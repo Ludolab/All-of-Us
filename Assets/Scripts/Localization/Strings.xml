@@ -33,6 +33,15 @@
         <string name="friday">Friday</string>
         <string name="saturday">Saturday</string>
         <string name="sunday">Sunday</string>
+
+        <string name="monday_short">MON</string>
+        <string name="tuesday_short">TUE</string>
+        <string name="wednesday_short">WED</string>
+        <string name="thursday_short">THU</string>
+        <string name="friday_short">FRI</string>
+        <string name="saturday_short">SAT</string>
+        <string name="sunday_short">SUN</string>
+
         <string name="comm_manager">Community Manager</string>
         <string name="day_summary">Day Summary</string>
         <string name="continue">CONTINUE</string>
@@ -44,6 +53,8 @@
         <string name="info">INFO</string>
         <string name="save">SAVE</string>
         <string name="go_to_sleep">GO TO SLEEP</string>
+        <string name="current_task">Current Task</string>
+        
         <string name="english">English</string>
         <string name="spanish">Spanish</string>
         
