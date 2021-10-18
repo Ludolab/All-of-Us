@@ -3105,12 +3105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26222f1c28b0546d3bad8300af95ee50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  calendarIconPressed: 0
   WeekText: {fileID: 1083697693}
   ShortDayText: {fileID: 1754380267}
   CurrentTaskTitle: {fileID: 1953807810}
   CurrentTask: {fileID: 1938144777}
   CurrentNPC: {fileID: 1488577880}
   BackButtonText: {fileID: 959185496}
+  ExitButtonText: {fileID: 631354219}
+  PhoneIcon: {fileID: 1954259024}
+  CalendarIcon: {fileID: 1614265891}
+  CalendarMessage: {fileID: 535966729}
+  BackButton: {fileID: 0}
+  NPCAndTask: {fileID: 0}
   NPCImage: {fileID: 2034159695}
 --- !u!1 &295476106
 GameObject:
@@ -5629,7 +5636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &535966730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6192,6 +6199,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614336821}
+  m_CullTransparentMesh: 0
+--- !u!1 &631354217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631354218}
+  - component: {fileID: 631354220}
+  - component: {fileID: 631354219}
+  m_Layer: 5
+  m_Name: Exit Game Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &631354218
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631354217}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.74760765, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 729164058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12, y: 1}
+  m_SizeDelta: {x: 100, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &631354219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631354217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: EXIT GAME
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 6dcfd87fd05cc418b8309c0c8e29c411, type: 2}
+  m_sharedMaterial: {fileID: -2536879518849845702, guid: 6dcfd87fd05cc418b8309c0c8e29c411,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4282064764
+  m_fontColor: {r: 0.48627454, g: 0.121568635, b: 0.23137257, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -45.312042, y: 0, z: -14.745117, w: 0.654541}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &631354220
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631354217}
   m_CullTransparentMesh: 0
 --- !u!1 &639528792
 GameObject:
@@ -7613,7 +7754,7 @@ GameObject:
   - component: {fileID: 729164060}
   - component: {fileID: 729164059}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Exit Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7629,7 +7770,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 631354218}
   m_Father: {fileID: 535966730}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9656,13 +9798,14 @@ GameObject:
   - component: {fileID: 995221142}
   - component: {fileID: 995221141}
   - component: {fileID: 995221143}
+  - component: {fileID: 995221144}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995221140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9736,7 +9879,44 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 995221144}
+          m_MethodName: toggleCalendarIcon
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &995221144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995221139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26222f1c28b0546d3bad8300af95ee50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calendarIconPressed: 0
+  WeekText: {fileID: 0}
+  ShortDayText: {fileID: 0}
+  CurrentTaskTitle: {fileID: 0}
+  CurrentTask: {fileID: 0}
+  CurrentNPC: {fileID: 0}
+  BackButtonText: {fileID: 0}
+  ExitButtonText: {fileID: 0}
+  PhoneIcon: {fileID: 1954259024}
+  CalendarIcon: {fileID: 1614265891}
+  CalendarMessage: {fileID: 535966729}
+  BackButton: {fileID: 995221139}
+  NPCAndTask: {fileID: 0}
+  NPCImage: {fileID: 0}
 --- !u!1 &995252445
 GameObject:
   m_ObjectHideFlags: 0
@@ -11393,7 +11573,6 @@ RectTransform:
   m_LocalScale: {x: 1.18264, y: 1.20624, z: 1}
   m_Children:
   - {fileID: 1954259025}
-  - {fileID: 1440217255}
   m_Father: {fileID: 1510505320}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17204,7 +17383,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1257829165}
+    m_TransformParent: {fileID: 1954259025}
     m_Modifications:
     - target: {fileID: 2544876191119469019, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
@@ -17311,7 +17490,7 @@ PrefabInstance:
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
@@ -17346,12 +17525,12 @@ PrefabInstance:
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8455659
+      value: 1.2499998
       objectReference: {fileID: 0}
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.82902235
+      value: 1.2499999
       objectReference: {fileID: 0}
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
@@ -17391,12 +17570,12 @@ PrefabInstance:
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.42352295
+      value: 0.6259308
       objectReference: {fileID: 0}
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.0622253
+      value: 6.1249847
       objectReference: {fileID: 0}
     - target: {fileID: 6861777948896379087, guid: a27e3f7ab345a49bcb17231945f6502d,
         type: 3}
@@ -18311,6 +18490,7 @@ GameObject:
   - component: {fileID: 1614265895}
   - component: {fileID: 1614265894}
   - component: {fileID: 1614265893}
+  - component: {fileID: 1614265896}
   m_Layer: 5
   m_Name: Calendar
   m_TagString: Untagged
@@ -18381,12 +18561,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 26222f1c28b0546d3bad8300af95ee50, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1614265896}
+        m_MethodName: toggleCalendarIcon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18429,6 +18609,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614265891}
   m_CullTransparentMesh: 0
+--- !u!114 &1614265896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614265891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26222f1c28b0546d3bad8300af95ee50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calendarIconPressed: 0
+  WeekText: {fileID: 0}
+  ShortDayText: {fileID: 0}
+  CurrentTaskTitle: {fileID: 0}
+  CurrentTask: {fileID: 0}
+  CurrentNPC: {fileID: 0}
+  BackButtonText: {fileID: 0}
+  ExitButtonText: {fileID: 0}
+  PhoneIcon: {fileID: 1954259024}
+  CalendarIcon: {fileID: 1614265891}
+  CalendarMessage: {fileID: 535966729}
+  BackButton: {fileID: 995221139}
+  NPCAndTask: {fileID: 422540916}
+  NPCImage: {fileID: 0}
 --- !u!1 &1617774700
 GameObject:
   m_ObjectHideFlags: 1
@@ -22303,7 +22509,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6764528, y: 0.6632179, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1440217255}
   m_Father: {fileID: 1257829165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
