@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MapScript : MonoBehaviour
 {
@@ -15,10 +16,16 @@ public class MapScript : MonoBehaviour
     public TextMeshProUGUI CurrentNPC;
     public TextMeshProUGUI BackButtonText;
     public TextMeshProUGUI ExitButtonText;
+    public TextMeshProUGUI NumDaysLeft;
+    public TextMeshProUGUI DaysLeftText;
+    public TextMeshProUGUI ToBlockParty;
+    public TextMeshProUGUI PleaseNote;
+    public TextMeshProUGUI ProgressWontSave;
     public GameObject PhoneIcon;
     public GameObject CalendarIcon;
     public GameObject CalendarMessage;
     public GameObject BackButton;
+    public GameObject ExitGame;
     public GameObject NPCAndTask;
     public Image NPCImage;
     
@@ -37,6 +44,12 @@ public class MapScript : MonoBehaviour
 
         BackButtonText.text = LangClass.getString("back");
         ExitButtonText.text = LangClass.getString("exit_game");
+        NumDaysLeft.text = (4 - GlobalGameInfo.GetCurrentDay()).ToString();
+        DaysLeftText.text = LangClass.getString("days_left");
+        ToBlockParty.text = LangClass.getString("to_block_party") + " " + GlobalGameInfo.GetCurrentNPC();
+        
+        PleaseNote.text = LangClass.getString("please_note");
+        ProgressWontSave.text = LangClass.getString("progress_wont_save");
 
         // Update NPC Image
 
@@ -54,7 +67,11 @@ public class MapScript : MonoBehaviour
         CalendarIcon.SetActive(!calendarIconPressed);
 
         // Move object of NPC and task
-        // NPCAndTask.transform.position = NPCAndTask.transform.position + new Vector3 (1f, 0f, 0f);
+        if (calendarIconPressed) {
+            NPCAndTask.transform.position = new Vector3(1324, 768, 0f);
+        } else {
+            NPCAndTask.transform.position = new Vector3(1024, 768, 0f);
+        }
 
         // Show back button
         BackButton.SetActive(calendarIconPressed);
@@ -63,6 +80,11 @@ public class MapScript : MonoBehaviour
         CalendarMessage.SetActive(calendarIconPressed);
 
 
+    }
+
+    public void GoToOpeningScreen() {
+        // Go back to opening screen
+        SceneManager.LoadScene("OpeningScene");
     }
 
     // Update is called once per frame

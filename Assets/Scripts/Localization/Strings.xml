@@ -55,6 +55,11 @@
         <string name="save">SAVE</string>
         <string name="go_to_sleep">GO TO SLEEP</string>
         <string name="current_task">Current Task</string>
+
+        <string name="days_left">DAYS LEFT</string>
+        <string name="to_block_party">to block party for</string>
+        <string name="please_note">Please Note!</string>
+        <string name="progress_wont_save">Unfortunately, your progress made in the current task will not be saved.</string>
         
         <string name="english">English</string>
         <string name="spanish">Spanish</string>
