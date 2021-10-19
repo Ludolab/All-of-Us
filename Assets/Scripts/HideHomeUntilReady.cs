@@ -8,9 +8,9 @@ public class HideHomeUntilReady : MonoBehaviour
     void Update()
     {
         if(InkFileManager.DailyQuestsCompleted < 3){
-            gameObject.GetComponent<HoverMap>().isViewable = false;
+            gameObject.GetComponent<HighlightClickableBuildlings2DMap>().isViewable = false;
         } else {
-            gameObject.GetComponent<HoverMap>().isViewable = true;
+            gameObject.GetComponent<HighlightClickableBuildlings2DMap>().isViewable = true;
         }
     }
 }

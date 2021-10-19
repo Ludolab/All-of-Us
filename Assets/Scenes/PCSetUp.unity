@@ -2041,6 +2041,7 @@ GameObject:
   - component: {fileID: 1095467907}
   - component: {fileID: 1095467909}
   - component: {fileID: 1095467908}
+  - component: {fileID: 1095467910}
   m_Layer: 5
   m_Name: Input Container
   m_TagString: Untagged
@@ -2105,6 +2106,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095467906}
   m_CullTransparentMesh: 0
+--- !u!114 &1095467910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095467906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1142785950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2130,7 @@ GameObject:
   - component: {fileID: 1142785954}
   - component: {fileID: 1142785953}
   - component: {fileID: 1142785952}
+  - component: {fileID: 1142785955}
   m_Layer: 5
   m_Name: Inactive Continue Button
   m_TagString: Untagged
@@ -2235,6 +2249,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142785950}
   m_CullTransparentMesh: 0
+--- !u!114 &1142785955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142785950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1169944561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,6 +2454,7 @@ GameObject:
   - component: {fileID: 1175897490}
   - component: {fileID: 1175897489}
   - component: {fileID: 1175897488}
+  - component: {fileID: 1175897491}
   m_Layer: 5
   m_Name: Pronouns Dropdown
   m_TagString: Untagged
@@ -2549,6 +2576,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175897486}
   m_CullTransparentMesh: 0
+--- !u!114 &1175897491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175897486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178798082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3656,7 @@ GameObject:
   - component: {fileID: 1584470665}
   - component: {fileID: 1584470664}
   - component: {fileID: 1584470667}
+  - component: {fileID: 1584470668}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -3761,6 +3801,61 @@ MonoBehaviour:
   languageDropDown: {fileID: 1833719007}
   continueButton: {fileID: 1584470664}
   inactiveContinueButton: {fileID: 1142785952}
+--- !u!114 &1584470668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584470662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1617430661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617430663}
+  - component: {fileID: 1617430662}
+  m_Layer: 0
+  m_Name: MouseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1617430662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617430661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234a1560dfb4ddb47a44acfde619d3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1617430663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617430661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 781.4988, y: 702.15454, z: -5.8269596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646148456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,6 +4038,7 @@ GameObject:
   - component: {fileID: 1833719009}
   - component: {fileID: 1833719008}
   - component: {fileID: 1833719007}
+  - component: {fileID: 1833719010}
   m_Layer: 5
   m_Name: Language Dropdown
   m_TagString: Untagged
@@ -4064,6 +4160,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833719005}
   m_CullTransparentMesh: 0
+--- !u!114 &1833719010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833719005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850796256
 GameObject:
   m_ObjectHideFlags: 0
