@@ -21130,7 +21130,7 @@ GameObject:
   - component: {fileID: 1693337644}
   - component: {fileID: 1693337643}
   m_Layer: 5
-  m_Name: Bubble
+  m_Name: Num Days Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
