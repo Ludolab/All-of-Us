@@ -23,6 +23,7 @@
         <string name ="phone_contacts_app">Contacts</string>
         <string name ="phone_todo_app">To-do List</string>
         <string name ="phone_notes_app">My Journal</string>
+        <string name ="phone_dictionary_app">Dictionary</string>
     
         <string name="day">DAY</string>
         <string name="week">Week</string>
