@@ -13,11 +13,13 @@ public class PhoneScreenManager : MonoBehaviour
     public GameObject notes;
     public GameObject contacts;
     public GameObject settings;
+    public GameObject dictionary;
 
     public GameObject messagesBorder;
     public GameObject notesBorder;
     public GameObject contactsBorder;
     public GameObject settingsBorder;
+    public GameObject dictionaryBorder;
 
     public GameObject questPanel;
 
@@ -64,6 +66,7 @@ public class PhoneScreenManager : MonoBehaviour
     public Sprite contactsIcon;
     public Sprite journalIcon;
     public Sprite settingsIcon;
+    public Sprite dictionaryIcon;
  
     void Update(){
       if (started && timer <= seconds) {
@@ -195,6 +198,10 @@ public class PhoneScreenManager : MonoBehaviour
                 go = settings;
                 border = settingsBorder;
                 break;
+            case "dictionary":
+                go = dictionary;
+                border = dictionaryBorder;
+                break;
             case "back":
                 go = null;
                 border = null;
@@ -213,6 +220,8 @@ public class PhoneScreenManager : MonoBehaviour
                 return "My Contacts";
             case "settings":
                 return "Settings";
+            case "dictionary":
+                return "Dictionary";
             case "back":
                 return "Home Screen";
         }
@@ -231,6 +240,8 @@ public class PhoneScreenManager : MonoBehaviour
                 return contactsIcon;
             case "settings":
                 return settingsIcon;
+            case "dictionary":
+                return dictionaryIcon;
             case "back":
                 return journalIcon;
         }

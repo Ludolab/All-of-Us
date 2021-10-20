@@ -9,9 +9,9 @@ public class HideNPCsIfDone : MonoBehaviour
     void Update()
     {
         if(InkFileManager.CanAdvanceDay()){
-            gameObject.GetComponent<HoverMap>().isViewable = false;
+            gameObject.GetComponent<HighlightClickableBuildlings2DMap>().isViewable = false;
         } else {
-            gameObject.GetComponent<HoverMap>().isViewable = true;
+            gameObject.GetComponent<HighlightClickableBuildlings2DMap>().isViewable = true;
         }
     }
 }
