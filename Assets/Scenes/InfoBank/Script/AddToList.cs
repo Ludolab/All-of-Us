@@ -23,6 +23,9 @@ public class AddToList : MonoBehaviour
             case "Settings":
                 fillSettingsList();
                 break;
+            case "Dictionary":
+                fillDictionaryList();
+                break;
             default:
                 List<GlobalGameInfo.InfoItem> list = new List<GlobalGameInfo.InfoItem>(GlobalGameInfo.infoList);
                 list.Reverse();
@@ -49,16 +52,12 @@ public class AddToList : MonoBehaviour
 
     private void fillSettingsList()
     {
-        /*
-        if (list.Count == 0)
-        {
-            return;
-        }
+        // Fill in with settings list
+    }
 
-        Destroy(this.gameObject.transform.Find("Scroll View/Viewport/Content/No Info Yet").gameObject);
-
-        Transform go = this.gameObject.transform.Find("Scroll View/Viewport/Content");
-        */
+    private void fillDictionaryList()
+    {
+        // Fill in with Dictionary list
     }
 
     private void fillInfoList(List<GlobalGameInfo.InfoItem> list){

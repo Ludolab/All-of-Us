@@ -130,7 +130,7 @@ public class InkFileManager : MonoBehaviour {
     /// Returns true if you can start a quest for character
     /// </summary>
     /// <returns></returns>
-    public bool CanStartQuest(CharacterResources.CHARACTERS character) {
+    private static bool CanStartQuest(CharacterResources.CHARACTERS character) {
         // a quest is already active
         if (activeFileIdx != (-1, -1))
             return false;
@@ -151,6 +151,9 @@ public class InkFileManager : MonoBehaviour {
         return false;
     }
 
+    // Basically the same as CanStartQuestion but we don't care if a question is currently active.
+    
+    
     /// <summary>
     /// If possible, advances the progress of the quest file system. returns
     /// a bool representing if progress actually occurred
@@ -190,7 +193,38 @@ public class InkFileManager : MonoBehaviour {
         completedDailyLee = false;
     }
 
-    public void TryGoHome() {
+    public static bool CanSpeakToForCurrentQuestOrNewQuest(CharacterResources.CHARACTERS character)
+    {
+        // try start a new quest
+        if (CanStartQuest(character))
+        {
+            return true;
+        }
+        else
+        {
+            int questNum = activeFileIdx.Item1;
+            int chapterNum = activeFileIdx.Item2;
+            string fileToLoad = "";
+            try
+            {
+                fileToLoad = ActivePersonQuestList[questNum][chapterNum];
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+
+            }
+            // is this the next person to speak to for the quest?
+            if (character == GetSpeakerFromFile(fileToLoad))
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+
+
+
+        public void TryGoHome() {
         // if (CanAdvanceDay()) {
             SceneManager.LoadScene("Home");
         // }
@@ -269,7 +303,7 @@ public class InkFileManager : MonoBehaviour {
     /// <param name="fileName">name of a .ink file located in
     /// Assets/Story Files/Resources</param>
     /// <returns>The primary speaking character for the .ink file</returns>
-    private CharacterResources.CHARACTERS GetSpeakerFromFile(string fileName) {
+    private static CharacterResources.CHARACTERS GetSpeakerFromFile(string fileName) {
         
         string[] splitLine = fileName.Split('_');
         string[] splitSecondLine = splitLine[3].Split('.');
