@@ -134,14 +134,14 @@ public class DetailPageManager : MonoBehaviour
       if(infoItem == null){
         return;
       }
-
+      /*
       if(TagManager.GetTags(infoItem.tagIdentifier).Count > 0){
         Transform redbubble = HelperFunctions.FindChildByRecursion(transform, "redbubble");
         if(redbubble != null){
           redbubble.gameObject.SetActive(false);
         }
-        
       }
+      */
     }
 
     public void setInfo(GlobalGameInfo.InfoItem item){
@@ -155,11 +155,13 @@ public class DetailPageManager : MonoBehaviour
       Transform descriptionChild = HelperFunctions.FindChildByRecursion(transform, "description");
       if(descriptionChild == null) return;
       descriptionChild.gameObject.GetComponent<TextMeshProUGUI>().text = description;
-
+      
+        /*
       if(TagManager.GetTags(item.tagIdentifier).Count > 0){
         Transform redbubble = HelperFunctions.FindChildByRecursion(transform, "redbubble");
         redbubble.gameObject.SetActive(false);
       }
+        */
     }
 
     public void setText(string txt){

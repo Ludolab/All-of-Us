@@ -17,15 +17,20 @@ public class DisplayDictionaryDefinition : MonoBehaviour {
     public enum DisplayStatus { DEFAULT, MISSING, DEFINITION };
     private DisplayStatus currentDisplay;
 
+    public bool visualNovelDictionary;
+    private bool firstTimeInVisual = true;
     public GameObject missingDisplay;
     public GameObject defaultDisplay;
     public GameObject definitionDisplay;
+    public GameObject parentDisplay;
+    public GameObject termsDisplay;
 
     private Hashtable Words;
     private List<string> orderedWords;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Here again!");
         initWords(); 
     }
 
@@ -55,11 +60,19 @@ public class DisplayDictionaryDefinition : MonoBehaviour {
     }
     public int GetNumWords()
     {
+        if (Words == null)
+        {
+            initWords();
+        }
         return Words.Count;
     }
 
     public List<String> GetWords()
     {
+        if (Words == null)
+        {
+            initWords();
+        }
         return orderedWords;
     }
 
@@ -107,10 +120,16 @@ public class DisplayDictionaryDefinition : MonoBehaviour {
         definitionDisplay.SetActive(false);
         defaultDisplay.SetActive(false);
         missingDisplay.SetActive(true);
-        Text missingText = missingDisplay.GetComponentInChildren<Text>();
-        missingText.text = "Oops, we can't find: " + inputWord;
+        foreach (Transform child in missingDisplay.transform)
+        {
+            GameObject childObj = child.gameObject;
+            if (childObj.name == "MissingText")
+            {
+                Text missingText = childObj.GetComponentInChildren<Text>();
+                missingText.text = "\"" + inputWord + "\"";
+            }
+        }
         currentDisplay = DisplayStatus.MISSING;
-        
     }
     public void ClearDescription()
     {
@@ -118,13 +137,37 @@ public class DisplayDictionaryDefinition : MonoBehaviour {
         missingDisplay.SetActive(false);
         defaultDisplay.SetActive(true);
         currentDisplay = DisplayStatus.DEFAULT;
+        updateWord = "";
     }
     private void Update()
     {
+        // This first if statement is just to make sure the definitions won't be displayed once we FIRST enter a visual novel scene
+        if (visualNovelDictionary && firstTimeInVisual)
+        {
+            firstTimeInVisual = false;
+            updateWord = "";
+        }
         if (updateWord != "")
         {
+            if (visualNovelDictionary)
+            {
+                termsDisplay.SetActive(false);
+                parentDisplay.SetActive(true);
+            }
+            // If we are in the phone app, we want to make sure the next time we go to a visual novel dictionary, the definition screen
+            // is turned off
+            // This is mega inelegant, but I don't want to add stuff to every button that transitions to the visual novels, so this is just
+            // easier albeit hacky
+            else
+            {
+                firstTimeInVisual = true;
+            }
             DisplayDescription(updateWord);
-            updateWord = "";
+        }
+        // Is visual novel dictionary and word is ""
+        else if (visualNovelDictionary)
+        {
+            parentDisplay.SetActive(false);
         }
     }
     

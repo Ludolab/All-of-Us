@@ -57,7 +57,44 @@ public class CharacterResources
     leeSmall = Resources.Load<Sprite>("lee_small");
   }
 
-  public Sprite GetSmallIcon(CHARACTERS c){
+    public Color GetColor(CHARACTERS c)
+    {
+        switch (c)
+        {
+            case CHARACTERS.RASHAD:
+                return new Color(0.9921569f, 0.6313726f, 0.5686275f, 1.0f);
+            case CHARACTERS.LILA:
+                return new Color(0.7333333f, 0.8313726f, 0.6784314f, 1.0f);
+            case CHARACTERS.CALINDAS:
+                return new Color(0.9686275f, 0.8745099f, 0.5803922f, 1.0f);
+            case CHARACTERS.ELISA:
+                return new Color(0.6156863f, 0.6666667f, 0.8431373f, 1.0f);
+            case CHARACTERS.LEE:
+                return new Color(0.3294118f, 0.6156863f, 0.5803922f, 1.0f);
+            default:
+                return new Color(0.9921569f, 0.6313726f, 0.5686275f, 1.0f);
+        }
+    }
+   public string GetName(CHARACTERS c)
+    {
+        switch (c)
+        {
+            case CHARACTERS.RASHAD:
+                return "Rashad";
+            case CHARACTERS.LILA:
+                return "Lila";
+            case CHARACTERS.CALINDAS:
+                return "Calindas";
+            case CHARACTERS.ELISA:
+                return "Elisa";
+            case CHARACTERS.LEE:
+                return "Lee";
+            default:
+                return "Rashad";
+        }
+    }
+
+    public Sprite GetSmallIcon(CHARACTERS c){
     switch (c){
       case CHARACTERS.RASHAD:
         return rashadSmall;

@@ -12,9 +12,14 @@ using TMPro;
 
 public class SearchDictionary : MonoBehaviour
 {
+    // True if this is for a visual novel dictionary, false if for the info bank dictionary
+    public bool visualNovelDictionary;
     public DisplayDictionaryDefinition definitionsManager;
     public GameObject dictionaryTermPrefab;
     public Scrollbar verticalScrollbar;
+    public GameObject dictionaryTermsObject;
+    public GameObject contentObject;
+
 
     private List<GameObject> allTerms;
     private List<GameObject> displayedTerms;
@@ -35,23 +40,26 @@ public class SearchDictionary : MonoBehaviour
         
         int numWords = definitionsManager.GetNumWords();
         List<string> words = definitionsManager.GetWords();
-        GridLayoutGroup glg = GetComponent<GridLayoutGroup>();
+        GridLayoutGroup glg = contentObject.GetComponent<GridLayoutGroup>();
         topPadding = glg.padding.top;
         bottomPadding = glg.padding.bottom;
         cellHeight = (int)glg.cellSize.y;
         cellHeightSpacing = (int)glg.spacing.y;
-        RectTransform rt = GetComponent<RectTransform>();
+        RectTransform rt = contentObject.GetComponent<RectTransform>();
         float contentWindowHeight = (float)(numWords * (cellHeight + cellHeightSpacing) + topPadding + bottomPadding);
         rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, contentWindowHeight);
         for (int i = 0; i < numWords; i++)
         {
-            GameObject newObject = Instantiate(dictionaryTermPrefab, this.transform);
+            GameObject newObject = Instantiate(dictionaryTermPrefab, contentObject.transform);
             TextMeshProUGUI newText = newObject.GetComponentInChildren<TextMeshProUGUI>();
             newText.text = words[i];
             allTerms.Add(newObject);
             displayedTerms.Add(newObject);
             // newText.font = (Font)AssetDatabase.LoadAssetAtPath("Assets/Fonts/Lato-Regular.ttf", typeof(Font));
         }
+        // This is to fix a bug where it believed the content object was not turned on
+        contentObject.SetActive(true);
+        Debug.Log(numWords);
     }
 
     private GameObject getHighlightImageObject(GameObject go)
@@ -97,6 +105,7 @@ public class SearchDictionary : MonoBehaviour
     }
     public void searchForTerms(string searchWord)
     {
+        dictionaryTermsObject.SetActive(true);
         List<GameObject> newDisplayedTerms = new List<GameObject>(); 
         foreach (GameObject go in allTerms) 
         {
@@ -122,14 +131,15 @@ public class SearchDictionary : MonoBehaviour
                         {
                             newDisplayedTerms.Add(go);
                             go.SetActive(true);
-                            int startInd = wordInd - searchWord.Length + 1;
-                            float startX = textComponent.textInfo.characterInfo[startInd].bottomLeft.x;
-                            float endX = textComponent.textInfo.characterInfo[wordInd].bottomRight.x;
-                            float highlightImageWidth = endX - startX;
+                           
 
                             GameObject img = getHighlightImageObject(go);
                             if (img != null)
                             {
+                                int startInd = wordInd - searchWord.Length + 1;
+                                float startX = textComponent.textInfo.characterInfo[startInd].bottomLeft.x;
+                                float endX = textComponent.textInfo.characterInfo[wordInd].bottomRight.x;
+                                float highlightImageWidth = endX - startX;
                                 // Offset is because text object is sligtly shifted in parent
                                 float newStartX = startX + textComponent.transform.localPosition.x;
                                 img.transform.localPosition = new Vector3(newStartX, img.transform.localPosition.y, img.transform.localPosition.z);
@@ -168,6 +178,11 @@ public class SearchDictionary : MonoBehaviour
             {
                 clearSelected();
             }
+            if (visualNovelDictionary)
+            {
+                dictionaryTermsObject.SetActive(false);
+                DisplayDictionaryDefinition.UpdateDefinition("");
+            }
         }
         // Search bar is not clear and no results for search
         else if (displayedTerms.Count == 0)
@@ -175,11 +190,23 @@ public class SearchDictionary : MonoBehaviour
             // Reset it to the top of the window
             clearAllHighlights();
             verticalScrollbar.value = 1;
-            definitionsManager.WordNotFound(searchWord); 
+            definitionsManager.WordNotFound(searchWord);
+            // For visual novel, if there are no results, turn off the search dictionary terms field
+            if (visualNovelDictionary)
+            {
+                dictionaryTermsObject.SetActive(false);
+                // String is just a placeholder
+                DisplayDictionaryDefinition.UpdateDefinition(searchWord);
+            }
         }
-
+        // Neither of two cases above, and is visual novel dictionary, then we want to just show the search terms, and disable
+        // the definitions page
+        else if (visualNovelDictionary)
+        {
+            DisplayDictionaryDefinition.UpdateDefinition("");
+        }
         // Update content window height, so scrollbar will disappear if not enough elements
-        RectTransform rt = GetComponent<RectTransform>();
+        RectTransform rt = contentObject.GetComponent<RectTransform>();
         float contentWindowHeight = (float)(displayedTerms.Count * (cellHeight + cellHeightSpacing) + topPadding + bottomPadding);
         rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, contentWindowHeight);
     }
