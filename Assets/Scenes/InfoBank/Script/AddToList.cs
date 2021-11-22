@@ -8,6 +8,7 @@ using TMPro;
 public class AddToList : MonoBehaviour
 {
 
+    public Transform todoPersonPrefab;
     public Transform listItemPrefab;
     public Transform infoListItemPrefab;
     public string whichList = "Dialog";
@@ -47,7 +48,7 @@ public class AddToList : MonoBehaviour
             case "Dictionary":
                 fillDictionaryList();
                 break;
-            default:
+            case "Info":
                 List<GlobalGameInfo.InfoItem> list = new List<GlobalGameInfo.InfoItem>(GlobalGameInfo.infoList);
                 list.Reverse();
                 fillInfoList(list);
@@ -60,16 +61,45 @@ public class AddToList : MonoBehaviour
         if(list.Count == 0){
             return;
         }
-        
+
+        // Added another element to test the todo list expanding feature. Only used for testing
+        // list.Add(list[0]);
+
+        // Destory placeholder saying no todo list
         Destroy(this.gameObject.transform.Find("Scroll View/Viewport/Content/No Info Yet").gameObject);
-        
-        Transform go = this.gameObject.transform.Find("Scroll View/Viewport/Content");
-        
-        for(int i = 0; i < list.Count; i++){
-            Transform newItem = Instantiate(listItemPrefab, go);
+        Transform contentParent = this.gameObject.transform.Find("Scroll View/Viewport/Content");
+        CharacterResources cr = new CharacterResources();
+
+        for (int i = 0; i < list.Count; i++) {
+            // Instantiate TodoPerson prefab
+            Transform newTodoPerson = Instantiate(todoPersonPrefab, contentParent);
+
+            // Update a person's header
+            Transform header = newTodoPerson.Find("Header");
+            header.gameObject.SetActive(true);
+            Transform characterName = header.transform.Find("Character/CharacterName");
+            Transform characterPic = header.transform.Find("Character/CharacterPic");
+            Transform daysPassed = header.transform.Find("DaysPassed");
+            characterPic.gameObject.GetComponent<Image>().sprite = cr.GetSmallIcon(list[i].character);
+            characterName.gameObject.GetComponent<Text>().text = cr.GetName(list[i].character).ToUpper();
+
+            // Create the todo item list;
+            Transform newItemListParent = newTodoPerson.Find("TodoItemList");
+            Transform newItem = Instantiate(listItemPrefab, newItemListParent);
             newItem.GetComponent<TodoManager>().setDetails(list[i]);
+
+            // This was done for testing purposes. Remove in actual game
+            /*
+            Transform newItem2 = Instantiate(listItemPrefab, newItemListParent);
+            newItem2.GetComponent<TodoManager>().setDetails(list[i]);
+            */
+            foreach (Transform child in daysPassed)
+            {
+                child.gameObject.GetComponent<Image>().color = cr.GetColor(list[i].character);
+            }
         }
     }
+
 
     private void fillSettingsList()
     {
@@ -144,6 +174,7 @@ public class AddToList : MonoBehaviour
             }
             
         }
+        
     }
 
     private void fillContactList(Dictionary<CharacterResources.CHARACTERS, GlobalGameInfo.CharacterItem> list){

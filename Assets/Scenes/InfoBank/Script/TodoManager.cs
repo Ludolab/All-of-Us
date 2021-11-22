@@ -18,6 +18,10 @@ public class TodoManager : MonoBehaviour
     public GameObject dropdownImage;
 
     public Image backgroundImage;
+    public Image checklistArrowImage;
+    public Image checklistDoneImage;
+
+    public static int backgroundImageDefaultHeight = 100;
 
     private GameObject profileImage;
 
@@ -33,7 +37,10 @@ public class TodoManager : MonoBehaviour
 
     List<GlobalGameInfo.ChecklistItem> checklist;
 
-    private float extraPadding = 100f;
+    private Transform checklistTransform = null;
+    private Transform dropdownTransformArrow = null;
+    private Transform dropdownTransformDone = null;
+
 
     void Awake(){
       cr = new CharacterResources();
@@ -43,84 +50,76 @@ public class TodoManager : MonoBehaviour
       greenBackground = Resources.Load<Sprite>("greenbg");
     }
     public void setDetails(GlobalGameInfo.TodoItem item){
-      if(cr == null){
-        cr = new CharacterResources();
-      }
+        if(cr == null){
+            cr = new CharacterResources();
+        }
 
-      string title = item.title;
-      checklist = item.checklist;
-      Transform textChild = HelperFunctions.FindChildByRecursion(transform, "title");
-      if(textChild == null) return;
-      titleRTransform = textChild.gameObject.GetComponent<RectTransform>();
-      textChild.gameObject.GetComponent<TextMeshProUGUI>().text = title;
-      Transform go = HelperFunctions.FindChildByRecursion(transform, "checklist");
-      checklistItems = go.gameObject;
-      Transform image = HelperFunctions.FindChildByRecursion(transform, "image");
-      profileImage = image.gameObject;
-      if(image != null){
-        image.gameObject.GetComponent<Image>().sprite = cr.GetSmallIcon(item.character);
-      }
-      for(int i = 0; i < checklist.Count; i++){
-        Transform newItem = Instantiate(itemPrefab, go);
-        newItem.GetComponent<ChecklistManager>().setItem(checklist[i]);
-      }
+        // Update checklist title
+        string title = item.title;
+        Transform textChild = HelperFunctions.FindChildByRecursion(transform, "title");
+        if(textChild == null) return;
+        titleRTransform = textChild.gameObject.GetComponent<RectTransform>();
+        textChild.gameObject.GetComponent<TextMeshProUGUI>().text = title;
 
-      if(!item.showNotification){
-        Transform redbubble = HelperFunctions.FindChildByRecursion(transform, "redbubble");
-        redbubble.gameObject.SetActive(false);
-      }
-      
+        // Add checklist items to checklist object 
+        Transform go = HelperFunctions.FindChildByRecursion(transform, "checklist");
+        checklistItems = go.gameObject;
+        GridLayoutGroup glg = go.GetComponent<GridLayoutGroup>();
+        checklist = item.checklist;
+        for (int i = 0; i < checklist.Count; i++){
+            Transform newItem = Instantiate(itemPrefab, go);
+            newItem.GetComponent<ChecklistManager>().setItem(checklist[i]);
+        }
+        
+        // If they are all completed already, update the arrow sprite to be the green checkmark
+        completed = item.complete;
+        if(completed){
+            backgroundImage.sprite = greenBackground;
+            dropdownImage.gameObject.GetComponent<Image>().sprite = greenDropdown;
+        }
 
-      completed = item.complete;
+        // Should not be open by default
+        checklistItems.SetActive(false);
 
-      if(completed){
-        backgroundImage.sprite = greenBackground;
-        dropdownImage.gameObject.GetComponent<Image>().sprite = greenDropdown;
-      }
-      resetLayouts();
-      gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(152f, titleRTransform.sizeDelta.y + extraPadding); 
-      checklistItems.SetActive(false);
-
+        // Used for toggleChecklist
+        checklistTransform = this.transform.Find("checklist");
+        dropdownTransformArrow = this.transform.Find("Header/dropdown/dropdownArrow");
+        dropdownTransformDone = this.transform.Find("Header/dropdown/dropdownDone");
     }
 
     public void toggleChecklist(){
-      if(opened){
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(152f,  titleRTransform.sizeDelta.y + extraPadding);
-        checklistItems.SetActive(false);
-        profileImage.SetActive(false);
-        dropdownImage.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        if(completed){
-          dropdownImage.gameObject.GetComponent<Image>().sprite = greenDropdown;
-        } else {
-          dropdownImage.gameObject.GetComponent<Image>().sprite = redDropdown;
+        if (opened)
+        {
+            opened = false;
+            checklistItems.SetActive(false);
+        } 
+        else 
+        {
+            opened = true;
+            checklistItems.SetActive(true);
         }
-        opened = false;
-        
-      } else {
-        opened = true;
-        checklistItems.SetActive(true);
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(152f, checklist.Count * 30 + titleRTransform.sizeDelta.y + extraPadding);
-        profileImage.SetActive(true);
-        dropdownImage.gameObject.GetComponent<Image>().sprite = greyDropdown;
-        if(completed){
-          dropdownImage.gameObject.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        }
-      }
-      resetLayouts();
     }
 
-    //we need to reset the layouts or else they look weird when you open or
-    //close the dropdown in the quests
-    private void resetLayouts(){
-      Canvas.ForceUpdateCanvases();
-      gameObject.GetComponent<VerticalLayoutGroup>().enabled = false;
-      gameObject.GetComponent<VerticalLayoutGroup>().enabled = true;
-      Canvas.ForceUpdateCanvases();
-      checklistItems.GetComponent<VerticalLayoutGroup>().enabled = false;
-      checklistItems.GetComponent<VerticalLayoutGroup>().enabled = true;
-      Canvas.ForceUpdateCanvases();
-      transform.parent.GetComponent<VerticalLayoutGroup>().enabled = false;
-      transform.parent.GetComponent<VerticalLayoutGroup>().enabled = true;
-      Canvas.ForceUpdateCanvases();
+    public void Update()
+    {
+        // If all the checklist elements are checked, then give a green checkmark instead of the arrow
+        if (checklistTransform != null && dropdownTransformArrow != null && dropdownTransformDone != null)
+        {
+            bool allChecked = true;
+            foreach (Transform child in checklistTransform)
+            {
+                allChecked = allChecked && child.gameObject.GetComponent<ChecklistManager>().isChecked();
+            }
+            if (allChecked)
+            {
+                dropdownTransformArrow.gameObject.SetActive(false);
+                dropdownTransformDone.gameObject.SetActive(true);
+            }
+            else
+            {
+                dropdownTransformDone.gameObject.SetActive(false);
+                dropdownTransformArrow.gameObject.SetActive(true);
+            }
+        } 
     }
 }

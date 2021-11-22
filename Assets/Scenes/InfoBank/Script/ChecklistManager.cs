@@ -12,15 +12,15 @@ public class ChecklistManager : MonoBehaviour
 {
     public Sprite checkedSprite;
     public Sprite uncheckedSprite;
-
+    private bool checkmarked = false;
     public Image checkmark;
 
     GlobalGameInfo.ChecklistItem item;
 
     public void setItem(GlobalGameInfo.ChecklistItem ci){
-      item = ci;
-      setText(item.title);
-      //setCheckmark(item.completed);
+        item = ci;
+        setText(item.title);
+        checkmarked = ci.completed;
     }
 
     public void setText(string text){
@@ -29,12 +29,22 @@ public class ChecklistManager : MonoBehaviour
       textChild.gameObject.GetComponent<TextMeshProUGUI>().text = text;
     }
 
-    //removing this feature for now
-    // public void setCheckmark(bool isDone){
-    //   if(isDone){
-    //     checkmark.sprite = checkedSprite;
-    //   } else {
-    //     checkmark.sprite = uncheckedSprite;
-    //   }
-    // }
+    public bool isChecked()
+    {
+        return checkmarked;
+    }
+
+    public void toggleChecked()
+    {
+        Image imageObject = this.transform.GetComponentInChildren<Image>();
+        if (checkmarked)
+        {
+            imageObject.sprite = uncheckedSprite;
+        }
+        else
+        {
+            imageObject.sprite = checkedSprite;
+        }
+        checkmarked = !checkmarked;
+    }
 }

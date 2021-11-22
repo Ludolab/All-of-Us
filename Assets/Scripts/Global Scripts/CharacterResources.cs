@@ -57,7 +57,6 @@ public class CharacterResources
     leeSmall = Resources.Load<Sprite>("lee_small");
   }
 
-
     public Color GetColor(CHARACTERS c)
     {
         switch (c)
@@ -76,6 +75,7 @@ public class CharacterResources
                 return new Color(0.9921569f, 0.6313726f, 0.5686275f, 1.0f);
         }
     }
+
     public string GetName(CHARACTERS c)
     {
         switch (c)
