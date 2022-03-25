@@ -37,7 +37,6 @@ public class CharacterResources
   public static Sprite leeSmall;
 
   public CharacterResources(){
-    
 
     rashadNeutral = Resources.Load<Sprite>("rashad_neutral");
     rashadTalking = Resources.Load<Sprite>("rashad_talking");
