@@ -157,6 +157,7 @@ public static class GameStrings {
                 {"community_engagement", "Community Engagement"},
 
                 // Start week
+                {"startweek_title", "Who should I chat with?"},
                 {"startweek_text1", "Are you ready to start the week and help"},
                 {"startweek_text2", "solve some problems?"},
                 {"startweek_text3", "If not, you can select a different neighbor!"},
