@@ -6,9 +6,9 @@ VAR new_quest = ""
 -> intro
 
 ==intro==
-Mrslee?Smiling " "
+Mrslee?Smiling "Great morning, {player_name}!"
 
-* {not TempGoodbye} How are you?
+* {not TempGoodbye} Great to see you too!
   -> Chat1
 * {not TempGoodbye} I thought about how to prepare!
   -> ReadyToSolve
@@ -24,7 +24,7 @@ Mrslee?Smiling "Hey. Can you believe it, still no headache."
   -> ReadyToSolve
 
 ==Chat2==
-Mrslee?Neutral "Oh my God! I just remember what I worry about. The appointment!"
+Mrslee?Neutral "Oh my goodness! I just remember what I worry about. The appointment!"
 
 * I can help you.
   -> ReadyToSolve
@@ -42,49 +42,52 @@ Mrslee?Neutral "OK. What should I do?"
 ==PuzzleInterface==
 # turnin
 
-* They picked Option1
+* They picked Option 1. 
   -> Option1
-* They picked Option2
+* They picked Option 2. 
   -> Option2
-* They picked Option3
+* They picked Option 3.
   -> Option3
-* They picked Option4
+* They picked Option 4. 
   -> Option4
-* They picked a solution marked bad.
+* They picked a solution marked as bad.
   -> BadSolution
 
 ==Option1==
-Mrslee?Smiling "OPTION 1 PICKED"
-* I picked OPTION 1. Nice! -> SolvedGoodbye
+Mrslee?Smiling "Did you know Eddie like to Facetime? Last time he was home, he asked me to talk sometimes. I know he worry, so this is a good idea.."
+
+* Sharing your health information might be helpful for him, too! 
+->Followup31
+
+==Followup31==
+Mrslee?Smiling "He ask good questions, and if I write down answers, I feel less stress about forgetting when I talk to doctor. I feel proud of how smart and helpful Eddie is."
+
+->END
 
 ==Option2==
-Mrslee?Smiling "OPTION 2 PICKED"
-* I picked OPTION 2. Nice! -> SolvedGoodbye
+Mrslee?Neutral "Lila is very helpful, but her life very busy. If she go to this appointment, what about next appointment. Dr. Lee always take care of everything, and now look! So stress!"
+
+* I think you can do it, Mrs. Lee. I’ll be back with a better suggestion!
+-> TempGoodbye
 
 ==Option3==
-Mrslee?Smiling "OPTION 3 PICKED"
-* I picked OPTION 3. Nice! -> SolvedGoodbye
+Mrslee?Smiling "Write down when I feel headache. Write down how bad? I can do that. Thinking about headache make me feel headache, but you say doctor might help."
+Mrslee?Smiling "Lila give me special notebook with pretty pink paper. She say if I feel good using my journal, maybe it feel less stress."
+
+* Do you feel like you need more guidance on what to write down?
+-> Followup32
+
+==Followup32==
+Mrslee?Smiling "I visit Heatlh Clinic and Mr. Calindas gave me pamphlet. It had questions doctor might ask. I will try to answer those questions in my journal, so I have good information to share."
+
+* Oh! Mr. Calindas and his pamphlets are so helpful!
+-> END
 
 ==Option4==
-Mrslee?Smiling "OPTION 4 PICKED"
-* I picked OPTION 4. Nice! -> SolvedGoodbye
+Mrslee?Neutral "Use my phone, and talk to doctor, and wear hospital gown? That sounds even MORE headache. I’m sorry, but I don’t think that help my headache."
 
-
-===GoodSolution==
-Mrslee?Smiling "Oh. I think that makes me feel much better. Good idea!
-
-* I'm so glad
-  -> SolvedGoodbye
-* Yay!
-  -> SolvedGoodbye
-
-==BadSolution==
-Mrslee?Neutral "I don't think!"
-
-* Try again?
-  -> PuzzleInterface
-* Let me come back, Mrs. Lee!
-  -> TempGoodbye
+* Oh, Mrs. Lee! You’re right. That sounds hard. I’ll be back.
+-> END
 
 ==SolvedGoodbye==
 Mrslee?Smiling "{player_name}. Thank you. This way, no stress."
@@ -97,7 +100,9 @@ Mrslee?Smiling "{player_name}. Thank you. This way, no stress."
 ==TempGoodbye==
 Mrslee?Neutral "OK. I will wait."
 
-* No worries, Mrs. Lee 
+* No worries, Mrs. Lee. I'll be back.
   -> END
-* I'm sorry!!
+
+==BadSolution==
+
   -> END

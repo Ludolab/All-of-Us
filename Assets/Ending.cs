@@ -9,10 +9,6 @@ public class Ending : MonoBehaviour
 {
 
     private int current_text_counter = 1;
-
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
     public TextMeshProUGUI NextText;
     public Text Textfield;
     public Text LastTextField;
@@ -25,10 +21,8 @@ public class Ending : MonoBehaviour
 
     private void Start() {
 
-        
-
-        Textfield.text = LangClass.getString("ending_1");
-        NextText.text = LangClass.getString("next");
+        Textfield.text = GameStrings.getString("ending_1");
+        NextText.text = GameStrings.getString("next");
 
         mrcalindas.enabled = false;
         mrslee.enabled = false;
@@ -41,52 +35,52 @@ public class Ending : MonoBehaviour
     public void setNextText() {
         switch (current_text_counter) {
             case 1:
-                Textfield.text = LangClass.getString("ending_2");
+                Textfield.text = GameStrings.getString("ending_2");
                 current_text_counter++;
                 break;
             case 2:
                 mrcalindas.enabled = true;
                 StartCoroutine(FadeImage(mrcalindas, false));
-                Textfield.text = LangClass.getString("ending_3");
+                Textfield.text = GameStrings.getString("ending_3");
                 current_text_counter++;
                 break;
             case 3:
                 StartCoroutine(FadeImage(mrcalindas, true));
-                Textfield.text = LangClass.getString("ending_4");
+                Textfield.text = GameStrings.getString("ending_4");
                 current_text_counter++;
                 lila.enabled = true;
                 StartCoroutine(FadeImage(lila, false));
                 break;
             case 4:
                 StartCoroutine(FadeImage(lila, true));
-                Textfield.text = LangClass.getString("ending_5");
+                Textfield.text = GameStrings.getString("ending_5");
                 current_text_counter++;
                 rashad.enabled = true;
                 StartCoroutine(FadeImage(rashad, false));
                 break;
             case 5:
                 StartCoroutine(FadeImage(rashad, true));
-                Textfield.text = LangClass.getString("ending_6");
+                Textfield.text = GameStrings.getString("ending_6");
                 current_text_counter++;
                 mrslee.enabled = true;
                 StartCoroutine(FadeImage(mrslee, false));
                 break;
             case 6:
                 StartCoroutine(FadeImage(mrslee, true));
-                Textfield.text = LangClass.getString("ending_7");
+                Textfield.text = GameStrings.getString("ending_7");
                 current_text_counter++;
                 elisa.enabled = true;
                 StartCoroutine(FadeImage(elisa, false));
                 break;
             case 7:
                 StartCoroutine(FadeImage(elisa, true));
-                Textfield.text = LangClass.getString("ending_8");
+                Textfield.text = GameStrings.getString("ending_8");
                 current_text_counter++;
                 break;
             case 8:
                 Textfield.enabled = false;
                 current_text_counter++;
-                LastTextField.text = LangClass.getString("ending_9");
+                LastTextField.text = GameStrings.getString("ending_9");
                 LastTextField.enabled = true;
                 break;
             default:

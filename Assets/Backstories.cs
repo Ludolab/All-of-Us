@@ -11,24 +11,21 @@ public class Backstories : MonoBehaviour
     public Text Textfield;
     public TextMeshProUGUI NextText;
 
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
     void Start()
     {
-        Textfield.text = LangClass.getString("backstories_1");
-        NextText.text = LangClass.getString("next");
+        Textfield.text = GameStrings.getString("backstories_1");
+        NextText.text = GameStrings.getString("next");
     }
 
 
     public void setNextText() {
         switch (current_text_counter) {
             case 1:
-                Textfield.text = LangClass.getString("backstories_2");
+                Textfield.text = GameStrings.getString("backstories_2");
                 current_text_counter++;
                 break;
             // case 2:
-            //     Textfield.text = LangClass.getString("backstories_3");
+            // Textfield.text = GameStrings.getString("backstories_3");
             //     current_text_counter++;
             //     break;
             default:

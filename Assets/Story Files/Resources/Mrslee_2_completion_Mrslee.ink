@@ -8,9 +8,9 @@ VAR new_quest = ""
 ===intro===
 Mrslee?Smiling "{player_name}. Hi. Listen. I was looking for you. My headache went away! I am OK. No problem!"
 
-* {not TempGoodbye} That's great news, Mrs. Lee.
+* {not TempGoodbye} That's great news, Mrs. Lee. But we should talk about what I found out!
   -> Chat1
-* {not TempGoodbye} I can help you.
+* {not TempGoodbye} Oh, good! Let's try to make you an appointment before it comes back.
   -> ReadyToSolve
 * {TempGoodbye} I got it this time!
   -> ReadyToSolve
@@ -18,7 +18,7 @@ Mrslee?Smiling "{player_name}. Hi. Listen. I was looking for you. My headache we
 ==Chat1==
 Mrslee?Smiling "Yes, so you don't think I need the doctor anymore, you think?"
 
-* I think it's important to get your routine check up, Mrs Lee.
+* I think it's important to get a routine check up, Mrs Lee.
   -> Chat2
 * I think we should still talk about your headaches. Is that okay?
   -> ReadyToSolve
@@ -37,66 +37,65 @@ Mrslee?Neutral "What should I do?"
 * Actually, I'm not ready.
   -> TempGoodbye
 
-//mrs lee is neutral
 ==PuzzleInterface==
 # turnin
 
-* They picked Option1
+* They picked Option 1. 
   -> Option1
-* They picked Option2
+* They picked Option 2. 
   -> Option2
-* They picked Option3
+* They picked Option 3.
   -> Option3
-* They picked Option4
+* They picked Option 4. 
   -> Option4
-* They picked a solution marked bad.
+* They picked a solution marked as bad.
   -> BadSolution
-
+  
 ==Option1==
-Mrslee?Smiling "OPTION 1 PICKED"
-* I picked OPTION 1. Nice! -> SolvedGoodbye
+Mrslee?Smiling "Thank you, {player_name}. I feel good about going to the library program. They help me with my email one time. I know Rashad will take good care of me."
+Mrslee?Smiling "He say I am very good with technology; maybe scheduling over the internet will be easier than trying to understand on the phone. I feel less stress.."
+
+* He's right, Mrs. Lee. You're great with tech!
+    -> END
 
 ==Option2==
-Mrslee?Smiling "OPTION 2 PICKED"
-* I picked OPTION 2. Nice! -> SolvedGoodbye
+Mrslee?Neutral "Rashad is very helpful, but I still feel stress."
+Mrslee?Neutral "I need appointments in the future, and maybe Rashad is busy?. What if he can’t help me next time? No thank you."
 
+* Let me see what else I can suggest, Mrs. Lee.
+  ->TempGoodbye
+  
 ==Option3==
-Mrslee?Smiling "OPTION 3 PICKED"
-* I picked OPTION 3. Nice! -> SolvedGoodbye
+Mrslee?Neutral "That feel so stress. Not just headache, but talk about everything? I feel scared that maybe the doctor will talk more than he listen."
+
+* If you don’t like the first doctor you see, we can help you try someone else. 
+->Followup22
+
+==Followup22==
+Mrslee?Smiling "You help so much already. I try this, but might need more help later."
+
+* Of course, Mrs. Lee! I’m here to help! 
+->END
 
 ==Option4==
-Mrslee?Smiling "OPTION 4 PICKED"
-* I picked OPTION 4. Nice! -> SolvedGoodbye
+Mrslee?Neutral "That feel like more stress! Eddie say Urgent Care is different doctor every time. Too much trouble."
 
-
-==GoodSolution==
-Mrslee?Smiling "OK. You're right! I will do before I get another headache."
-
-* That's a great idea
-  -> SolvedGoodbye
-* I'm here to support you, Mrs. Lee.
-  -> SolvedGoodbye
-
-==BadSolution==
-Mrslee?Neutral "Headache, headache"
-
-* Try again?
-  -> PuzzleInterface
-* Actually, I'm not ready.
-  -> TempGoodbye
+* I understand, Mrs. Lee. Let’s find you a less stressful solution.
+  ->TempGoodbye
+  
 
 ==SolvedGoodbye==
-Mrslee?Smiling "{player_name}. Thank you for encouraging. I will do. 
+Mrslee?Smiling "{player_name}. Thank you for encouraging. I will do."
 
-* You got this!
-  -> END
 * I know you can do this, Mrs Lee!
   -> END
 
 ==TempGoodbye==
 Mrslee?Neutral "{player_name}, OK!"
 
-* Ok, see you later!
-  -> END
 * I'll come back.
+  -> END
+
+==BadSolution==
+
   -> END

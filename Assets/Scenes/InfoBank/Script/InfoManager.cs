@@ -12,6 +12,7 @@ public class InfoManager : MonoBehaviour
 {
     private static Transform lastItem = null;
 
+    public Transform infoListLineDivider;
     public Transform infoListLineItem;
     public Transform ResearchQuestion;
 
@@ -35,7 +36,7 @@ public class InfoManager : MonoBehaviour
         }
 
         // Set the notes header name, pic and background color corresponding to the person
-        if (GlobalGameInfo.researchVersion <= 1) {
+        if (GlobalGameInfo.researchVersion <= 0) {
             Transform charName = this.transform.Find("Header/PersonText");
             Transform charPic = this.transform.Find("Header/PersonIcon");
             Transform charBackground = this.transform.Find("Header/HeaderBackground");
@@ -49,22 +50,16 @@ public class InfoManager : MonoBehaviour
         Transform newItem;
         for (int i = 0; i < items.Count; i++)
         {
-            if (GlobalGameInfo.researchVersion <= 1) {
+            if (GlobalGameInfo.researchVersion <= 0) {
                 newItem = Instantiate(infoListLineItem, go);
             } else {
                 newItem = Instantiate(ResearchQuestion, go);
             }
-            newItem.GetComponent<InfoListLineManager>().setInfo(items[i], i == items.Count - 1);
-            // bool isLast = false;
-            // if (i == items.Count - 1)
-            // {
-            //     // Transform newItem = Instantiate(infoListLineItem, go);
-            //     newItem.GetComponent<InfoListLineManager>().setInfo(items[i / 2]);
-            // }
-            // else
-            // {
-            //     newItem = Instantiate(infoListLineDivider, go);
-            // }
+            newItem.GetComponent<InfoListLineManager>().setInfo(items[i]);
+            if (i != items.Count - 1)
+            {
+                Instantiate(infoListLineDivider, go);
+            }
         }
     }
 

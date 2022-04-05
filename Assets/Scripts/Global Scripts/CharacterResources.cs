@@ -36,12 +36,6 @@ public class CharacterResources
   public static Sprite leeTalking;
   public static Sprite leeSmall;
 
-  // Localization Feature
-  public static Lang LangClass = new Lang();
-
-  // public void Start()
-  // {
-  // }
   public CharacterResources(){
     
 
@@ -159,13 +153,13 @@ public class CharacterResources
 
   public static GlobalGameInfo.CharacterItem Rashad(){
     GlobalGameInfo.CharacterItem rashad = new GlobalGameInfo.CharacterItem(
-      LangClass.getString("rashad_name"),
-      LangClass.getString("rashad_first_name"),
-      LangClass.getString("rashad_description"),
-      LangClass.getString("rashad_title"),
+      GameStrings.getString("rashad_name"),
+      GameStrings.getString("rashad_first_name"),
+      GameStrings.getString("rashad_description"),
+      GameStrings.getString("rashad_title"),
       "",
-      LangClass.getString("rashad_pronouns"),
-      int.Parse(LangClass.getString("rashad_age")),
+      GameStrings.getString("rashad_pronouns"),
+      int.Parse(GameStrings.getString("rashad_age")),
       0f,
       0f,
       0f,
@@ -177,13 +171,13 @@ public class CharacterResources
 
   public static GlobalGameInfo.CharacterItem Lila(){
     GlobalGameInfo.CharacterItem lila = new GlobalGameInfo.CharacterItem(
-      LangClass.getString("lila_name"),
-      LangClass.getString("lila_first_name"),
-      LangClass.getString("lila_description"),
-      LangClass.getString("lila_title"),
+      GameStrings.getString("lila_name"),
+      GameStrings.getString("lila_first_name"),
+      GameStrings.getString("lila_description"),
+      GameStrings.getString("lila_title"),
       "",
-      LangClass.getString("lila_pronouns"),
-      int.Parse(LangClass.getString("lila_age")),
+      GameStrings.getString("lila_pronouns"),
+      int.Parse(GameStrings.getString("lila_age")),
       0f,
       0f,
       0f,
@@ -195,13 +189,13 @@ public class CharacterResources
 
   public static GlobalGameInfo.CharacterItem Calindas(){
     GlobalGameInfo.CharacterItem calindas = new GlobalGameInfo.CharacterItem(
-      LangClass.getString("mrcalindas_name"),
-      LangClass.getString("mrcalindas_first_name"),
-      LangClass.getString("mrcalindas_description"),
-      LangClass.getString("mrcalindas_title"),
+      GameStrings.getString("mrcalindas_name"),
+      GameStrings.getString("mrcalindas_first_name"),
+      GameStrings.getString("mrcalindas_description"),
+      GameStrings.getString("mrcalindas_title"),
       "",
-      LangClass.getString("mrcalindas_pronouns"),
-      int.Parse(LangClass.getString("mrcalindas_age")),
+      GameStrings.getString("mrcalindas_pronouns"),
+      int.Parse(GameStrings.getString("mrcalindas_age")),
       0f,
       0f,
       0f,
@@ -212,13 +206,13 @@ public class CharacterResources
   }
   public static GlobalGameInfo.CharacterItem Elisa(){
     GlobalGameInfo.CharacterItem elisa = new GlobalGameInfo.CharacterItem(
-      LangClass.getString("elisa_name"),
-      LangClass.getString("elisa_first_name"),
-      LangClass.getString("elisa_description"),
-      LangClass.getString("elisa_title"),
+      GameStrings.getString("elisa_name"),
+      GameStrings.getString("elisa_first_name"),
+      GameStrings.getString("elisa_description"),
+      GameStrings.getString("elisa_title"),
       "",
-      LangClass.getString("elisa_pronouns"),
-      int.Parse(LangClass.getString("elisa_age")),
+      GameStrings.getString("elisa_pronouns"),
+      int.Parse(GameStrings.getString("elisa_age")),
       0f,
       0f,
       0f,
@@ -230,13 +224,13 @@ public class CharacterResources
 
   public static GlobalGameInfo.CharacterItem Lee(){
     GlobalGameInfo.CharacterItem lee = new GlobalGameInfo.CharacterItem(
-      LangClass.getString("mrslee_name"),
-      LangClass.getString("mrslee_first_name"),
-      LangClass.getString("mrslee_description"),
-      LangClass.getString("mrslee_title"),
+      GameStrings.getString("mrslee_name"),
+      GameStrings.getString("mrslee_first_name"),
+      GameStrings.getString("mrslee_description"),
+      GameStrings.getString("mrslee_title"),
       "",
-      LangClass.getString("mrslee_pronouns"),
-      int.Parse(LangClass.getString("mrslee_age")),
+      GameStrings.getString("mrslee_pronouns"),
+      int.Parse(GameStrings.getString("mrslee_age")),
       0f,
       0f,
       0f,

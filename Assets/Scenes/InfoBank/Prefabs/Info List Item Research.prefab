@@ -473,6 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597ab57842a94508bef023b42e0f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoListLineDivider: {fileID: 1352814569331323832, guid: 57469e6f4a67d044da811d21735ba1fb,
+    type: 3}
   infoListLineItem: {fileID: 4602430138482443513, guid: 188070dde1549be47aec861f7d671959,
     type: 3}
   ResearchQuestion: {fileID: 6068087123465492826, guid: 5a1a5234f57f04b96a98da76427664da,

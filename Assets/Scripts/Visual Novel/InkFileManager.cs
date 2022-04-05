@@ -13,6 +13,8 @@ public class InkFileManager : MonoBehaviour {
     private Flowchart _fc;
     private static CharacterResources.CHARACTERS activeQuestGiver;
     private static (int, int) activeFileIdx;
+    private static CharacterResources.CHARACTERS alreadySpokenTo;
+    private static int speakingToFileIndex = 0;
     private static string[][] ActivePersonQuestList { get {
             switch (activeQuestGiver) {
                 case CharacterResources.CHARACTERS.RASHAD:
@@ -32,7 +34,14 @@ public class InkFileManager : MonoBehaviour {
 
     public static string ActiveFileName { get {
             try {
-                return ActivePersonQuestList[activeFileIdx.Item1][activeFileIdx.Item2];
+                if (activeFileIdx.Item2 == ActivePersonQuestList[activeFileIdx.Item1].Length - 1 || activeFileIdx.Item2 == 0)
+                {
+                    return ActivePersonQuestList[activeFileIdx.Item1][activeFileIdx.Item2];
+                }
+                else
+                {
+                    return ActivePersonQuestList[activeFileIdx.Item1][speakingToFileIndex];
+                }
             } catch {
                 Debug.LogWarning("Tried to access ActiveFileName with no active quest.");
                 return null;
@@ -71,7 +80,7 @@ public class InkFileManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-
+        alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
         _fc = GetComponent<Flowchart>();
         if (!GetVisualNovelComponents()) // if we couldn't find the VN components
             return;
@@ -187,6 +196,11 @@ public class InkFileManager : MonoBehaviour {
         // i.e. is there still at least one more ink file to read?
         if (chapterNum < ActivePersonQuestList[questNum].Length - 1) {
             activeFileIdx.Item2++;
+            // The next time, will be a completion. Thus, clear the already spoken to variable we added
+            if (activeFileIdx.Item2 == ActivePersonQuestList[questNum].Length - 1)
+            {
+                alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
+            }
             return true;
         } else {
             return false;
@@ -224,19 +238,37 @@ public class InkFileManager : MonoBehaviour {
             int questNum = activeFileIdx.Item1;
             int chapterNum = activeFileIdx.Item2;
             string fileToLoad = "";
+            string fileToLoad1 = "";
+            string fileToLoad2 = "";
             try
             {
                 fileToLoad = ActivePersonQuestList[questNum][chapterNum];
+                fileToLoad1 = ActivePersonQuestList[questNum][1];
+                fileToLoad2 = ActivePersonQuestList[questNum][2];
             }
             catch (System.IndexOutOfRangeException)
             {
 
             }
-            // is this the next person to speak to for the quest?
-            if (character == GetSpeakerFromFile(fileToLoad))
+            // One of the other two people player has to talk to (not quest giver delivery or completion)
+            // If ActivePersonQuestList[questNum].Length - 1 == 2, then there is only one middle person to talk to, so this case doesn't apply
+            if (ActivePersonQuestList[questNum].Length - 1 != 2 && chapterNum != ActivePersonQuestList[questNum].Length - 1 && chapterNum != 0)
             {
-                return true;
+                if (character != alreadySpokenTo && ((character == GetSpeakerFromFile(fileToLoad1)) || (character == GetSpeakerFromFile(fileToLoad2))))
+                {
+                    return true;
+                }
             }
+            // Else case, then it is the delivery or completion
+            else
+            {
+                if (character == GetSpeakerFromFile(fileToLoad))
+                {
+                    return true;
+                }
+            }
+            // is this the next person to speak to for the quest?
+            
             return false;
         }
     }
@@ -288,7 +320,22 @@ public class InkFileManager : MonoBehaviour {
 
             }
             // is this the next person to speak to for the quest?
-            if (character == GetSpeakerFromFile(fileToLoad)) {
+            if (CanSpeakToForCurrentQuestOrNewQuest(character))
+            {
+                alreadySpokenTo = character;
+                if (chapterNum != ActivePersonQuestList[questNum].Length - 1 && chapterNum != 0)
+                {
+                    string fileToLoad1 = ActivePersonQuestList[questNum][1];
+                    string fileToLoad2 = ActivePersonQuestList[questNum][2];
+                    if (character == GetSpeakerFromFile(fileToLoad1))
+                    {
+                        speakingToFileIndex = 1;
+                    }
+                    if (character == GetSpeakerFromFile(fileToLoad2))
+                    {
+                        speakingToFileIndex = 2;
+                    }
+                }
                 NarrativeDirector.staticInk = Resources.Load<TextAsset>(InkToJson(ActiveFileName));
                 switch (character) {
                     case CharacterResources.CHARACTERS.RASHAD:

@@ -72,40 +72,37 @@ public class MapScript : MonoBehaviour
 
     private float secondsPassed = 0.0f;
 
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
     // Start is called before the first frame update
     private IEnumerator Start() {
         Destroy (GameObject.FindGameObjectWithTag("Music"));
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
 
-        MeetNPCText.text = LangClass.getString("meet") + " " + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
+        MeetNPCText.text = GameStrings.getString("meet") + " " + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
 
-        GoodMorningText.text = LangClass.getString("good_morning_message");
+        GoodMorningText.text = GameStrings.getString("good_morning_message");
         
-        WeekText.text = LangClass.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
-        WeekTextPopup.text = LangClass.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
-        CalendarWeekTextPopup.text = LangClass.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
-        MyJournalUpdated.text = LangClass.getString("journal_updated");
+        WeekText.text = GameStrings.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
+        WeekTextPopup.text = GameStrings.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
+        CalendarWeekTextPopup.text = GameStrings.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
+        MyJournalUpdated.text = GameStrings.getString("journal_updated");
 
         string day = GlobalGameInfo.GetCurrentDayAsString("short");
         ShortDayText.text = day;
         ShortDayTextPopup.text = day;
         CalendarShortDayTextPopup.text = day;
 
-        CurrentTaskTitle.text = LangClass.getString("current_task");
+        CurrentTaskTitle.text = GameStrings.getString("current_task");
         CurrentTask.text = GlobalGameInfo.GetCurrentTask();
         CurrentNPC.text = CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
 
-        BackButtonText.text = LangClass.getString("back");
-        ExitButtonText.text = LangClass.getString("exit_game");
+        BackButtonText.text = GameStrings.getString("back");
+        ExitButtonText.text = GameStrings.getString("exit_game");
         NumDaysLeft.text = (4 - GlobalGameInfo.GetCurrentDay()).ToString();
-        DaysLeftText.text = LangClass.getString("days_left");
-        ToBlockParty.text = LangClass.getString("to_block_party") + " " + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
+        DaysLeftText.text = GameStrings.getString("days_left");
+        ToBlockParty.text = GameStrings.getString("to_block_party") + " " + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
         
-        PleaseNote.text = LangClass.getString("please_note");
-        ProgressWontSave.text = LangClass.getString("progress_wont_save");
+        PleaseNote.text = GameStrings.getString("please_note");
+        ProgressWontSave.text = GameStrings.getString("progress_wont_save");
 
         // Update NPC Image
         RashadImage.enabled = false;
@@ -163,7 +160,7 @@ public class MapScript : MonoBehaviour
                 this.activateTutorial();
 
                 HelpButton.SetActive(true);
-                HelpButtonText.text = LangClass.getString("tutorial_help");
+                HelpButtonText.text = GameStrings.getString("tutorial_help");
             }
         }
     }
@@ -175,22 +172,22 @@ public class MapScript : MonoBehaviour
         TutorialButtonTask.enabled = true;
 
         // Text for the task container
-        YellowTitleTask.text = LangClass.getString("task_map_yellowtitle");
-        WhiteTitleTask.text = LangClass.getString("task_map_whitetitle");
-        WhiteTextTask.text = LangClass.getString("task_map_whitetext");
-        ButtonTextTask.text = LangClass.getString("task_map_buttontext");
+        YellowTitleTask.text = GameStrings.getString("task_map_yellowtitle");
+        WhiteTitleTask.text = GameStrings.getString("task_map_whitetitle");
+        WhiteTextTask.text = GameStrings.getString("task_map_whitetext");
+        ButtonTextTask.text = GameStrings.getString("task_map_buttontext");
 
         // Text for the neighbors container
-        YellowTitleNeighbors.text = LangClass.getString("neighbors_map_yellowtitle");
-        WhiteTitleNeighbors.text = LangClass.getString("neighbors_map_whitetitle");
-        WhiteTextNeighbors.text = LangClass.getString("neighbors_map_whitetext");
-        ButtonTextNeighbors.text = LangClass.getString("neighbors_map_buttontext");
+        YellowTitleNeighbors.text = GameStrings.getString("neighbors_map_yellowtitle");
+        WhiteTitleNeighbors.text = GameStrings.getString("neighbors_map_whitetitle");
+        WhiteTextNeighbors.text = GameStrings.getString("neighbors_map_whitetext");
+        ButtonTextNeighbors.text = GameStrings.getString("neighbors_map_buttontext");
 
         // Text for the phone container
-        YellowTitlePhone.text = LangClass.getString("phone_map_yellowtitle");
-        WhiteTitlePhone.text = LangClass.getString("phone_map_whitetitle");
-        WhiteTextPhone.text = LangClass.getString("phone_map_whitetext");
-        ButtonTextPhone.text = LangClass.getString("phone_map_buttontext");
+        YellowTitlePhone.text = GameStrings.getString("phone_map_yellowtitle");
+        WhiteTitlePhone.text = GameStrings.getString("phone_map_whitetitle");
+        WhiteTextPhone.text = GameStrings.getString("phone_map_whitetext");
+        ButtonTextPhone.text = GameStrings.getString("phone_map_buttontext");
     }
 
     public void tutorialTaskClick() {

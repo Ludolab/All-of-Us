@@ -28,9 +28,6 @@ public class VN : MonoBehaviour
     public GameObject SpeedImage;
     public GameObject SpeedGlow;
     
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
     // Show Dialog only when tooltip complete
     public List<GameObject> toggleComponents;
 
@@ -42,13 +39,13 @@ public class VN : MonoBehaviour
 
         switch (SceneManager.GetActiveScene().name) {
             case ("CommunityVN"):
-                buildingName.text = LangClass.getString("community_center");
+                buildingName.text = GameStrings.getString("community_center");
                 break;
             case ("HealthVN"):
-                buildingName.text = LangClass.getString("health_clinic");
+                buildingName.text = GameStrings.getString("health_clinic");
                 break;
             case ("LibraryVN"):
-                buildingName.text = LangClass.getString("library");                   
+                buildingName.text = GameStrings.getString("library");                   
                 break;
         }
 
@@ -59,15 +56,15 @@ public class VN : MonoBehaviour
             TutorialButtonDictionary.enabled = true;
             DictionaryGlow.SetActive(true);
 
-            YellowTitleDictionary.text = LangClass.getString("dictionary_vn_yellowtitle");
-            WhiteTitleDictionary.text = LangClass.getString("dictionary_vn_whitetitle");
-            WhiteTextDictionary.text = LangClass.getString("dictionary_vn_whitetext_1") + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC()) + LangClass.getString("dictionary_vn_whitetext_2");
-            ButtonTextDictionary.text = LangClass.getString("dictionary_vn_buttontext");
+            YellowTitleDictionary.text = GameStrings.getString("dictionary_vn_yellowtitle");
+            WhiteTitleDictionary.text = GameStrings.getString("dictionary_vn_whitetitle");
+            WhiteTextDictionary.text = GameStrings.getString("dictionary_vn_whitetext_1") + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC()) + GameStrings.getString("dictionary_vn_whitetext_2");
+            ButtonTextDictionary.text = GameStrings.getString("dictionary_vn_buttontext");
 
-            YellowTitleSpeed.text = LangClass.getString("speed_vn_yellowtitle");
-            WhiteTitleSpeed.text = LangClass.getString("speed_vn_whitetitle");
-            WhiteTextSpeed.text = LangClass.getString("speed_vn_whitetext");
-            ButtonTextSpeed.text = LangClass.getString("speed_vn_buttontext");
+            YellowTitleSpeed.text = GameStrings.getString("speed_vn_yellowtitle");
+            WhiteTitleSpeed.text = GameStrings.getString("speed_vn_whitetitle");
+            WhiteTextSpeed.text = GameStrings.getString("speed_vn_whitetext");
+            ButtonTextSpeed.text = GameStrings.getString("speed_vn_buttontext");
         }
     }
 

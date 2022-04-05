@@ -66,8 +66,6 @@ public class StartWeek : MonoBehaviour
     public TextMeshProUGUI HelpButtonText;
 
 
-    public Lang LangClass = new Lang();
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -84,8 +82,8 @@ public class StartWeek : MonoBehaviour
             this.clickOnSavedGame(GlobalGameInfo.savedGame);
         }
 
-        Title.text = LangClass.getString("saved_games");
-        BackButtonText.text = LangClass.getString("back");
+        Title.text = GameStrings.getString("saved_games");
+        BackButtonText.text = GameStrings.getString("back");
 
         int y_location = 152;
         int gameNum = 1;
@@ -111,7 +109,7 @@ public class StartWeek : MonoBehaviour
                 numberText.text = gameNum.ToString();
 
                 TextMeshProUGUI completedText = savedGameItem.transform.Find("Completed Text").GetComponent<TextMeshProUGUI>();
-                completedText.text = (pair.Value.getWeek()) + "/5 " + LangClass.getString("completed");
+                completedText.text = (pair.Value.getWeek()) + "/5 " + GameStrings.getString("completed");
 
                 this.loadCompletedBarImage(savedGameItem, pair.Value.getWeek());
             }
@@ -136,7 +134,7 @@ public class StartWeek : MonoBehaviour
 
         GlobalGameInfo.savedGame = savedGame;
         // Change view to selecting a profile
-        Title.text = LangClass.getString("next_npc");
+        Title.text = GameStrings.getString("next_npc");
         // Load game slot into Global Game Info
         SavingGame.LoadGameProgress(savedGame);
 
@@ -153,7 +151,7 @@ public class StartWeek : MonoBehaviour
         SelectProfileText.enabled = true;
 
         HelpButton.SetActive(true);
-        HelpButtonText.text = LangClass.getString("tutorial_help");
+        HelpButtonText.text = GameStrings.getString("tutorial_help");
 
         // Tutorial
         if (!GlobalGameInfo.startWeekFlag) {
@@ -190,10 +188,10 @@ public class StartWeek : MonoBehaviour
         Glow.SetActive(true);
         TutorialButton.enabled = true;
 
-        YellowTitle.text = LangClass.getString("tutorial_startweek_yellowtitle");
-        WhiteTitle.text = LangClass.getString("tutorial_startweek_whitetitle");
-        WhiteText.text = LangClass.getString("tutorial_startweek_whitetext_1") + GlobalGameInfo.name + LangClass.getString("tutorial_startweek_whitetext_2");
-        ButtonText.text = LangClass.getString("tutorial_startweek_buttontext");
+        YellowTitle.text = GameStrings.getString("tutorial_startweek_yellowtitle");
+        WhiteTitle.text = GameStrings.getString("tutorial_startweek_whitetitle");
+        WhiteText.text = GameStrings.getString("tutorial_startweek_whitetext_1") + GlobalGameInfo.name + GameStrings.getString("tutorial_startweek_whitetext_2");
+        ButtonText.text = GameStrings.getString("tutorial_startweek_buttontext");
     }
 
     public void tutorialClick() {
@@ -223,8 +221,8 @@ public class StartWeek : MonoBehaviour
 
         // Show NPC's character card
         StartWeekContainer.SetActive(true);
-        StartWeekText1.text = LangClass.getString("startweek_text1") + " " + NPC + " " + LangClass.getString("startweek_text2");
-        StartWeekText2.text = LangClass.getString("startweek_text3");
+        StartWeekText1.text = GameStrings.getString("startweek_text1") + " " + NPC + " " + GameStrings.getString("startweek_text2");
+        StartWeekText2.text = GameStrings.getString("startweek_text3");
         GlobalGameInfo.SetCurrentNPC(CharacterResources.GetCharacterFromString(NPC));
         GlobalGameInfo.gotalkFlag = true;
         this.resetCharacterCards();
@@ -233,38 +231,38 @@ public class StartWeek : MonoBehaviour
         switch (NPC) {
             case "Rashad":
                 RashadCard.SetActive(true);
-                CharacterCardName.text = LangClass.getString("rashad_name");
-                CharacterCardAgePronouns.text = LangClass.getString("rashad_age_pronouns");
-                CharacterCardTitle.text = LangClass.getString("rashad_title");
-                CharacterCardDescription.text = LangClass.getString("rashad_description");
+                CharacterCardName.text = GameStrings.getString("rashad_name");
+                CharacterCardAgePronouns.text = GameStrings.getString("rashad_age_pronouns");
+                CharacterCardTitle.text = GameStrings.getString("rashad_title");
+                CharacterCardDescription.text = GameStrings.getString("rashad_description");
                 break;
             case "Lila":
                 LilaCard.SetActive(true);
-                CharacterCardName.text = LangClass.getString("lila_name");
-                CharacterCardAgePronouns.text = LangClass.getString("lila_age_pronouns");
-                CharacterCardTitle.text = LangClass.getString("lila_title");
-                CharacterCardDescription.text = LangClass.getString("lila_description");
+                CharacterCardName.text = GameStrings.getString("lila_name");
+                CharacterCardAgePronouns.text = GameStrings.getString("lila_age_pronouns");
+                CharacterCardTitle.text = GameStrings.getString("lila_title");
+                CharacterCardDescription.text = GameStrings.getString("lila_description");
                 break;
             case "Elisa":
                 ElisaCard.SetActive(true);
-                CharacterCardName.text = LangClass.getString("elisa_name");
-                CharacterCardAgePronouns.text = LangClass.getString("elisa_age_pronouns");
-                CharacterCardTitle.text = LangClass.getString("elisa_title");
-                CharacterCardDescription.text = LangClass.getString("elisa_description");
+                CharacterCardName.text = GameStrings.getString("elisa_name");
+                CharacterCardAgePronouns.text = GameStrings.getString("elisa_age_pronouns");
+                CharacterCardTitle.text = GameStrings.getString("elisa_title");
+                CharacterCardDescription.text = GameStrings.getString("elisa_description");
                 break;
             case "Mr. Calindas":
                 MrCalindasCard.SetActive(true);
-                CharacterCardName.text = LangClass.getString("mrcalindas_name");
-                CharacterCardAgePronouns.text = LangClass.getString("mrcalindas_age_pronouns");
-                CharacterCardTitle.text = LangClass.getString("mrcalindas_title");
-                CharacterCardDescription.text = LangClass.getString("mrcalindas_description");
+                CharacterCardName.text = GameStrings.getString("mrcalindas_name");
+                CharacterCardAgePronouns.text = GameStrings.getString("mrcalindas_age_pronouns");
+                CharacterCardTitle.text = GameStrings.getString("mrcalindas_title");
+                CharacterCardDescription.text = GameStrings.getString("mrcalindas_description");
                 break;
             case "Mrs.Lee":
                 MrsLeeCard.SetActive(true);
-                CharacterCardName.text = LangClass.getString("mrslee_name");
-                CharacterCardAgePronouns.text = LangClass.getString("mrslee_age_pronouns");
-                CharacterCardTitle.text = LangClass.getString("mrslee_title");
-                CharacterCardDescription.text = LangClass.getString("mrslee_description");
+                CharacterCardName.text = GameStrings.getString("mrslee_name");
+                CharacterCardAgePronouns.text = GameStrings.getString("mrslee_age_pronouns");
+                CharacterCardTitle.text = GameStrings.getString("mrslee_title");
+                CharacterCardDescription.text = GameStrings.getString("mrslee_description");
                 break;
             default:
                 break;

@@ -13,24 +13,24 @@ Mrcalindas?Smiling "{player_name}, what's goin' on?"
 
 * Hey, not too much. How 'bout you?
   -> Chat1
-* Beautiful weather in Bloomwood today, right? I can't complain about it!
+* I can't complain about much when it's this nice out!
   -> Chat1
 
 ==Chat1==
 Mrcalindas?Neutral "This weather is BEAUTIFUL. I think I just decided to take a little walk on my break."
 
-* Do you remember Dr. Lee? I was just visiting with Mrs. Lee.
+* Great plan! Hey, I was just with Mrs. Lee. Do you mind if I ask about Dr. Lee? 
   -> Chat2
-* That sounds really nice! Hey, do you have time and space right now to give some advice on high blood pressure
+* That sounds nice! Hey, do you have time for some advice on high blood pressure?
   -> Explain1
 
 ==Chat2==
-Mrcalindas?Smiling "Now that you mention Dr. Lee, I do recall he used to love this weather."
-Mrcalindas?Smiling "We would sometimes get lunch together, but only when the sun was high in the sky like this. The sun brought that man to life like nothing else."
+Mrcalindas?Smiling "I miss him most on days like this! He used to love good weather."
+Mrcalindas?Smiling "We would get lunch together on nice days. Sunshine brought out the best in both of us!"
 
 * Neat! I didn't know you were close with Dr. Lee.
   -> Chat3
-* That is a really nice memory you have of Dr. Lee.
+* I'm sorry I didn't get to know Dr. Lee.
   -> Explain1
 
 ==Chat3==
@@ -38,29 +38,38 @@ Mrcalindas?Neutral "Yes it's just so tragic that he passed. Heart attacks are no
 
 * Do you know what caused Dr. Lee's heart attack?
   -> Explain1
-* My heart goes out to Mrs. Lee
+* My heart goes out to Mrs. Lee and Eddie.
   -> Explain1
 
 ==Explain1==
-~ notification = "Mrcalindas_Day 1_At-home monitoring machines can be used for monitoring blood pressure"
-# notification Mrcalindas_Day 1_At-home monitoring machines can be used for monitoring blood pressure
-~ notification = "Mrcalindas_Day 1_High blood pressure can lead to heart attacks"
-# notification Mrcalindas_Day 1_High blood pressure can lead to heart attacks
+Mrcalindas?Neutral "Yeah, high blood pressure, y'know. It can contribute to a fatal heart attack if you don't keep it in check."
+Mrcalindas?Neutral "With the right medications, lifestyle changes, and at-home monitoring machines, you really can improve your outcome."
+Mrcalindas?Neutral "I wish he'd done more to understand his condition. I'm sure Mrs. Lee feels the same."
 
-Mrcalindas?Neutral "Yeah, high blood pressure, y'know, it can contribute to a fatal heart attack if you don't keep it in check."
-Mrcalindas?Neutral "With the right medications, lifestyle changes, and at-home monitoring machines, you really can improve your outcome. I wish he'd done more to understand his condition. I'm sure Mrs. Lee feels the same."
-
-* How can I learn more about this?
+* What resources exist for learning more? 
   -> Explain2
-* Thank you so much for giving me your time, Mr. Calindas
+* Thank you so much for chatting. Am I keeping you from other things?
   -> Explain2
 
 ==Explain2==
-~ notification = "Mrcalindas_Day 1_Drug information portal can be used to look up medications_Mrslee1-2"
-# notification Mrcalindas_Day 1_Drug information portal can be used to look up medications_Mrslee1-2
+~ notification = "Mrcalindas_Day 1_Mrs. Lee can use Google to find a reliable resource to provide information about Eddie’s medication_Mrslee1-4"
+# notification Mrcalindas_Day 1_Mrs. Lee can use Google to find a reliable resource to provide information about Eddie’s medication_Mrslee1-4
 
-Mrcalindas?Smiling "Actually, I got a minute. We have several secure online resources. Look at this one - it's a drug information portal, where you can look up medications."
+Mrcalindas?Smiling "Actually, I got a minute. Let me show you a couple of things."
+Mrcalindas?Neutral "Some people just start with a visit to Google. They enter the drug name, and find some information that way. That's a good start, but we have better options." 
+
+That sounds a little risky; how would she know if the website she picked was accurate? 
+->Explain3
+
+==Explain3==
+
+~ notification = "Mrcalindas_Day 1_Mrs. Lee can learn to use a secure online portal to look up drug information from a safe resource_Mrslee1-3"
+# notification Mrcalindas_Day 1_Mrs. Lee can learn to use a secure online portal to look up drug information from a safe resource_Mrslee1-3
+
+Mrcalindas?Smiling "Great question. Lucky for us, there are several secure online resources that have been created just for this purpose. 
+Mrcalindas?Smiling Look at this one - it's a drug information portal, where you can look up medications. They work with doctors to make sure the information is useful and accurate."
 Mrcalindas?Smiling "And this one is a site for reading up on different health conditions - like high blood pressure. You can access them from here, or your home computer."
+Mrcalindas?Smiling "Rashad regularly helps patients from the clinic access these resources at the library."
 
 * Thank you so much for this information!
   -> Goodbye

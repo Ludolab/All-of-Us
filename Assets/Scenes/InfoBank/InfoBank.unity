@@ -1507,7 +1507,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: contacts
+          m_StringArgument: dictionary
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &133824389
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292092919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2799,6 +2799,7 @@ GameObject:
   - component: {fileID: 348503353}
   - component: {fileID: 348503352}
   - component: {fileID: 348503351}
+  - component: {fileID: 348503354}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2871,6 +2872,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348503354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348503350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab7c84d4bc9b41139c1efe316f07ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &350427326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,7 +3922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &474313696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4540,7 +4553,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 872794241}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99998987
+  m_Size: 0.9999818
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5639,8 +5652,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1812541902}
   m_HandleRect: {fileID: 1812541901}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999267
+  m_Value: 0
+  m_Size: 0.9999868
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6889,8 +6902,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 368687712}
   m_HandleRect: {fileID: 368687711}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999869
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7806,7 +7819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1063552278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8961,7 +8974,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: contacts
+          m_StringArgument: settings
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1240564549
@@ -9071,7 +9084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000979911}
+  m_AnchoredPosition: {x: 0, y: 0.000018916162}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1281262038
@@ -10934,7 +10947,6 @@ GameObject:
   - component: {fileID: 1602992127}
   - component: {fileID: 1602992126}
   - component: {fileID: 1602992124}
-  - component: {fileID: 1602992125}
   - component: {fileID: 1602992130}
   - component: {fileID: 1602992129}
   m_Layer: 5
@@ -10976,50 +10988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e0b7b1d1957d34c8899395e88a6e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1602992125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602992122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70212434c88714ef1915333e0c1c01d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detailContainer: {fileID: 1293973425}
-  todo: {fileID: 6727028849673039923}
-  notes: {fileID: 1195107063}
-  contacts: {fileID: 1195798615}
-  settings: {fileID: 1062027413}
-  dictionary: {fileID: 1973211182}
-  todoBorder: {fileID: 1607855250}
-  notesBorder: {fileID: 1414504675}
-  contactsBorder: {fileID: 1963114345}
-  settingsBorder: {fileID: 1240564546}
-  dictionaryBorder: {fileID: 133824386}
-  questPanel: {fileID: 0}
-  notesNotificationBubble: {fileID: 0}
-  todoIcon: {fileID: 0}
-  contactsIcon: {fileID: 0}
-  journalIcon: {fileID: 0}
-  settingsIcon: {fileID: 0}
-  dictionaryIcon: {fileID: 0}
-  TutorialContainer: {fileID: 1143572563}
-  TutorialArrow: {fileID: 178676127}
-  TutorialButton: {fileID: 1602992126}
-  YellowTitle: {fileID: 100919818}
-  WhiteTitle: {fileID: 606814212}
-  WhiteText: {fileID: 2122823367}
-  ButtonText: {fileID: 160459884}
-  Glow: {fileID: 1321840641}
-  HelpButton: {fileID: 1854970722}
-  HelpButtonText: {fileID: 79793732}
-  secondsPassed: 0
-  BackButtonText: {fileID: 335594430}
-  SectionName: {fileID: 671025836}
-  NoJournalEntriesText: {fileID: 1841923366}
 --- !u!114 &1602992126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11063,7 +11031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602992125}
+      - m_Target: {fileID: 1165405192}
         m_MethodName: tutorialClick
         m_Mode: 1
         m_Arguments:
@@ -11345,7 +11313,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: messages
+          m_StringArgument: todo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1626478687
@@ -12967,7 +12935,6 @@ GameObject:
   - component: {fileID: 1854970726}
   - component: {fileID: 1854970725}
   - component: {fileID: 1854970724}
-  - component: {fileID: 1854970728}
   - component: {fileID: 1854970730}
   - component: {fileID: 1854970729}
   m_Layer: 5
@@ -13052,7 +13019,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1854970728}
+      - m_Target: {fileID: 1165405192}
         m_MethodName: activateTutorial
         m_Mode: 1
         m_Arguments:
@@ -13100,50 +13067,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854970722}
   m_CullTransparentMesh: 0
---- !u!114 &1854970728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854970722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70212434c88714ef1915333e0c1c01d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detailContainer: {fileID: 1293973425}
-  todo: {fileID: 6727028849673039923}
-  notes: {fileID: 1195107063}
-  contacts: {fileID: 1195798615}
-  settings: {fileID: 1062027413}
-  dictionary: {fileID: 1973211182}
-  todoBorder: {fileID: 1607855250}
-  notesBorder: {fileID: 1414504675}
-  contactsBorder: {fileID: 1963114345}
-  settingsBorder: {fileID: 1240564546}
-  dictionaryBorder: {fileID: 133824386}
-  questPanel: {fileID: 0}
-  notesNotificationBubble: {fileID: 0}
-  todoIcon: {fileID: 0}
-  contactsIcon: {fileID: 0}
-  journalIcon: {fileID: 0}
-  settingsIcon: {fileID: 0}
-  dictionaryIcon: {fileID: 0}
-  TutorialContainer: {fileID: 1143572563}
-  TutorialArrow: {fileID: 178676127}
-  TutorialButton: {fileID: 1602992126}
-  YellowTitle: {fileID: 100919818}
-  WhiteTitle: {fileID: 606814212}
-  WhiteText: {fileID: 2122823367}
-  ButtonText: {fileID: 160459884}
-  Glow: {fileID: 1321840641}
-  HelpButton: {fileID: 1854970722}
-  HelpButtonText: {fileID: 79793732}
-  secondsPassed: 0
-  BackButtonText: {fileID: 335594430}
-  SectionName: {fileID: 671025836}
-  NoJournalEntriesText: {fileID: 1841923366}
 --- !u!114 &1854970729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13412,7 +13335,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 13.35, y: 27.61}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900381355
 MonoBehaviour:
@@ -16463,7 +16386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.00018310547, y: 249.9992}
+  m_AnchoredPosition: {x: 0.00018310547, y: 250.00002}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1249845604790435951
@@ -16540,7 +16463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bfcfa47cd084607b13c2907227635f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  todoPersonPrefab: {fileID: 0}
+  todoPersonPrefab: {fileID: 7057201077633590890, guid: f14f6d4c81bd79847bca410c286ec90c,
+    type: 3}
   listItemPrefab: {fileID: 7751141566266584329, guid: f0ec79a50168845648e775e6581ca2ac,
     type: 3}
   infoListItemPrefab: {fileID: 8016197110009607290, guid: c2ea61563350d464ebe604217def4e38,
@@ -16944,6 +16868,8 @@ MonoBehaviour:
     type: 3}
   listItemPrefab: {fileID: 2410521005090410589, guid: 222e3e318bc89404280010682cd9cd45,
     type: 3}
-  infoListItemPrefab: {fileID: 0}
-  infoListItemResearchPrefab: {fileID: 0}
+  infoListItemPrefab: {fileID: 8016197110009607290, guid: c2ea61563350d464ebe604217def4e38,
+    type: 3}
+  infoListItemResearchPrefab: {fileID: 8016197110009607290, guid: f5de9e09ed6dc49e5819446d0e547806,
+    type: 3}
   whichList: Dialog

@@ -2155,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269, y: 68.976}
+  m_AnchoredPosition: {x: 269, y: -94.000015}
   m_SizeDelta: {x: 106.64172, y: 40.62732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7226987177904924803
@@ -3407,6 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597ab57842a94508bef023b42e0f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoListLineDivider: {fileID: 0}
   infoListLineItem: {fileID: 0}
   ResearchQuestion: {fileID: 6068087123465492826}
 --- !u!114 &7793510756897034612
@@ -3425,6 +3426,7 @@ MonoBehaviour:
     type: 3}
   tagItemPrefab: {fileID: 5721310647679008108, guid: 796899be124fd458393defba8d316f02,
     type: 3}
+  optionNumber: 0
   questId: 
   character: 0
 --- !u!114 &7122523307012431102

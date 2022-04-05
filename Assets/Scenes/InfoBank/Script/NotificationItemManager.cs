@@ -18,8 +18,6 @@ public class NotificationItemManager : MonoBehaviour
     public TextMeshProUGUI updatedText;
     public GameObject updatedTextGameObject;
     public GameObject bubble;
-    // Localization Feature
-    public Lang LangClass = new Lang();
 
     public GlobalGameInfo.NOTIFICATION notificationType;
 
@@ -53,9 +51,9 @@ public class NotificationItemManager : MonoBehaviour
         }
 
         if(lastNotificationType == GlobalGameInfo.NOTIFICATION.INFO){
-          updatedText.text = LangClass.getString("journal_updated");
+          updatedText.text = GameStrings.getString("journal_updated");
         } else if (lastNotificationType == GlobalGameInfo.NOTIFICATION.TODO){
-          updatedText.text = LangClass.getString("todo_updated");
+          updatedText.text = GameStrings.getString("todo_updated");
         }   
       }
       

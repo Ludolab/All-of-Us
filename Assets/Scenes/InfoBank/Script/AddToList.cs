@@ -191,9 +191,6 @@ public class AddToList : MonoBehaviour
             return;
         }
 
-       
-       
-
         Transform content = this.gameObject.transform.Find("Scroll View/Viewport/Content");
 
         // Code from here: https://forum.unity.com/threads/deleting-all-chidlren-of-an-object.92827/ 
@@ -221,17 +218,13 @@ public class AddToList : MonoBehaviour
         {
             if (i.quest != null && !iconsWeekDict.ContainsKey(i.week))
             {
-                Debug.Log("WEEK: " + i.week);
-                Debug.Log("QUEST GIVER: " + i.quest.questGiver);
                 iconsWeekDict.Add(i.week, i.quest.questGiver);
                 numWeeksSeen++;
-                Debug.Log("NUM WEEKS SEEN: " + numWeeksSeen);
             }
         }
 
         numWeeksInJournal = numWeeksSeen;
 
-        Debug.Log("NUM WEEKS IN JOURNAL: " + numWeeksInJournal);
         if (numWeeksInJournal == 1)
         {
             topElementsTransform.Find("LeftArrow").gameObject.SetActive(false);
@@ -247,7 +240,6 @@ public class AddToList : MonoBehaviour
             topElementsTransform.Find("RightArrowEmpty").gameObject.SetActive(false);
         }
 
-        Debug.Log("BEFORE ACCESS CURRENT DISPLAY WEEK: " + currentDisplayWeek);
         questIcon.gameObject.GetComponent<Image>().sprite = cr.GetSmallIcon(iconsWeekDict[currentDisplayWeek]);
         questChar.gameObject.GetComponent<Text>().text = CharacterResources.GetName(iconsWeekDict[currentDisplayWeek]).ToUpper();
 
@@ -297,7 +289,7 @@ public class AddToList : MonoBehaviour
             foreach (KeyValuePair<string, List<GlobalGameInfo.InfoItem>> character in chars)
             {
                 // Add all notes of people
-                if (GlobalGameInfo.researchVersion <= 1) {
+                if (GlobalGameInfo.researchVersion <= 0) {
                     Transform newItem = Instantiate(infoListItemPrefab, itemsList);
                     newItem.GetComponent<InfoManager>().setDetails(character.Key, character.Value);
                 } else {

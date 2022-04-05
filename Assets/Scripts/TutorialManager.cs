@@ -14,9 +14,6 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] stages;
     public TextMeshProUGUI[] npcNameText;
     public GameObject[] lilaImages;
-
-    // Localization Feature
-    public Lang LangClass = new Lang();
     private int stage;
     private Vector3 dialoguePosition;
 
@@ -87,7 +84,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 2:
                 dialogue.transform.position = dialoguePosition;
-                contentText.text = LangClass.getString("tutorial_building");
+                contentText.text = GameStrings.getString("tutorial_building");
                 break;
             case 3:
                 dialogue.SetActive(false);
@@ -96,28 +93,28 @@ public class TutorialManager : MonoBehaviour
                 OpenNextStage();
                 break;
             case 7:
-                contentText.text = LangClass.getString("tutorial_phone");
+                contentText.text = GameStrings.getString("tutorial_phone");
                 dialogue.SetActive(true);
                 break;
             case 8:
                 dialogue.SetActive(false);
                 break;
             case 10:
-                contentText.text = LangClass.getString("tutorial_todo");
+                contentText.text = GameStrings.getString("tutorial_todo");
                 dialogue.SetActive(true);
                 break;
             case 11:
                 dialogue.SetActive(false);
                 break;
             case 12:
-                contentText.text = LangClass.getString("tutorial_notes");
+                contentText.text = GameStrings.getString("tutorial_notes");
                 dialogue.SetActive(true);
                 break;
             case 13:
                 dialogue.SetActive(false);
                 break;
             case 14:
-                contentText.text = LangClass.getString("tutorial_contacts");
+                contentText.text = GameStrings.getString("tutorial_contacts");
                 dialogue.SetActive(true);
                 break;
             case 15:

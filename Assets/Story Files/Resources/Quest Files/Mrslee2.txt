@@ -1,10 +1,9 @@
-Empower Mrs. Lee to schedule a doctor’s appointment
+Empower Mrs. Lee to Schedule a Doctor's Appointment
 Mrs. Lee
 +1
 0
 0
 0
-Talk to Rashad
-Talk to Mr Calindas
-Check your journal
-Return to Mrs. Lee
+Talk to Rashad at Library. 
+Talk to Mr. Calindas at Health Clinc.
+Return to Mrs. Lee to discuss options.

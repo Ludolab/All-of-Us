@@ -35,28 +35,24 @@ public class PCSetUp : MonoBehaviour
     private string pronouns;
     private string language;
     
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
     // Start is called before the first frame update
     void Start()
     {
 
-        // Setting texts from Strings.xml
-        NameText.text = LangClass.getString("name_field");
-        codeText.text = LangClass.getString("code_field");
-        PronounsText.text = LangClass.getString("pronouns_field");
-        LanguageText.text = LangClass.getString("language_field");
-        nameFieldPlaceholder.text = LangClass.getString("first_name");
-        BackButtonText.text = LangClass.getString("back");
+        NameText.text = GameStrings.getString("name_field");
+        codeText.text = GameStrings.getString("code_field");
+        PronounsText.text = GameStrings.getString("pronouns_field");
+        LanguageText.text = GameStrings.getString("language_field");
+        nameFieldPlaceholder.text = GameStrings.getString("first_name");
+        BackButtonText.text = GameStrings.getString("back");
 
         // Setting dropdown lists' options is done in the script PCSetUpDropdowns
 
         string buttonText = "";
         if (SceneManager.GetActiveScene().name == "PCSetUp") {
-            buttonText = LangClass.getString("continue");
-            WelcomeTitle.text = LangClass.getString("welcome_title");
-            WelcomeText.text = LangClass.getString("welcome_text");
+            buttonText = GameStrings.getString("continue");
+            WelcomeTitle.text = GameStrings.getString("welcome_title");
+            WelcomeText.text = GameStrings.getString("welcome_text");
 
             // Control continue buttons
             continueButton.gameObject.SetActive(false);
@@ -72,7 +68,7 @@ public class PCSetUp : MonoBehaviour
             pronounsDropDown.value = GlobalGameInfo.pronounsInt;
             languageDropDown.value = GlobalGameInfo.languageInt;
 
-            buttonText = LangClass.getString("save");
+            buttonText = GameStrings.getString("save");
 
             // Control continue buttons
             continueButton.gameObject.SetActive(true);
@@ -115,7 +111,7 @@ public class PCSetUp : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "PCSetUp" && isTaken(firstName)
         || previousName != firstName && isTaken(firstName)) {
             NameError.gameObject.SetActive(true);
-            NameErrorText.text = LangClass.getString("name_taken");
+            NameErrorText.text = GameStrings.getString("name_taken");
             return;
         }
 
@@ -125,9 +121,6 @@ public class PCSetUp : MonoBehaviour
         GlobalGameInfo.language = GetLanguages(languageDropDown.value);
         GlobalGameInfo.pronounsInt = pronounsDropDown.value;
         GlobalGameInfo.languageInt = languageDropDown.value;
-
-        // Change the language globally
-        LangClass.setLanguage(GetLanguages(languageDropDown.value));
 
         // TODO consider moving some parts here to the SavingGame script
         if (SceneManager.GetActiveScene().name == "PCSetUp") {
@@ -179,11 +172,13 @@ public class PCSetUp : MonoBehaviour
         switch (intPronouns)
         {
             case 1:
-                return LangClass.getString("she_her");
+                return GameStrings.getString("she_her");
             case 2:
-                return LangClass.getString("he_his");
+                return GameStrings.getString("he_his");
             case 3:
-                return LangClass.getString("they_them");
+                return GameStrings.getString("they_them");
+            case 4:
+                return GameStrings.getString("other");
             default:
                 return null;
         }
@@ -194,9 +189,9 @@ public class PCSetUp : MonoBehaviour
         switch (intLanguage)
         {
             case 1:
-                return LangClass.getString("english");
+                return GameStrings.getString("english");
             case 2:
-                return LangClass.getString("spanish");
+                return GameStrings.getString("spanish");
             default:
                 return null;
         }

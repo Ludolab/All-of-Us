@@ -11,29 +11,29 @@ VAR new_quest = ""
 
 Mrslee?Neutral " "
 
-* It's good to see you out and about!
+* Hi, Mrs. Lee! How are you today?
   -> Chat1
 * How are you, Mrs. Lee?
   -> QuestIntro
 
 ==Chat1==
-Mrslee?Smiling "Hey. {player_name}. Today I volunteer to work with the kids."
+Mrslee?Smiling "Hey. {player_name}. Today I feel happy. Today, I volunteer with the kids."
 
-* That is so awesome, Mrs. Lee.
+* I'm so glad; this seems like it's good for you, the kids, and Lila!
   -> Chat2
-* What have you been up to?
+* Have you thought about making that doctor appointment?
   -> QuestIntro
 
 ==Chat2==
-Mrslee?Smiling "Yah. You know the kids always making noise! Ha ha. I am relax now. Because of the kids, and their funny noise."
+Mrslee?Smiling "Yah. It hard to feel stress when kids ask you to color or sing little songs."
 
-* It's sweet how you get along with the kids!
+* Well, less stress is good. Especially if less stress means less headaches.
   -> QuestIntro
 * No headaches?
   -> QuestIntro
 
 ==QuestIntro==
-Mrslee?Smiling "Oh. The appointment. I made appointment at doctor office. Eddie said he was relief."
+Mrslee?Smiling "Oh. That. I made appointment at doctor office. Eddie said he was relief."
 
 * That's awesome, Mrs. Lee! But how are you feeling about it?
   -> QuestDetails1
@@ -42,31 +42,15 @@ Mrslee?Smiling "Oh. The appointment. I made appointment at doctor office. Eddie 
 
 ==QuestDetails1==
 Mrslee?Neutral "Me? I am concern. Nervous!"
+Mrslee?Neutral "Doctor always speak so fast. Not so much want to listen."
 
-* I think that's okay to feel nervous before an appointment.
-  -> QuestDetails2
-* Do you want to talk about it?
-  -> OptionalQuestDetails1
-* I could maybe help you prepare.
-  -> QuestAcceptance
-
-==OptionalQuestDetails1==
-Mrslee?Neutral "You know? Doctor always speak so fast."
-
-* I understand, I'm sure that's a stressful experience for you, Mrs. Lee
+* I understand! That sounds super stressful, Mrs. Lee.
   -> QuestDetails2
 * Maybe I can support you in some way.
   -> QuestAcceptance
 
 ==QuestDetails2==
-Mrslee?Neutral "I forget everything! My feeling.. my words."
-
-* Mh-hm... I hear you.
-  -> OptionalQuestDetails2
-* Maybe we can prepare together?
-  -> QuestAcceptance
-
-==OptionalQuestDetails2==
+Mrslee?Neutral "I forget everything! My feeling.. my words. "
 Mrslee?Neutral "Why I'm gonna go if nobody listen to me?"
 
 * We can work on ways to make sure the doctor listens to you.

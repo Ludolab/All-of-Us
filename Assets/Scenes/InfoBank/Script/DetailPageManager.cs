@@ -21,12 +21,12 @@ public class DetailPageManager : MonoBehaviour
     private static GlobalGameInfo.InfoItem openedInfoItem;
 
     private Color defaultColor = new Color(0.1960f, 0.1960f, 0.196f);
-    private Color selectedColor = Color.red;
+    private Color selectedColor = Color.blue;
     private static DetailPageManager selectedItem = null;
     private Transform overlayItem = null;
 
     private GlobalGameInfo.InfoItem infoItem;
-
+    private string turninSceneName = "Quest Turnin Testing";
     public int optionNumber = 0;
     [HideInInspector]
     public string questId = "";
@@ -133,19 +133,10 @@ public class DetailPageManager : MonoBehaviour
     public void updateBubble(){
       Debug.Log(text);
       Debug.Log(infoItem);
-      //Debug.Log(TagManager.GetTags(infoItem.tagIdentifier));
 
       if(infoItem == null){
         return;
       }
-      /*
-      if(TagManager.GetTags(infoItem.tagIdentifier).Count > 0){
-        Transform redbubble = HelperFunctions.FindChildByRecursion(transform, "redbubble");
-        if(redbubble != null){
-          redbubble.gameObject.SetActive(false);
-        }
-      }
-      */
     }
 
     public void setInfo(GlobalGameInfo.InfoItem item){
@@ -170,7 +161,7 @@ public class DetailPageManager : MonoBehaviour
     }
 
     public void SelectItemForQuest() {
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing") {
+        if (SceneManager.GetActiveScene().name == turninSceneName) {
             FindObjectOfType<PhoneScreenManager>().SelectQuestAnswer(questId,
               HelperFunctions.StringFromCharacter(infoItem.characterEnum), description, optionNumber);
 

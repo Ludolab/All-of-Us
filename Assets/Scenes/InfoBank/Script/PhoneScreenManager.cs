@@ -82,13 +82,13 @@ public class PhoneScreenManager : MonoBehaviour
     public GameObject Glow;
     public GameObject HelpButton;
     public TextMeshProUGUI HelpButtonText;
+    private string selectedAppForTutorial = "";
     
     // More texts
     public float secondsPassed = 0.0f;
     public TextMeshProUGUI BackButtonText;
     public TextMeshProUGUI SectionName;
     public TextMeshProUGUI NoJournalEntriesText;
-    public Lang LangClass = new Lang();
 
     void Update(){
       if (started && timer <= seconds) {
@@ -121,10 +121,10 @@ public class PhoneScreenManager : MonoBehaviour
         settingsBorder.SetActive(false);
         dictionaryBorder.SetActive(false);
 
-        HelpButtonText.text = LangClass.getString("tutorial_help");
-        BackButtonText.text = LangClass.getString("back");
-        SectionName.text = LangClass.getString("home_screen");
-        NoJournalEntriesText.text = LangClass.getString("no_journal_entries");
+        HelpButtonText.text = GameStrings.getString("tutorial_help");
+        BackButtonText.text = GameStrings.getString("back");
+        SectionName.text = GameStrings.getString("home_screen");
+        NoJournalEntriesText.text = GameStrings.getString("no_journal_entries");
 
         lastSelected = null;
         lastSelectedBorder = null;
@@ -191,19 +191,19 @@ public class PhoneScreenManager : MonoBehaviour
         if(lastSelected != null){
             lastSelected.GetComponent<RectTransform>().localScale = new Vector3(0f, 1f, 1f);
         }
-        if(lastSelectedBorder != null){
+        if(lastSelectedBorder != null) {
             lastSelectedBorder.SetActive(false);
         }
 
-        if(lastSelected == todo){
+        if(lastSelected == todo) {
             GlobalGameInfo.SeeAllTodoItems();
         }
 
-        if(go != null){
+        if(go != null) {
             go.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
             lastSelected = go;
         }
-        if(border != null){
+        if(border != null) {
             border.SetActive(true);
             lastSelectedBorder = border;
         }
@@ -242,7 +242,7 @@ public class PhoneScreenManager : MonoBehaviour
                 go = todo;
                 border = todoBorder;
                 HelpButton.SetActive(true);
-                GlobalGameInfo.selectedAppForTutorial = "todolist";
+                selectedAppForTutorial = "todolist";
                 // Tutorial
                 if (!GlobalGameInfo.todolistFlag) {
                     this.activateTodoListTutorial();
@@ -252,7 +252,7 @@ public class PhoneScreenManager : MonoBehaviour
                 go = notes;
                 border = notesBorder;
                 HelpButton.SetActive(true);
-                GlobalGameInfo.selectedAppForTutorial = "myjournal";
+                selectedAppForTutorial = "myjournal";
                 // Tutorial
                 if (!GlobalGameInfo.myjournalFlag) {
                     this.activateMyJournalTutorial();
@@ -287,9 +287,9 @@ public class PhoneScreenManager : MonoBehaviour
     }
 
     public void activateTutorial() {
-        if (GlobalGameInfo.selectedAppForTutorial == "todolist") {
+        if (selectedAppForTutorial == "todolist") {
             this.activateTodoListTutorial();
-        } else if (GlobalGameInfo.selectedAppForTutorial == "myjournal") {
+        } else if (selectedAppForTutorial == "myjournal") {
             this.activateMyJournalTutorial();
         }
     }
@@ -299,10 +299,10 @@ public class PhoneScreenManager : MonoBehaviour
         TutorialButton.enabled = true;
         Glow.SetActive(true);
 
-        YellowTitle.text = LangClass.getString("todolist_phone_yellowtitle");
-        WhiteTitle.text = LangClass.getString("todolist_phone_whitetitle");
-        WhiteText.text = LangClass.getString("todolist_phone_whitetext");
-        ButtonText.text = LangClass.getString("todolist_phone_buttontext");
+        YellowTitle.text = GameStrings.getString("todolist_phone_yellowtitle");
+        WhiteTitle.text = GameStrings.getString("todolist_phone_whitetitle");
+        WhiteText.text = GameStrings.getString("todolist_phone_whitetext");
+        ButtonText.text = GameStrings.getString("todolist_phone_buttontext");
 
         GlobalGameInfo.todolistFlag = true;
     }
@@ -313,10 +313,10 @@ public class PhoneScreenManager : MonoBehaviour
         TutorialButton.enabled = true;
         Glow.SetActive(true);
 
-        YellowTitle.text = LangClass.getString("myjournals_phone_yellowtitle");
-        WhiteTitle.text = LangClass.getString("myjournals_phone_whitetitle");
-        WhiteText.text = LangClass.getString("myjournals_phone_whitetext");
-        ButtonText.text = LangClass.getString("myjournals_phone_buttontext");
+        YellowTitle.text = GameStrings.getString("myjournals_phone_yellowtitle");
+        WhiteTitle.text = GameStrings.getString("myjournals_phone_whitetitle");
+        WhiteText.text = GameStrings.getString("myjournals_phone_whitetext");
+        ButtonText.text = GameStrings.getString("myjournals_phone_buttontext");
 
         GlobalGameInfo.myjournalFlag = true;
     }
@@ -394,8 +394,6 @@ public class PhoneScreenManager : MonoBehaviour
 
     public void SelectQuestAnswer(string questId, string character, string description, int optionNumber) {
         Debug.Log("Item selected that solves quest " + questId);
-        Debug.Log("QUEST PANEL " + questPanel);
-        Debug.Log("QUEST PANEL 2" + !questPanel.activeInHierarchy);
         // preview text hard-coded for now
         if (questPanel == null || !questPanel.activeInHierarchy)
             return;
@@ -409,8 +407,6 @@ public class PhoneScreenManager : MonoBehaviour
         _txt.rectTransform.anchoredPosition = txtPos;
         _txt.color = Color.black;
         string imgString = character.ToLower() + "_small";
-
-        Debug.Log("IMG STRING" + imgString);
 
         Image questSolverImg = selectedQuest.Find("Quest Solver").GetComponent<Image>();
         questSolverImg.sprite = Resources.Load<Sprite>(imgString);

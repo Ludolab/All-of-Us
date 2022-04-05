@@ -29,11 +29,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Visual Novel Scenes/HealthVN.unity
     guid: 01a4f923a5c7a48b6bc3184d43d1568d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Visual Novel Scenes/Orig.unity
-    guid: 012e5d99837562a40bad6666d27d2b31
-  - enabled: 1
-    path: Assets/Scenes/Visual Novel Scenes/Quest Turnin Testing.unity
+    path: Assets/Scenes/Visual Novel Scenes/Research.unity
     guid: 0b0dacd9e69ea4c0d82e997c9e9af1ed
   - enabled: 1
     path: Assets/Scenes/Home.unity
@@ -56,6 +56,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: bf724612148bd4b4d87dc7b7e96d620e
+  - enabled: 1
+    path: Assets/Scenes/Visual Novel Scenes/Quest Turnin Testing.unity
+    guid: 19b3ef5f5f14c9e4fa270dc3bc8672d6
+  - enabled: 1
+    path: Assets/Scenes/Visual Novel Scenes/Turnin.unity
+    guid: 3b4c2084b35172b4c9279c92f3c60a36
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8b06978d4fc5da74b9713990bc515b59,
       type: 2}

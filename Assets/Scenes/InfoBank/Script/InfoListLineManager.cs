@@ -15,7 +15,7 @@ public class InfoListLineManager : MonoBehaviour
     public Toggle capabilityToggle0;
     public Toggle capabilityToggle1;
     public Toggle capabilityToggle2;
-    public void setInfo(GlobalGameInfo.InfoItem item, bool isLast)
+    public void setInfo(GlobalGameInfo.InfoItem item)
     {
         this.item = item;
         // Update the detail page manager
@@ -23,20 +23,19 @@ public class InfoListLineManager : MonoBehaviour
         CharacterResources cr = new CharacterResources();
 
         this.transform.Find("Content/Text").GetComponent<Text>().text = item.description;
-        // If its the last note, we don't want the divider
-        if(isLast && GlobalGameInfo.researchVersion <= 1)
+        
+        // Non research version
+        if (GlobalGameInfo.researchVersion == 0)
         {
-            this.transform.Find("Divider").gameObject.SetActive(false);
+             // If we have already viewed it before, don't have the red circle next to the line
+            // Will only be 1, the first time we click the notes/journal app
+            if (item.timesViewed != 1)
+            {
+                this.transform.Find("Content/Image").gameObject.SetActive(false);
+            }
         }
-        // If we have already viewed it before, don't have the red circle next to the line
-        // Will only be 1, the first time we click the notes/journal app
-        if (item.timesViewed != 1 && GlobalGameInfo.researchVersion <= 1)
-        {
-            this.transform.Find("Content/Image").gameObject.SetActive(false);
-        }
-
         // In research version only
-        if (GlobalGameInfo.researchVersion > 1) {
+        else {
             // Setting the NPCImage in the new research journal item
             this.transform.Find("Content/NPCImage").gameObject.GetComponent<Image>().sprite = cr.GetSmallIcon(item.characterEnum);
 
@@ -73,7 +72,7 @@ public class InfoListLineManager : MonoBehaviour
     void Update()
     {
         // Will only be 1, the first time we click the notes/journal app
-        if (item != null && item.timesViewed != 1 && buttonToggledOn && GlobalGameInfo.researchVersion <= 1)
+        if (item != null && item.timesViewed != 1 && buttonToggledOn && GlobalGameInfo.researchVersion <= 0)
         {
             this.transform.Find("Content/Image").gameObject.SetActive(false);
             buttonToggledOn = false;

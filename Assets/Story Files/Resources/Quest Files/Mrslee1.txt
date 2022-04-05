@@ -1,10 +1,9 @@
-Help Mrs. Lee verify that Eddie’s medication is correct
+Help Mrs. Lee Feel Confident Picking up Eddie's Prescription
 Mrs. Lee
 0
 0
 0
 +1
-Talk to Mr. Calindas
-Talk to Lila
-Check your journal
-Talk to Mrs. Lee
+Talk To Lila at Community Center. 
+Talk to Mr. Calindas at Health Clinic. 
+Return to Mrs. Lee to discuss options.

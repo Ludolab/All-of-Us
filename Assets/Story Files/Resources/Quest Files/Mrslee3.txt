@@ -1,10 +1,9 @@
-Help Mrs. Lee prepare for her doctor's appointment
+Help Mrs. Lee Prepare for Her Doctor's Appointment
 Mrs. Lee
 +1
 0
 0
 0
-Talk to Lila
-Talk to Elisa
-Check your journal
-Return to Mrs. Lee
+Talk to Lila at Community Center.
+Talk to Elisa at Library. 
+Return to Mrs. Lee to discuss options. 

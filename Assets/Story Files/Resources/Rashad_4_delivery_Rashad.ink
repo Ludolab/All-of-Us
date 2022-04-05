@@ -36,7 +36,7 @@ Rashad?Smiling "The Board approved an initiative I wanted to talk to you about. 
 ==QuestIntro==
 Rashad?Smiling "Hey now. Bloomwood spirit, was- is a thing."
 Rashad?Smiling "I explained the changing demographics to the board when I pitched on this, but I want to get an intergenerational dialogue going at the library. "
-Rashad?Smiling "A lot of our seniors and young people frequent the library, and I'd like to bring them together.”
+Rashad?Smiling "A lot of our seniors and young people frequent the library, and I'd like to bring them together."
 
 * Intergenerational dialogue? I'm all for that. Tell me more.
   -> QuestDetails1
@@ -87,7 +87,7 @@ Rashad?Smiling "Maybe find out more about senior mental health, and what teens f
 Rashad?Smiling "Thank you so much, {player_name}. Thanks for helping with this. I knew you'd be the right person for this one."
 Rashad?Smiling "I feel like my vision for the library is finally coming true. Take care, okay?"
 
-* Tak care, Rashad. I'll be back.
+* Take care, Rashad. I'll be back.
   ->END
 * Bye Rashad! I'm so excited for you, this is going to go great.
   ->END

@@ -84,6 +84,8 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     public static CharacterResources.CHARACTERS questGiver;
 
+    private string turninScenceName = "Quest Turnin Testing";
+
     public void Awake() {
         instance = this;
     }
@@ -156,7 +158,7 @@ public class QuestManager : MonoBehaviour
     /// Opens the quest turnin scene
     /// </summary>
     public void OpenTurninScene() {
-        FindObjectOfType<SceneChangeDemoController>().OpenScene("Quest Turnin Testing");
+        FindObjectOfType<SceneChangeDemoController>().OpenScene(turninScenceName);
     }
 
     /// <summary>

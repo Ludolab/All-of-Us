@@ -10,7 +10,6 @@ public class HoverClickableObjects : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         MouseCursor.turnOnClickableObjectCursor(true);
     }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         MouseCursor.turnOnClickableObjectCursor(false);

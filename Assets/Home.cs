@@ -25,19 +25,15 @@ public class Home : MonoBehaviour {
     public TextMeshProUGUI CommunityEngagementText;
     public TextMeshProUGUI CommunityEngagementValue;
 
-    // Localization Feature
-    public Lang LangClass = new Lang();
-
-
     private void Start() {
 
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
 
-        WeekText.text = LangClass.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
+        WeekText.text = GameStrings.getString("week") + " " + (GlobalGameInfo.GetCurrentWeek() + 1);
         DayText.text = GlobalGameInfo.GetCurrentDayAsString("long");
-        CommunityManagerText.text = LangClass.getString("comm_manager");
-        DaySummaryText.text = LangClass.getString("day_summary");
-        GoToSleepText.text = LangClass.getString("go_to_sleep");
+        CommunityManagerText.text = GameStrings.getString("comm_manager");
+        DaySummaryText.text = GameStrings.getString("day_summary");
+        GoToSleepText.text = GameStrings.getString("go_to_sleep");
 
         NameText.SetText(GlobalGameInfo.name);
 
@@ -48,13 +44,13 @@ public class Home : MonoBehaviour {
 
         // Stats
         
-        NewJournalEntriesText.text = LangClass.getString("new_journal_entries");
+        NewJournalEntriesText.text = GameStrings.getString("new_journal_entries");
         NewJournalEntriesValue.text = GlobalGameInfo.journalItemsLearnedTodayNum.ToString();
-        BlockPartyPreparationsText.text = LangClass.getString("block_party_preparations");
+        BlockPartyPreparationsText.text = GameStrings.getString("block_party_preparations");
         BlockPartyPreparationsValue.text = ((GlobalGameInfo.GetCurrentDay() + 1) * 25).ToString() + "%";
-        SucculentsPlantedText.text = LangClass.getString("succulents_planted");
+        SucculentsPlantedText.text = GameStrings.getString("succulents_planted");
         SucculentsPlantedValue.text = Random.Range(2, 10).ToString();
-        CommunityEngagementText.text = LangClass.getString("community_engagement");
+        CommunityEngagementText.text = GameStrings.getString("community_engagement");
         int communityEngagementLevel = ((GlobalGameInfo.GetCurrentWeek()) * 20 + (GlobalGameInfo.GetCurrentDay() + 1) * 5);
         CommunityEngagementValue.text = communityEngagementLevel.ToString() + "%";
 

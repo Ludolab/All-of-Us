@@ -628,6 +628,7 @@ MonoBehaviour:
   continueButton: {fileID: 1977971103}
   dialogCanvas: {fileID: 340232454}
   nameText: {fileID: 1344445140}
+  nameTextContainer: {fileID: 0}
   nameTextGO: {fileID: 0}
   storyText: {fileID: 1998684720}
   storyTextGO: {fileID: 0}
@@ -925,6 +926,7 @@ MonoBehaviour:
   - {fileID: 582650241}
   - {fileID: 582650242}
   - {fileID: 582650243}
+  activeCommand: {fileID: 0}
   suppressAllAutoSelections: 0
 --- !u!114 &582650236
 MonoBehaviour:
@@ -1218,6 +1220,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList: []
+  activeCommand: {fileID: 0}
   suppressAllAutoSelections: 0
 --- !u!114 &593490463
 MonoBehaviour:
@@ -1663,6 +1666,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1735,6 +1739,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab7c84d4bc9b41139c1efe316f07ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &979182109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2152,7 @@ MonoBehaviour:
   - {fileID: 1365810338}
   - {fileID: 1365810340}
   - {fileID: 1365810339}
+  activeCommand: {fileID: 0}
   suppressAllAutoSelections: 0
 --- !u!114 &1365810336
 MonoBehaviour:
@@ -2277,6 +2294,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1365810342}
+  activeCommand: {fileID: 0}
   suppressAllAutoSelections: 0
 --- !u!114 &1365810342
 MonoBehaviour:
@@ -2818,6 +2836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d347f9ee4c7384406a2f7a3e5ef9ea39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContinueButtonText: {fileID: 0}
+  NewGameButton: {fileID: 0}
+  ContinueButton: {fileID: 0}
 --- !u!1 &1931809247
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,8 +18,6 @@ public class EndOfQuest : MonoBehaviour
     public GameObject[] upcomingDays;
     public GameObject[] currentDays;
     public GameObject[] pastDays;
-    // Localization Feature
-    public Lang LangClass = new Lang();
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +50,7 @@ public class EndOfQuest : MonoBehaviour
         remainDays.text = GlobalGameInfo.GetRemainDays().ToString();
         if (GlobalGameInfo.GetRemainDays() <= 1)
         {
-            daysText.text = LangClass.getString("day");
+            daysText.text = GameStrings.getString("day");
         }
 
         // set character and picture
@@ -134,29 +132,30 @@ public class EndOfQuest : MonoBehaviour
 
     private void BuildQuestMap()
     {
-        questMap.Add(LangClass.getString("end_of_quest_rashad_1_title"), new Quest(LangClass.getString("end_of_quest_rashad_1_desc"), "Rashad"));
-        questMap.Add(LangClass.getString("end_of_quest_rashad_2_title"), new Quest(LangClass.getString("end_of_quest_rashad_2_desc"), "Rashad"));
-        questMap.Add(LangClass.getString("end_of_quest_rashad_3_title"), new Quest(LangClass.getString("end_of_quest_rashad_3_desc"), "Rashad"));
-        questMap.Add(LangClass.getString("end_of_quest_rashad_4_title"), new Quest(LangClass.getString("end_of_quest_rashad_4_desc"), "Rashad"));
+        questMap.Add(GameStrings.getString("end_of_quest_rashad_1_title"), new Quest(GameStrings.getString("end_of_quest_rashad_1_desc"), "Rashad"));
+        questMap.Add(GameStrings.getString("end_of_quest_rashad_2_title"), new Quest(GameStrings.getString("end_of_quest_rashad_2_desc"), "Rashad"));
+        questMap.Add(GameStrings.getString("end_of_quest_rashad_3_title"), new Quest(GameStrings.getString("end_of_quest_rashad_3_desc"), "Rashad"));
+        questMap.Add(GameStrings.getString("end_of_quest_rashad_4_title"), new Quest(GameStrings.getString("end_of_quest_rashad_4_desc"), "Rashad"));
 
-        questMap.Add(LangClass.getString("end_of_quest_lila_1_title"), new Quest(LangClass.getString("end_of_quest_lila_1_desc"), "Lila"));
-        questMap.Add(LangClass.getString("end_of_quest_lila_2_title"), new Quest(LangClass.getString("end_of_quest_lila_2_desc"), "Lila"));
-        questMap.Add(LangClass.getString("end_of_quest_lila_3_title"), new Quest(LangClass.getString("end_of_quest_lila_3_desc"), "Lila"));
-        questMap.Add(LangClass.getString("end_of_quest_lila_4_title"), new Quest(LangClass.getString("end_of_quest_lila_4_desc"), "Lila"));
+        questMap.Add(GameStrings.getString("end_of_quest_lila_1_title"), new Quest(GameStrings.getString("end_of_quest_lila_1_desc"), "Lila"));
+        questMap.Add(GameStrings.getString("end_of_quest_lila_2_title"), new Quest(GameStrings.getString("end_of_quest_lila_2_desc"), "Lila"));
+        questMap.Add(GameStrings.getString("end_of_quest_lila_3_title"), new Quest(GameStrings.getString("end_of_quest_lila_3_desc"), "Lila"));
+        questMap.Add(GameStrings.getString("end_of_quest_lila_4_title"), new Quest(GameStrings.getString("end_of_quest_lila_4_desc"), "Lila"));
 
-        questMap.Add(LangClass.getString("end_of_quest_calindas_1_title"), new Quest(LangClass.getString("end_of_quest_calindas_1_desc"), "Calindas"));
-        questMap.Add(LangClass.getString("end_of_quest_calindas_2_title"), new Quest(LangClass.getString("end_of_quest_calindas_2_desc"), "Calindas"));
-        questMap.Add(LangClass.getString("end_of_quest_calindas_3_title"), new Quest(LangClass.getString("end_of_quest_calindas_3_desc"), "Calindas"));
-        questMap.Add(LangClass.getString("end_of_quest_calindas_4_title"), new Quest(LangClass.getString("end_of_quest_calindas_4_desc"), "Calindas"));
+        questMap.Add(GameStrings.getString("end_of_quest_calindas_1_title"), new Quest(GameStrings.getString("end_of_quest_calindas_1_desc"), "Calindas"));
+        questMap.Add(GameStrings.getString("end_of_quest_calindas_2_title"), new Quest(GameStrings.getString("end_of_quest_calindas_2_desc"), "Calindas"));
+        questMap.Add(GameStrings.getString("end_of_quest_calindas_3_title"), new Quest(GameStrings.getString("end_of_quest_calindas_3_desc"), "Calindas"));
+        questMap.Add(GameStrings.getString("end_of_quest_calindas_4_title"), new Quest(GameStrings.getString("end_of_quest_calindas_4_desc"), "Calindas"));
 
-        questMap.Add(LangClass.getString("end_of_quest_lee_1_title"), new Quest(LangClass.getString("end_of_quest_lee_1_desc"), "Lee"));
-        questMap.Add(LangClass.getString("end_of_quest_lee_2_title"), new Quest(LangClass.getString("end_of_quest_lee_2_desc"), "Lee"));
-        questMap.Add(LangClass.getString("end_of_quest_lee_3_title"), new Quest(LangClass.getString("end_of_quest_lee_3_desc"), "Lee"));
-        questMap.Add(LangClass.getString("end_of_quest_lee_4_title"), new Quest(LangClass.getString("end_of_quest_lee_4_desc"), "Lee"));
+        questMap.Add(GameStrings.getString("end_of_quest_lee_1_title"), new Quest(GameStrings.getString("end_of_quest_lee_1_desc"), "Lee"));
+        questMap.Add(GameStrings.getString("end_of_quest_lee_2_title"), new Quest(GameStrings.getString("end_of_quest_lee_2_desc"), "Lee"));
+        questMap.Add(GameStrings.getString("end_of_quest_lee_3_title"), new Quest(GameStrings.getString("end_of_quest_lee_3_desc"), "Lee"));
+        questMap.Add(GameStrings.getString("end_of_quest_lee_4_title"), new Quest(GameStrings.getString("end_of_quest_lee_4_desc"), "Lee"));
 
-        questMap.Add(LangClass.getString("end_of_quest_elisa_1_title"), new Quest(LangClass.getString("end_of_quest_elisa_1_desc"), "Elisa"));
-        questMap.Add(LangClass.getString("end_of_quest_elisa_2_title"), new Quest(LangClass.getString("end_of_quest_elisa_2_desc"), "Elisa"));
-        questMap.Add(LangClass.getString("end_of_quest_elisa_3_title"), new Quest(LangClass.getString("end_of_quest_elisa_3_desc"), "Elisa"));
-        questMap.Add(LangClass.getString("end_of_quest_elisa_4_title"), new Quest(LangClass.getString("end_of_quest_elisa_4_desc"), "Elisa"));
+        questMap.Add(GameStrings.getString("end_of_quest_elisa_1_title"), new Quest(GameStrings.getString("end_of_quest_elisa_1_desc"), "Elisa"));
+        questMap.Add(GameStrings.getString("end_of_quest_elisa_2_title"), new Quest(GameStrings.getString("end_of_quest_elisa_2_desc"), "Elisa"));
+        questMap.Add(GameStrings.getString("end_of_quest_elisa_3_title"), new Quest(GameStrings.getString("end_of_quest_elisa_3_desc"), "Elisa"));
+        questMap.Add(GameStrings.getString("end_of_quest_elisa_4_title"), new Quest(GameStrings.getString("end_of_quest_elisa_4_desc"), "Elisa"));
+
     }
 }
