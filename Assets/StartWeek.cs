@@ -73,7 +73,8 @@ public class StartWeek : MonoBehaviour
         // If arrived from PCSetup, go to select profile
         if (GlobalGameInfo.goToSelectProfileFlag) {
             GlobalGameInfo.goToSelectProfileFlag = false;
-            this.clickOnSavedGame(GlobalGameInfo.savedGame);
+            SavedGame newPlayer = new SavedGame(GlobalGameInfo.name);
+            this.clickOnSavedGame(newPlayer);
         }
 
         // If arrived from ending a week in the game, go to select profile
@@ -136,13 +137,13 @@ public class StartWeek : MonoBehaviour
         // Change view to selecting a profile
         Title.text = GameStrings.getString("next_npc");
         // Load game slot into Global Game Info
-        SavingGame.LoadGameProgress(savedGame);
+        // SavingGame.LoadGameProgress(savedGame);
 
         // If player is in the middle of quest - go back to open quest
-        if (savedGame.isInMiddleOFQuest()) {
-            this.goBackToOpenQuest(savedGame.getNPCForWeek());
-            return;
-        }
+        // if (savedGame.isInMiddleOFQuest()) {
+        //     this.goBackToOpenQuest(savedGame.getNPCForWeek());
+        //     return;
+        // }
 
         // Updating local variables
         ScrollView.SetActive(false);
@@ -277,7 +278,7 @@ public class StartWeek : MonoBehaviour
     }
 
     public void GoToMapScene() {
-        SavingGame.setNPCOfCurrentQuest(GlobalGameInfo.GetCurrentNPC());
+        // SavingGame.setNPCOfCurrentQuest(GlobalGameInfo.GetCurrentNPC());
         Destroy (GameObject.FindGameObjectWithTag("Music"));
         // Go back to opening screen
         SceneManager.LoadScene("Map");

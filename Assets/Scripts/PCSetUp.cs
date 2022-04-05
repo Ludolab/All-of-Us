@@ -125,16 +125,16 @@ public class PCSetUp : MonoBehaviour
         // TODO consider moving some parts here to the SavingGame script
         if (SceneManager.GetActiveScene().name == "PCSetUp") {
             // Add new player to saved data
-            Dictionary<string, SavedGame> currentData = GlobalGameInfo.gameData;
-            if (currentData == null) {
-                currentData = new Dictionary<string, SavedGame>();
-                GlobalGameInfo.gameData = currentData;
-            }
-            SavedGame newPlayer = new SavedGame(firstName);
+            // Dictionary<string, SavedGame> currentData = GlobalGameInfo.gameData;
+            // if (currentData == null) {
+            //     currentData = new Dictionary<string, SavedGame>();
+            //     GlobalGameInfo.gameData = currentData;
+            // }
+            // SavedGame newPlayer = new SavedGame(firstName);
 
-            GlobalGameInfo.savedGame = newPlayer;
-            currentData.Add(firstName, newPlayer);
-            SaveSerial.SaveGame(currentData);
+            // GlobalGameInfo.savedGame = newPlayer;
+            // currentData.Add(firstName, newPlayer);
+            // SaveSerial.SaveGame(currentData);
             
             // Coming from PCsetup scene
             GlobalGameInfo.goToSelectProfileFlag = true;

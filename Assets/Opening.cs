@@ -20,7 +20,7 @@ public class Opening : MonoBehaviour
         NewGameButton.text = GameStrings.getString("new_game");
 
         // Loading game data
-        GlobalGameInfo.gameData = SaveSerial.LoadGame();
+        // GlobalGameInfo.gameData = SaveSerial.LoadGame();
 
         // Show continue button
         if (GlobalGameInfo.gameData != null) {
