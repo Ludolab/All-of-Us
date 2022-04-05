@@ -22,7 +22,8 @@ Rashad?Smiling "I'm so tired today. Do you want to grab a coffee with me? "
   -> Explain1
 
 ==Chat2==
-Rashad?Smiling "Yeah. The kids were up and down all night, and Cheryl has a big meeting at work this week so I was up with them. No one warned us that kids run on 15 minutes of sleep and three cheese sticks a day!"
+Rashad?Smiling "Yeah. The kids were up and down all night, and Cheryl has a big meeting at work this week so I was up with them."
+Rashad?Smiling "No one warned us that kids run on 15 minutes of sleep and three cheese sticks a day!"
 Rashad?Smiling "If they're asleep, I'm worrying about getting them to try new vegetables. If I'm asleep, they wake up."
 Rashad?Smiling "At their last pediatrician appointment, the doctor gave me the new FDA food pyramid. If I don't want them living on coffee and fumes like me, I feel like I need to start good habits now."
 

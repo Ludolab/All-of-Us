@@ -9,7 +9,7 @@ VAR new_quest = ""
 ~ new_quest = "Mrslee3.txt"
 # new_quest
 
-Mrslee?Neutral " "
+Mrslee?Neutral "Hey. {player_name}. "
 
 * Hi, Mrs. Lee! How are you today?
   -> Chat1
@@ -17,7 +17,7 @@ Mrslee?Neutral " "
   -> QuestIntro
 
 ==Chat1==
-Mrslee?Smiling "Hey. {player_name}. Today I feel happy. Today, I volunteer with the kids."
+Mrslee?Smiling "Today I feel happy. Today, I volunteer with the kids."
 
 * I'm so glad; this seems like it's good for you, the kids, and Lila!
   -> Chat2
@@ -25,7 +25,7 @@ Mrslee?Smiling "Hey. {player_name}. Today I feel happy. Today, I volunteer with 
   -> QuestIntro
 
 ==Chat2==
-Mrslee?Smiling "Yah. It hard to feel stress when kids ask you to color or sing little songs."
+Mrslee?Smiling "Yah. It's hard to feel stress when kids ask you to color or sing little songs."
 
 * Well, less stress is good. Especially if less stress means less headaches.
   -> QuestIntro

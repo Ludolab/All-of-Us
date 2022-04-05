@@ -36,7 +36,7 @@ Lila?Smiling "She trusts you, which is why I'm cool asking you this."
   -> Explain1
 
 ==Explain1==
-Lila?Neutral "Yeah, she scheduled it and i’m really proud of her for taking a proactive role in her health. Do you remember her husband? He was Dr Lee?"
+Lila?Neutral "Yeah, she scheduled it! I’m really proud of her for taking a proactive role in her health. Do you remember her husband? He was Dr Lee?"
 
 * Yeah, she has told me a little bit about him.
   -> Explain2
@@ -54,8 +54,8 @@ Lila?Neutral "I've been trying to brainstorm ways we can make Mrs. Lee more comf
   -> Suggestion1
 
 ==Suggestion1==
-~ notification = "Lila_Day 3_Mrs. Lee could ask Mrs. Lee to go to her doctor appointment_Mrslee3-2"
-# notification Lila_Day 3_Mrs. Lee could ask Lila to go to her doctor appointment_Mrslee3-2"
+~ notification = "Lila_Day 3_Mrs. Lee could ask Lila to go to her doctor appointment_Mrslee3-2"
+# notification Lila_Day 3_Mrs. Lee could ask Lila to go to her doctor appointment_Mrslee3-2
 
 Lila?Smiling "We could suggest that I will go to the appointment with her. She might not even know that having a friend along is an option."
 
@@ -75,7 +75,7 @@ Lila?Neutral "I don't want her to think she's only capable if she has someone al
 # notification Lila_Day 3_Mrs. Lee could call Eddie and practice her questions with him_Mrslee3-1
 
 Lila?Neutral "When Eddie was home, he mentioned that he'd like to be more involved. You know how she has regular video chats with her Korean friends? I think he's a little jealous."
-Lila?Smiling "After I was done teasing him, I realized that he'd be a great resource for helping Mrs. Lee feel more confident. They looked over drug portal information and read up on high blood pressure together, and she was just so much calmer."
+Lila?Smiling "After I was done teasing him, I realized that he'd be a great resource for helping Mrs. Lee feel more confident. They looked over drug information portal and read up on high blood pressure together."
 Lila?Smiling "He knows how to use the tools, and could help her feel more in control. Plus, it would give him a deeper insight into his family medical history." 
 
 * Huh..We should ask her what she thinks!

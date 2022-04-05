@@ -14,10 +14,10 @@ Mrslee?Smiling "You wanna see Eddie?"
 * Hey, Mrs. Lee! 
   -> Chat1
 * Eddie is back?
-  -> QuestIntro
+  -> Chat1
 
 ==Chat1==
-Mrslee?Smiling "I was reading the newspaper. I was thinking a lot! Eddie called Says he's coming this weekend. Surprise!"
+Mrslee?Smiling "I was reading the newspaper. I was thinking a lot! Eddie called and says he's coming this weekend. Surprise!"
 
 * That IS a surprise! 
    -> Chat2
@@ -53,7 +53,7 @@ Mrslee?Smiling "Doctor said "Mrs. Lee. Your blood pressure is ... a VERY good nu
 
 * Yes, the appointment was for you!
   -> QuestDetails2
-* Did you come away with more questions?.
+* Did you come away with more questions?
   -> QuestAcceptance
 
 ==QuestDetails2==

@@ -460,7 +460,7 @@ public class InkFileManager : MonoBehaviour {
         "Mrslee_3_info2_Elisa.ink", "Mrslee_3_completion_Mrslee.ink" };
     private static readonly string[] leeQuest4Files = {
         "Mrslee_4_delivery_Mrslee.ink", "Mrslee_4_info1_Rashad.ink",
-        "Mrslee_4_info2_Lila.ink", "Mrslee_4_completion_Mrslee.ink" };
+        "Mrslee_4_info2_Elisa.ink", "Mrslee_4_completion_Mrslee.ink" };
     private static readonly string[][] leeQuests = { leeQuest1Files,
         leeQuest2Files, leeQuest3Files, leeQuest4Files};
 

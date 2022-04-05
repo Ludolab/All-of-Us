@@ -77,7 +77,7 @@ Elisa?Smiling "Mom and I started a project documenting as much as she knows abou
 
 ==Goodbye==
 Elisa?Smiling "There are benefits to being part of a big family! Many hands make for lighter work. That's what they say, right?"
-Elisa?Smiling "Say, I should head off for my cleaning. Nice chatting with you!"
+Elisa?Smiling "I should head off for my cleaning. Nice chatting with you!"
 
 * Good luck! Hopefully you're cavity free. Thanks!
   ->END

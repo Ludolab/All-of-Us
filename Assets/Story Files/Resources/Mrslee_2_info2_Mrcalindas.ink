@@ -15,7 +15,8 @@ Mrcalindas?Smiling "Just can't get enough of this place, can you, {player_name}?
 
 ==Chat1==
 Mrcalindas?Smiling "No, no.  You know you can stop by here anytime. Emergency or not. One of our roles is to provide information to our community"
-Mrcalindas?Smiling "Before you leave, check out our wall of pamphlets. You might find something useful for yourself or someone else! They cover all different types of health conditions and are written to answer basic questions."
+Mrcalindas?Smiling "Before you leave, check out our wall of pamphlets. You might find something useful for yourself or someone else!."
+Mrcalindas?Smiling "They cover all different types of health conditions and are written to answer basic questions."
 
 * Thanks! I like knowing that's an option. The clinic is 24 hours, right?
   -> Chat2
@@ -40,7 +41,8 @@ Mrcalindas?Smiling "A lot of people are afraid of going to the doctor, so I try 
   -> Explain2
 
 ==Explain2==
-Mrcalindas?Smiling "It's all about making things easier and less stressful. We've made a lot of changes recently, like adding new online tools and resources. I like having new ways to help take care of people, but getting it all set up was a real headache."
+Mrcalindas?Smiling "It's all about making things easier and less stressful. We've made a lot of changes recently, like adding new online tools and resources."
+Mrcalindas?Smiling "I like having new ways to help take care of people, but getting it all set up was a real headache."
 
 * Speaking of headaches, when do headaches become something to worry about?
   -> Chat3
@@ -50,9 +52,7 @@ Mrcalindas?Smiling "Ah, are you getting headaches regularly? You should make an 
 Mrcalindas?Smiling "It's probably nothing but we want to keep an eye on symptoms. Early diagnosis can improve outcomes for some conditions."
 Mrcalindas?Smiling "Headaches - whether they're migraines or something else - can be warning signs and we want to keep an eye on them."
 
-* She might be one of those patients who avoids going to the doctor.
-  -> Suggestion1
-* I'm worried they're going to get worse before she makes an appointment.
+* My friend might be one of those patients who avoids going to the doctor.
   -> Suggestion1
   
 ==Suggestion1==
@@ -64,9 +64,9 @@ Mrcalindas?Smiling "Trust me, I get it. Who wants to get poked and prodded and t
 Mrcalindas?Neutral "Having a primary care doctor helps a lot; forming a trusting relationship can make it easier to ask important questions." 
 Mrcalindas?Neutral "We have several caring doctors. I bet your friend can find someone here they'd find comforting."
 
-What if I can't convince her to find a primary care doctor?
+* What if I can't convince her to find a primary care doctor?
 ->Suggestion2
-That's a great idea. What if the headaches get worse before then? 
+* That's a great idea. What if the headaches get worse before then? 
 ->Suggestion2
 
 ==Suggestion2==
@@ -75,7 +75,7 @@ That's a great idea. What if the headaches get worse before then?
 
 Mrcalindas?Neutral "Sometimes, people end up in the Emergency Room, or coming into Urgent Care at the clinic because their symptoms get so bad they can't be managed at home."
 Mrcalindas?Neutral "I think it ends up being more stressful. The patient doesn't get a chance to build a relationship with the doctor quite the same way." 
-Mrcalnidas?Neutral "I really recommend encouraging your friend to make an appointment before it gets to that point."
+Mrcalindas?Neutral "I really recommend encouraging your friend to make an appointment before it gets to that point."
 
 * Yeah, I will definitely do that.
   -> Goodbye
