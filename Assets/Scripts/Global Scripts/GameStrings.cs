@@ -74,7 +74,6 @@ public static class GameStrings {
                 {"search_term", "Search a term..."},
                 
                 // Saved Games
-                {"saved_games", "Saved Games"},
                 {"next_npc", "Where Do I Want to Start?"},
                 {"completed", "Completed"},
 
