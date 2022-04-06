@@ -124,7 +124,7 @@ public class ResearchQuestion : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing") {
+        if (SceneManager.GetActiveScene().name == "Turnin") {
             if (GlobalGameInfo.researchVersion == 2 || GlobalGameInfo.researchVersion == 1 && GlobalGameInfo.allResearchQuestionsAnswered) {
                 selectButton.SetActive(true);
             }
@@ -135,7 +135,7 @@ public class ResearchQuestion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing" &&
+        if (SceneManager.GetActiveScene().name == "Turnin" &&
             GlobalGameInfo.researchVersion == 1 &&
             GlobalGameInfo.allResearchQuestionsAnswered) {
             selectButton.SetActive(true);

@@ -84,7 +84,7 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     public static CharacterResources.CHARACTERS questGiver;
 
-    private string turninScenceName = "Quest Turnin Testing";
+    private string turninScenceName = "Turnin";
 
     public void Awake() {
         instance = this;

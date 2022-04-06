@@ -26,7 +26,7 @@ public class DetailPageManager : MonoBehaviour
     private Transform overlayItem = null;
 
     private GlobalGameInfo.InfoItem infoItem;
-    private string turninSceneName = "Quest Turnin Testing";
+    private string turninSceneName = "Turnin";
     public int optionNumber = 0;
     [HideInInspector]
     public string questId = "";

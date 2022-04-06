@@ -8,7 +8,7 @@ public static class GlobalGameInfo
 
     // Tutorial Flags
     public static bool startWeekFlag = false;
-    public static bool dictionaryFlag = false;
+    public static bool dictionaryFlag = true;
     public static bool speedFlag = false;
     public static bool mapFlag = false;
     public static bool todolistFlag = false;
@@ -25,7 +25,7 @@ public static class GlobalGameInfo
     public static SavedGame savedGame;
 
     // Research version: 0=regular, 1=version1, 2=version2
-    public static int researchVersion = 0;
+    public static int researchVersion = 2;
     // Code for the research version purposes
     public static string playerCode = "";
     // A flag to determine whether or not to show the "Select" button for the journal items

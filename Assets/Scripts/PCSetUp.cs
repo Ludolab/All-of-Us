@@ -190,8 +190,6 @@ public class PCSetUp : MonoBehaviour
         {
             case 1:
                 return GameStrings.getString("english");
-            case 2:
-                return GameStrings.getString("spanish");
             default:
                 return null;
         }

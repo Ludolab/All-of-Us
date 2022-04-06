@@ -23,7 +23,7 @@ public class ResearchVersionTurnin : MonoBehaviour
         if (GlobalGameInfo.researchVersion == 1) {
             MrsLeeInstructions.SetActive(true);
             MrsLeeImage.SetActive(true);
-            viewProfileButton.SetActive(true);
+            viewProfileButton.gameObject.SetActive(true);
         }
     }
 

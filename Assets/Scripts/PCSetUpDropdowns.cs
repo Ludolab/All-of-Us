@@ -17,7 +17,7 @@ public class PCSetUpDropdowns : MonoBehaviour
         
         // Setting dropdown lists
         List<string> pronounsDropDownOptions = new List<string> { "", GameStrings.getString("she_her"), GameStrings.getString("he_his"), GameStrings.getString("they_them"), GameStrings.getString("other")};
-        List<string> languageDropDownOptions = new List<string> { "", GameStrings.getString("english"), GameStrings.getString("spanish")};
+        List<string> languageDropDownOptions = new List<string> { "", GameStrings.getString("english")};
 
         pronounsDropDown.AddOptions(pronounsDropDownOptions);
         languageDropDown.AddOptions(languageDropDownOptions);

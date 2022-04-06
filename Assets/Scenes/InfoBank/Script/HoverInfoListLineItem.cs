@@ -10,7 +10,7 @@ public class HoverInfoListLineItem : MonoBehaviour, IPointerEnterHandler, IPoint
     //Do this when the cursor enters the rect area of this selectable UI object.
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing")
+        if (SceneManager.GetActiveScene().name == "Turnin")
         {
             MouseCursor.turnOnClickableObjectCursor(true);
         }
@@ -18,7 +18,7 @@ public class HoverInfoListLineItem : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing")
+        if (SceneManager.GetActiveScene().name == "Turnin")
         {
             MouseCursor.turnOnClickableObjectCursor(false);
             dpm.SelectItemForQuest();
@@ -26,7 +26,7 @@ public class HoverInfoListLineItem : MonoBehaviour, IPointerEnterHandler, IPoint
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (SceneManager.GetActiveScene().name == "Quest Turnin Testing")
+        if (SceneManager.GetActiveScene().name == "Turnin")
         {
             MouseCursor.turnOnClickableObjectCursor(false);
         }

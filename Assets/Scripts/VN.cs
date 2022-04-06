@@ -49,38 +49,44 @@ public class VN : MonoBehaviour
                 break;
         }
 
-        // Tutorial
-        if (!GlobalGameInfo.dictionaryFlag) {
-            TutorialContainerDictionary.SetActive(true);
-            TutorialArrowDictionary.SetActive(true);
-            TutorialButtonDictionary.enabled = true;
-            DictionaryGlow.SetActive(true);
-
-            YellowTitleDictionary.text = GameStrings.getString("dictionary_vn_yellowtitle");
-            WhiteTitleDictionary.text = GameStrings.getString("dictionary_vn_whitetitle");
-            WhiteTextDictionary.text = GameStrings.getString("dictionary_vn_whitetext_1") + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC()) + GameStrings.getString("dictionary_vn_whitetext_2");
-            ButtonTextDictionary.text = GameStrings.getString("dictionary_vn_buttontext");
-
-            YellowTitleSpeed.text = GameStrings.getString("speed_vn_yellowtitle");
-            WhiteTitleSpeed.text = GameStrings.getString("speed_vn_whitetitle");
-            WhiteTextSpeed.text = GameStrings.getString("speed_vn_whitetext");
-            ButtonTextSpeed.text = GameStrings.getString("speed_vn_buttontext");
-        }
-    }
-
-    public void tutorialDictionaryClick() {
-
-        TutorialContainerDictionary.SetActive(false);
-        TutorialArrowDictionary.SetActive(false);
-        TutorialButtonDictionary.enabled = false;
-        DictionaryGlow.SetActive(false);
-        GlobalGameInfo.dictionaryFlag = true;
-
         TutorialContainerSpeed.SetActive(true);
         TutorialButtonSpeed.enabled = true;
         SpeedImage.SetActive(true);
         SpeedGlow.SetActive(true);
+
+        YellowTitleSpeed.text = GameStrings.getString("speed_vn_yellowtitle");
+        WhiteTitleSpeed.text = GameStrings.getString("speed_vn_whitetitle");
+        WhiteTextSpeed.text = GameStrings.getString("speed_vn_whitetext");
+        ButtonTextSpeed.text = GameStrings.getString("speed_vn_buttontext");
+        
+        // Tutorial
+        // if (!GlobalGameInfo.dictionaryFlag) {
+        //     TutorialContainerDictionary.SetActive(true);
+        //     TutorialArrowDictionary.SetActive(true);
+        //     TutorialButtonDictionary.enabled = true;
+        //     DictionaryGlow.SetActive(true);
+
+        //     YellowTitleDictionary.text = GameStrings.getString("dictionary_vn_yellowtitle");
+        //     WhiteTitleDictionary.text = GameStrings.getString("dictionary_vn_whitetitle");
+        //     WhiteTextDictionary.text = GameStrings.getString("dictionary_vn_whitetext_1") + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC()) + GameStrings.getString("dictionary_vn_whitetext_2");
+        //     ButtonTextDictionary.text = GameStrings.getString("dictionary_vn_buttontext");
+
+        // }
     }
+
+    // public void tutorialDictionaryClick() {
+
+    //     TutorialContainerDictionary.SetActive(false);
+    //     TutorialArrowDictionary.SetActive(false);
+    //     TutorialButtonDictionary.enabled = false;
+    //     DictionaryGlow.SetActive(false);
+    //     GlobalGameInfo.dictionaryFlag = true;
+
+    //     TutorialContainerSpeed.SetActive(true);
+    //     TutorialButtonSpeed.enabled = true;
+    //     SpeedImage.SetActive(true);
+    //     SpeedGlow.SetActive(true);
+    // }
     public void tutorialSpeedClick() {
         TutorialContainerSpeed.SetActive(false);
         TutorialButtonSpeed.enabled = false;
