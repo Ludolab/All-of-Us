@@ -74,7 +74,6 @@ public static class GameStrings {
                 {"search_term", "Search a term..."},
                 
                 // Saved Games
-                {"saved_games", "Saved Games"},
                 {"next_npc", "Where Do I Want to Start?"},
                 {"completed", "Completed"},
 
@@ -157,6 +156,7 @@ public static class GameStrings {
                 {"community_engagement", "Community Engagement"},
 
                 // Start week
+                {"startweek_title", "Who should I check with?"},
                 {"startweek_text1", "Are you ready to start the week and help"},
                 {"startweek_text2", "solve some problems?"},
                 {"startweek_text3", "If not, you can select a different neighbor!"},
