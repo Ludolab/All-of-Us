@@ -15,7 +15,7 @@
         if (objs.Length > 1) {
             return;
         }
-         _audioSource.Play();
+        //  _audioSource.Play();
          
      }
  
