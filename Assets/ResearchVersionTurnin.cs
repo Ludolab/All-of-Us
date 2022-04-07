@@ -30,7 +30,8 @@ public class ResearchVersionTurnin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalGameInfo.allResearchQuestionsAnswered) {
+        if (GlobalGameInfo.allResearchQuestionsAnswered &&
+        GlobalGameInfo.researchTurninItemSelected) {
             continueButton.gameObject.SetActive(true);
         }
     }

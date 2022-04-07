@@ -172,6 +172,7 @@ public class DetailPageManager : MonoBehaviour
             }
             selectedItem = this;
             this.transform.Find("Content/Text").GetComponent<Text>().color = selectedColor;
+            GlobalGameInfo.researchTurninItemSelected = true;
         }    
     }
 
