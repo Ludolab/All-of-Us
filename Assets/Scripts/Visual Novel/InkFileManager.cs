@@ -13,7 +13,7 @@ public class InkFileManager : MonoBehaviour {
     private Flowchart _fc;
     private static CharacterResources.CHARACTERS activeQuestGiver;
     private static (int, int) activeFileIdx;
-    private static CharacterResources.CHARACTERS alreadySpokenTo;
+    private static CharacterResources.CHARACTERS alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
     private static int speakingToFileIndex = 0;
     private static string[][] ActivePersonQuestList { get {
             switch (activeQuestGiver) {
@@ -80,7 +80,6 @@ public class InkFileManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
         _fc = GetComponent<Flowchart>();
         if (!GetVisualNovelComponents()) // if we couldn't find the VN components
             return;
@@ -159,22 +158,6 @@ public class InkFileManager : MonoBehaviour {
         }
 
         return character == GlobalGameInfo.GetCurrentNPC();
-        /*
-        // have we already done their quest for the day?
-        switch (character) {
-            case CharacterResources.CHARACTERS.RASHAD:
-                return !completedDailyRashad;
-            case CharacterResources.CHARACTERS.LILA:
-                return !completedDailyLila;
-            case CharacterResources.CHARACTERS.ELISA:
-                return !completedDailyElisa;
-            case CharacterResources.CHARACTERS.CALINDAS:
-                return !completedDailyCalindas;
-            case CharacterResources.CHARACTERS.LEE:
-                return !completedDailyLee;
-        }
-        return false;
-        */
     }
 
     // Basically the same as CanStartQuestion but we don't care if a question is currently active.
@@ -199,6 +182,7 @@ public class InkFileManager : MonoBehaviour {
             // The next time, will be a completion. Thus, clear the already spoken to variable we added
             if (activeFileIdx.Item2 == ActivePersonQuestList[questNum].Length - 1)
             {
+                Debug.Log("here");
                 alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
             }
             return true;
@@ -250,14 +234,20 @@ public class InkFileManager : MonoBehaviour {
             {
 
             }
+            Debug.Log("CAN SPEAK");
+            Debug.Log(CharacterResources.GetName(character));
+            Debug.Log(CharacterResources.GetName(alreadySpokenTo));
             // One of the other two people player has to talk to (not quest giver delivery or completion)
             // If ActivePersonQuestList[questNum].Length - 1 == 2, then there is only one middle person to talk to, so this case doesn't apply
             if (ActivePersonQuestList[questNum].Length - 1 != 2 && chapterNum != ActivePersonQuestList[questNum].Length - 1 && chapterNum != 0)
             {
+                Debug.Log("In this case");
                 if (character != alreadySpokenTo && ((character == GetSpeakerFromFile(fileToLoad1)) || (character == GetSpeakerFromFile(fileToLoad2))))
                 {
+                    Debug.Log("in this case instead");
                     return true;
                 }
+
             }
             // Else case, then it is the delivery or completion
             else
@@ -291,7 +281,7 @@ public class InkFileManager : MonoBehaviour {
         if (CanStartQuest(character)) {
             activeFileIdx = (GlobalGameInfo.GetCurrentDay(), 0);
             activeQuestGiver = character;
-
+            alreadySpokenTo = character;
             NarrativeDirector.staticInk = Resources.Load<TextAsset>(InkToJson(ActiveFileName));
             switch (character) {
                 case CharacterResources.CHARACTERS.RASHAD:
@@ -322,7 +312,9 @@ public class InkFileManager : MonoBehaviour {
             // is this the next person to speak to for the quest?
             if (CanSpeakToForCurrentQuestOrNewQuest(character))
             {
+                Debug.Log("The character is :" + CharacterResources.GetName(character));
                 alreadySpokenTo = character;
+                Debug.Log("Afterwards: " + CharacterResources.GetName(character));
                 if (chapterNum != ActivePersonQuestList[questNum].Length - 1 && chapterNum != 0)
                 {
                     string fileToLoad1 = ActivePersonQuestList[questNum][1];
