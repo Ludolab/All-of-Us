@@ -110,6 +110,8 @@ public class PhoneScreenManager : MonoBehaviour
 
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
+
         todo.GetComponent<RectTransform>().localScale = new Vector3(0f, 1f, 1f);
         notes.GetComponent<RectTransform>().localScale = new Vector3(0f, 1f, 1f);
         contacts.GetComponent<RectTransform>().localScale = new Vector3(0f, 1f, 1f);

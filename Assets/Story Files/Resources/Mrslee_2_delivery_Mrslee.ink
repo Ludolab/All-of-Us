@@ -9,7 +9,7 @@ VAR new_quest = ""
 ~ new_quest = "Mrslee2.txt"
 # new_quest
 
-Mrslee?Smiling "Hello, {player_name}! I got Eddie's medicine. I ask the pharmacist, and it was just a different name. Just ask. Less stress. I should worry less. That's what Eddie says. I worry too much. Too much stress."
+Mrslee?Smiling "Hello, {player_name}! I got Eddie's medicine. I ask the pharmacist, and it was a different name. Just ask. I should worry less. That's what Eddie says. Too much stress."
 
 * Mrs. Lee! I'm so glad it worked out. How are you today? 
   -> Chat1

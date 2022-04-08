@@ -63,13 +63,13 @@ Mrslee?Smiling "Also, it makes things easy if he has to answer questions if I ge
 ==Followup41==
 Mrslee?Smiling "Dr. Lee did not tell Eddie about high blood pressure. I need to make sure he knows everything he can!"
 
-->END
+* Well said, Mrs. Lee! -> SolvedGoodbye
 
 ==Option2==
 Mrslee?Neutral "Great Idea. But, Dr. Lee had big folder, but it was so confusing. I never understand all of it. I feel more stress with big pile of papers to look at."
 Mrslee?Neutral "I want to share all my information with Eddie, and the folder so confusing."
 
--> TempGoodbye
+* I will try again -> PuzzleInterface
 
 ==Option3==
 Mrslee?Smiling "I never want to feel so stress about appointments. So scared, and for what? I talk to Eddie and make sure he know as much as I know."
@@ -81,13 +81,13 @@ Mrslee?Smiling "I never want to feel so stress about appointments. So scared, an
 Mrslee?Neutral "Dr. Lee did not share his information, and did not tell me about high blood pressure or heart disease. I feel sad and angry. I did not know."
 Mrslee?Smiling "I want to know my health business!"
 
-->END
+* You are making great strides! -> SolvedGoodbye
 
 ==Option4==
 Mrslee?Neutral "So many doctors, so many schedule. My new volunteering job with the kids is still changing. I can’t plan so far ahead."
 Mrslee?Smiling "They give me card to fill out; they will mail it to remind me to schedule appointments later. Maybe after I learn my new job, I can plan ahead even more."
 
--> TempGoodbye
+* I'll try again -> PuzzleInterface
 
 ==SolvedGoodbye==
 Mrslee?Neutral "I understand... I will continue to think about my health. And I feel support. Thank you. I will go find Eddie now."

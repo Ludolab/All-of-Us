@@ -75,6 +75,7 @@ public static class GameStrings {
                 
                 // Saved Games
                 {"saved_games", "Saved Games"},
+                {"chat_with", "Who should I chat with?"},
                 {"next_npc", "Where Do I Want to Start?"},
                 {"completed", "Completed"},
 
@@ -225,7 +226,7 @@ public static class GameStrings {
 
                 {"speed_vn_yellowtitle", "What should I do?"},
                 {"speed_vn_whitetitle", "Wanna speed up?"},
-                {"speed_vn_whitetext", "Click on the white dialogue box or press enter/return key on your keyboard to expedite the conversation!"},
+                {"speed_vn_whitetext", "You’re about to have your first conversation with Mrs. Lee. To start chatting, click inside the white box. Select a response to keep the dialogue going!"},
                 {"speed_vn_buttontext", "GOT IT"},
 
                 {"task_map_yellowtitle", "What Next?"},

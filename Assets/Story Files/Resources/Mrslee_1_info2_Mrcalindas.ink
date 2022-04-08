@@ -58,16 +58,16 @@ Mrcalindas?Neutral "I wish he'd done more to understand his condition. I'm sure 
 Mrcalindas?Smiling "Actually, I got a minute. Let me show you a couple of things."
 Mrcalindas?Neutral "Some people just start with a visit to Google. They enter the drug name, and find some information that way. That's a good start, but we have better options." 
 
-That sounds a little risky; how would she know if the website she picked was accurate? 
-->Explain3
+* That sounds a little risky; how would she know if the website she picked was accurate? 
+-> Explain3
 
 ==Explain3==
 
 ~ notification = "Mrcalindas_Day 1_Mrs. Lee can learn to use a secure online portal to look up drug information from a safe resource_Mrslee1-3"
 # notification Mrcalindas_Day 1_Mrs. Lee can learn to use a secure online portal to look up drug information from a safe resource_Mrslee1-3
 
-Mrcalindas?Smiling "Great question. Lucky for us, there are several secure online resources that have been created just for this purpose. 
-Mrcalindas?Smiling Look at this one - it's a drug information portal, where you can look up medications. They work with doctors to make sure the information is useful and accurate."
+Mrcalindas?Smiling "Great question. Lucky for us, there are several secure online resources that have been created just for this purpose."
+Mrcalindas?Smiling "Look at this one - it's a drug information portal, where you can look up medications. They work with doctors to make sure the information is useful and accurate."
 Mrcalindas?Smiling "And this one is a site for reading up on different health conditions - like high blood pressure. You can access them from here, or your home computer."
 Mrcalindas?Smiling "Rashad regularly helps patients from the clinic access these resources at the library."
 

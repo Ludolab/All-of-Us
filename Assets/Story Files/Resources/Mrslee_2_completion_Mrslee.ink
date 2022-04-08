@@ -63,7 +63,7 @@ Mrslee?Neutral "Rashad is very helpful, but I still feel stress."
 Mrslee?Neutral "I need appointments in the future, and maybe Rashad is busy?. What if he can’t help me next time? No thank you."
 
 * Let me see what else I can suggest, Mrs. Lee.
-  ->TempGoodbye
+  ->PuzzleInterface
   
 ==Option3==
 Mrslee?Neutral "That feel so stress. Not just headache, but talk about everything? I feel scared that maybe the doctor will talk more than he listen."
@@ -81,7 +81,7 @@ Mrslee?Smiling "You help so much already. I try this, but might need more help l
 Mrslee?Neutral "That feel like more stress! Eddie say Urgent Care is different doctor every time. Too much trouble."
 
 * I understand, Mrs. Lee. Let’s find you a less stressful solution.
-  ->TempGoodbye
+  ->PuzzleInterface
   
 
 ==SolvedGoodbye==

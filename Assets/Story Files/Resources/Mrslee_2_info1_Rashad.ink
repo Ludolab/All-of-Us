@@ -53,7 +53,7 @@ Rashad?Smiling "Librarians help people find great books, but we also answer ques
 * What's the next cool thing you're hosting?
   -> Suggestion1
 * That's why you're the boss!
-  -> Suggestion2
+  -> Suggestion1
 
 ==Suggestion1==
 ~ notification = "Rashad_Day 2_Mrs. Lee can go to the health programming workshop at the library and ask for help_Mrslee2-1"
