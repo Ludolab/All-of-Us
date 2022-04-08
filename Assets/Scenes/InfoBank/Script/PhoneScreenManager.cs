@@ -426,5 +426,6 @@ public class PhoneScreenManager : MonoBehaviour
 
     public void SubmitQuest() {
         QuestManager.SubmitQuest(QuestManager.submittedQuest);
+        GlobalGameInfo.researchTurninItemSelected = false;
     }
 }

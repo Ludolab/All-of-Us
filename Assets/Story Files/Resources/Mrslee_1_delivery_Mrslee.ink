@@ -13,15 +13,15 @@ VAR new_quest = ""
 
 Mrslee?Neutral "Good morning, {player_name}!"
 
-* Mrs. Lee! How was fitness class?  
++ Mrs. Lee! How was fitness class?  
   -> Chat1
-* Hey Mrs. Lee! How are you?
++ Hey Mrs. Lee! How are you?
   -> Chat2
 
 ==Chat1==
 Mrslee?Smiling "Good to see you. I love my fitness class."
 
-* I wish mornings weren't so early; maybe I'll join you sometime! How's your week going?
++ I wish mornings weren't so early; maybe I'll join you sometime! How's your week going?
   -> Chat2
 
 == Chat2 ==

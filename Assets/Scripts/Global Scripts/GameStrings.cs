@@ -159,7 +159,7 @@ public static class GameStrings {
                 // Start week
                 {"startweek_text1", "Are you ready to start the week and help"},
                 {"startweek_text2", "solve some problems?"},
-                {"startweek_text3", "If not, you can select a different neighbor!"},
+                {"startweek_text3", ""},
 
                 // End of quest
                 {"days_left", "DAYS LEFT"},
@@ -235,7 +235,7 @@ public static class GameStrings {
 
                 {"neighbors_map_yellowtitle", "What should I do?"},
                 {"neighbors_map_whitetitle", "Talk to your Neighbors"},
-                {"neighbors_map_whitetext", "The map shows you all the important places around town. Hover over a location to see who is there right now. \n Click on a neighbor to start a conversation. Each neighbor has specific expertise, and will be able to help with specific questions. Talk to people around town for advice and ideas."},
+                {"neighbors_map_whitetext", "The map shows you all the important places around town. Hover over a location to see who is there right now. \n Click on a neighbor to start a conversation. Each neighbor has specific expertise, and will be able to help with specific questions. Talk to people around town for advice and ideas. If you can't click on someone it means they are not available right now."},
                 {"neighbors_map_buttontext", "NEXT"},
 
                 {"phone_map_yellowtitle", "What should I do?"},

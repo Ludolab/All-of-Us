@@ -75,7 +75,6 @@ public class MapScript : MonoBehaviour
     // Start is called before the first frame update
     private IEnumerator Start() {
         Destroy (GameObject.FindGameObjectWithTag("Music"));
-        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
 
         MeetNPCText.text = GameStrings.getString("meet") + " " + CharacterResources.GetName(GlobalGameInfo.GetCurrentNPC());
 
