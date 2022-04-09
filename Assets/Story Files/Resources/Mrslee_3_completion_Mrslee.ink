@@ -104,5 +104,7 @@ Mrslee?Neutral "OK. I will wait."
   -> END
 
 ==BadSolution==
+Mrslee?Neutral “Thank you, {player_name}.”
 
++ No problem!
   -> END

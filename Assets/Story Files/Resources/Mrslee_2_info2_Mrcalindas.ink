@@ -71,7 +71,7 @@ Mrcalindas?Neutral "We have several caring doctors. I bet your friend can find s
 
 ==Suggestion2==
 ~ notification = "Mrcalindas_Day 2_Mrs. Lee could go to Urgent Care to see someone about her headaches_Mrslee2-4"
-# notification Mrcalindas_Day 2_Mrs. Lee should could go to Urgent Care to see someone about her headaches_Mrslee2-4
+# notification Mrcalindas_Day 2_Mrs. Lee could go to Urgent Care to see someone about her headaches_Mrslee2-4
 
 Mrcalindas?Neutral "Sometimes, people end up in the Emergency Room, or coming into Urgent Care at the clinic because their symptoms get so bad they can't be managed at home."
 Mrcalindas?Neutral "I think it ends up being more stressful. The patient doesn't get a chance to build a relationship with the doctor quite the same way." 

@@ -84,7 +84,7 @@ public class ResearchQuestion : MonoBehaviour
                     capabilityFirstOption.GetComponent<Toggle>().isOn = true;                    
                     break;
                 // 3-2
-                case "Mrs. Lee could ask Mrs. Lee to go to her doctor appointment":
+                case "Mrs. Lee could ask Lila to go to her doctor appointment":
                     learningThirdOption.GetComponent<Toggle>().isOn = true;
                     capabilitySecondOption.GetComponent<Toggle>().isOn = true;                      
                     break;

@@ -1724,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &252445386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4587,8 +4587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a863502d3a79d7a45ba80c5c655a1147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 797111791}
-  key: phone_settings_app
 --- !u!114 &797111791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,7 +5987,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 32553161}
   m_HandleRect: {fileID: 32553160}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7113,8 +7111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a863502d3a79d7a45ba80c5c655a1147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1080549511}
-  key: phone_dictionary_app
 --- !u!114 &1080549511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9001,7 +8997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1264325599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12635,7 +12631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1797546605
 RectTransform:
   m_ObjectHideFlags: 0

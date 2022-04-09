@@ -38,7 +38,7 @@ public class ResearchToggle : MonoBehaviour
                         GlobalGameInfo.infoList[i].researchCapability = newValue;
                     }
                     // Data Collection - Recording the new value to the cloud
-                    DataCollection.LogEvent("RECORDING RESEARCH DATA. User code: " + GlobalGameInfo.playerCode + ", Quest Number: " + GlobalGameInfo.GetCurrentDay() + ", Journal Item: " + itemText.text + ", Category: " + toggle.transform.parent.name + ", Answer selected: " + newValue, "RESEARCH ANSWER CHANGED");
+                    DataCollection.LogEvent("RECORDING RESEARCH DATA. Version: " + GlobalGameInfo.researchVersion + ", User code: " + GlobalGameInfo.playerCode + ", Quest Number: " + GlobalGameInfo.GetCurrentDay() + ", Journal Item: " + itemText.text + ", Category: " + toggle.transform.parent.name + ", Answer selected: " + newValue, "RESEARCH ANSWER CHANGED");
 
                     this.updateNumResearchQuestionsAnswered();
 

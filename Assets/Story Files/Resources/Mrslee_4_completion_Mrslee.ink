@@ -102,5 +102,7 @@ Mrslee?Neutral "I feel excite to hear your suggestion!"
   -> END
 
 ==BadSolution==
+Mrslee?Neutral “Thank you, {player_name}.”
 
++ No problem!
   -> END
