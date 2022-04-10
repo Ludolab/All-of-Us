@@ -51,10 +51,9 @@ Mrslee?Neutral "What do you think?"
   -> Option3
 + They picked Option 4. 
   -> Option4
-+ They picked a solution marked as bad.
-  -> BadSolution
-  
+
 ==Option2==
+# correct
 Mrslee?Smiling "Thank you, {player_name}. I do trust Lila. I have a bad feeling the medicine might be wrong. Lila can help me ask the pharmacist to confirm."
 Mrslee?Smiling "Eddie says some drugs have different names, and it is okay, but anyway I am scare for Eddie."
 Mrslee?Neutral "Lila can help if I feel embarrass about my English."
@@ -85,6 +84,7 @@ Mrslee?Neutral "I feel stress, {player_name}. I learn in library workshop that s
   ->PuzzleInterface
   
 ==Option3==
+# correct
 Mrslee?Smiling "I know that the drug can be named lisinopril. If I look it up in the drug portal, they give other names too?"
 
 + Exactly! You can print out the information sheet and take it with you.

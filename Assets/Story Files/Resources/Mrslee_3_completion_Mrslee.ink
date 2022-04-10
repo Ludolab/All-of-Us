@@ -54,6 +54,7 @@ Mrslee?Neutral "OK. What should I do?"
   -> BadSolution
 
 ==Option1==
+# correct
 Mrslee?Smiling "Did you know Eddie like to Facetime? Last time he was home, he asked me to talk sometimes. I know he worry, so this is a good idea.."
 
 * Sharing your health information might be helpful for him, too! 
@@ -71,6 +72,7 @@ Mrslee?Neutral "Lila is very helpful, but her life very busy. If she go to this 
 -> PuzzleInterface
 
 ==Option3==
+# correct
 Mrslee?Smiling "Write down when I feel headache. Write down how bad? I can do that. Thinking about headache make me feel headache, but you say doctor might help."
 Mrslee?Smiling "Lila give me special notebook with pretty pink paper. She say if I feel good using my journal, maybe it feel less stress."
 

@@ -78,6 +78,7 @@ public class QuestManager : MonoBehaviour
     /// Used when returning to VN scene.
     /// </summary>
     public static Quest submittedQuest;
+    private static Quest prevSubmittedQuest;
     /// <summary>
     /// Contains the name of the person whose quest we're about to solve.
     /// Used when going to turnin scene.
@@ -90,38 +91,41 @@ public class QuestManager : MonoBehaviour
         instance = this;
     }
 
+  
+
     private void Start() {
         // adjust the variables in the Flowchart for if a quest was submitted
         // the Variables Flowchart object currently takes care of handling
 
         if (redeem_fc != null) {
-            switch (_status) {
+            switch (_status)
+            {
                 case SubmitStatus.correct:
-                    RemoveQuest(submittedQuest);
                     _status = SubmitStatus.not_submitted;
                     redeem_fc.SetIntegerVariable("optionNumber", _optionNumber);
                     redeem_fc.SetBooleanVariable("wasQuestSubmitted", true);
                     redeem_fc.SetBooleanVariable("wasSubmitCorrect", true);
                     Debug.Log("Option Number: " + _optionNumber);
-                    InkFileManager.OnQuestCompleted(submittedQuest.questGiver);
-                    IncreaseExpValues(submittedQuest);
-                    InkFileManager.completedQuestString = submittedQuest.questId;
-
+                    Debug.Log("INFO1 + " + submittedQuest.description);
+                    prevSubmittedQuest = submittedQuest;
                     submittedQuest = null;
+                   
                     Debug.Log("Correct Quest!");
                     break;
-                case SubmitStatus.incorrect:
-                    submittedQuest = null;
-                    _status = SubmitStatus.not_submitted;
-                    redeem_fc.SetBooleanVariable("wasQuestSubmitted", true);
-                    redeem_fc.SetBooleanVariable("wasSubmitCorrect", false);
-                    Debug.Log("Incorrect Quest!");
-                    break;
-                case SubmitStatus.not_submitted:
+               case SubmitStatus.not_submitted:
                     redeem_fc.SetBooleanVariable("wasQuestSubmitted", false);
                     break;
             }
         }
+    }
+
+    public void CorrectOption()
+    {
+        Debug.Log("INFO2 + " + prevSubmittedQuest.description);
+        RemoveQuest(prevSubmittedQuest);
+        InkFileManager.OnQuestCompleted(prevSubmittedQuest.questGiver);
+        IncreaseExpValues(prevSubmittedQuest);
+        InkFileManager.completedQuestString = prevSubmittedQuest.questId;
     }
 
     private void IncreaseExpValues(Quest q) {
@@ -218,7 +222,6 @@ public class QuestManager : MonoBehaviour
         // be different
         try {
             foreach (Quest q in activeQuests) {
-                Debug.Log("Q QUESTID: " + q.questId + " QUEST QUESTID: " + quest.questId);
                 if (q.questId == quest.questId) {
                     _status = SubmitStatus.correct;
                     _optionNumber = q.optionNumber;

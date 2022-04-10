@@ -54,6 +54,7 @@ Mrslee?Smiling "What do I do about my health and good future health?"
   -> BadSolution
   
 ==Option1==
+# correct
 Mrslee?Smiling "Eddie and I already using video calls to talk more. And he asking more questions about Dr. Lee. I want him to know everything I know."
 Mrslee?Smiling "Also, it makes things easy if he has to answer questions if I get sick."
 
@@ -72,6 +73,7 @@ Mrslee?Neutral "I want to share all my information with Eddie, and the folder so
 * I will try again -> PuzzleInterface
 
 ==Option3==
+# correct
 Mrslee?Smiling "I never want to feel so stress about appointments. So scared, and for what? I talk to Eddie and make sure he know as much as I know."
 
 * That’s great, Mrs. Lee. Helping you helps him!

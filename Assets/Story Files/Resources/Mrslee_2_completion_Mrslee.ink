@@ -52,6 +52,7 @@ Mrslee?Neutral "What should I do?"
   -> BadSolution
   
 ==Option1==
+# correct
 Mrslee?Smiling "Thank you, {player_name}. I feel good about going to the library program. They help me with my email one time. I know Rashad will take good care of me."
 Mrslee?Smiling "He say I am very good with technology; maybe scheduling over the internet will be easier than trying to understand on the phone. I feel less stress.."
 
@@ -66,6 +67,7 @@ Mrslee?Neutral "I need appointments in the future, and maybe Rashad is busy?. Wh
   ->PuzzleInterface
   
 ==Option3==
+# correct
 Mrslee?Neutral "That feel so stress. Not just headache, but talk about everything? I feel scared that maybe the doctor will talk more than he listen."
 
 * If you don’t like the first doctor you see, we can help you try someone else. 
