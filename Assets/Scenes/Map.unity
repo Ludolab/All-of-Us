@@ -22711,7 +22711,7 @@ GameObject:
   - component: {fileID: 1574156645}
   - component: {fileID: 1574156644}
   m_Layer: 5
-  m_Name: VN SayDialog
+  m_Name: cantTalkDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

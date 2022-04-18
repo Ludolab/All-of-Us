@@ -5,6 +5,8 @@ using InkFungus;
 using Fungus;
 using UnityEngine.SceneManagement;
 using System.IO;
+using TMPro;
+
 
 public class InkFileManager : MonoBehaviour {
     [Tooltip("Ink-Fungus narrative director for this scene.")]
@@ -13,6 +15,19 @@ public class InkFileManager : MonoBehaviour {
     private Flowchart _fc;
     private static CharacterResources.CHARACTERS activeQuestGiver;
     private static (int, int) activeFileIdx;
+
+
+    public GameObject cantTalkDialog;
+    public TextMeshProUGUI cantTalkText;
+    public TextMeshProUGUI characterNameText;
+    public SpriteRenderer spriteRenderer;
+    public Sprite mrcalindas;
+    public Sprite mrslee;
+    public Sprite elisa;
+    public Sprite lila;
+    public Sprite rashad;
+    
+
     private static CharacterResources.CHARACTERS alreadySpokenTo;
     private static int speakingToFileIndex = 0;
     private static string[][] ActivePersonQuestList { get {
@@ -352,6 +367,65 @@ public class InkFileManager : MonoBehaviour {
                         break;
                     case CharacterResources.CHARACTERS.LEE:
                         SceneManager.LoadScene("CommunityVN");
+                        break;
+                }
+            } 
+            else 
+            {
+                //set the cantTalkDialog objet as active
+                cantTalkDialog.SetActive(true);
+                //change name text
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        characterNameText.text = GameStrings.getString("rashad_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        characterNameText.text = GameStrings.getString("elisa_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        characterNameText.text = GameStrings.getString("mrcalindas_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        characterNameText.text = GameStrings.getString("lila_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        characterNameText.text = GameStrings.getString("lee_first_name");
+                        break;
+                }
+                //change dialog text
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogRashad");
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogElisa");
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogCalindas");
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLila");
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLee");
+                        break;
+                }
+                //change character sprite
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        spriteRenderer.sprite = rashad; 
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        spriteRenderer.sprite = elisa; 
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        spriteRenderer.sprite = mrcalindas; 
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        spriteRenderer.sprite = lila; 
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        spriteRenderer.sprite = mrslee; 
                         break;
                 }
             }
