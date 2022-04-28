@@ -72,6 +72,11 @@ public static class GameStrings {
                 {"meet", "Meet"},
                 {"good_morning_message", "Good morning! Another beautiful day in Bloomwood."},
                 {"search_term", "Search a term..."},
+                {"cantTalkDialogLila", "I can't talk right now"},
+                {"cantTalkDialogLee", "I can't talk right now"},
+                {"cantTalkDialogCalindas", "I can't talk right now"},
+                {"cantTalkDialogElisa", "I can't talk right now"},
+                {"cantTalkDialogRashad", "I can't talk right now"},
                 
                 // Saved Games
                 {"saved_games", "Saved Games"},

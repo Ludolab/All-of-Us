@@ -5,6 +5,8 @@ using InkFungus;
 using Fungus;
 using UnityEngine.SceneManagement;
 using System.IO;
+using TMPro;
+using UnityEngine.UI;
 
 public class InkFileManager : MonoBehaviour {
     [Tooltip("Ink-Fungus narrative director for this scene.")]
@@ -15,6 +17,14 @@ public class InkFileManager : MonoBehaviour {
     private static (int, int) activeFileIdx;
     private static CharacterResources.CHARACTERS alreadySpokenTo = CharacterResources.CHARACTERS.NONE;
     private static int speakingToFileIndex = 0;
+    public GameObject cantTalkDialog;
+    public TextMeshProUGUI cantTalkText;
+    public TextMeshProUGUI characterNameText;
+    public GameObject mrcalindas;
+    public GameObject mrslee;
+    public GameObject elisa;
+    public GameObject lila;
+    public GameObject rashad;
     private static string[][] ActivePersonQuestList { get {
             switch (activeQuestGiver) {
                 case CharacterResources.CHARACTERS.RASHAD:
@@ -31,6 +41,9 @@ public class InkFileManager : MonoBehaviour {
                     return rashadQuests;
             }
         } }
+
+    
+
 
     public static string ActiveFileName { get {
             try {
@@ -346,8 +359,77 @@ public class InkFileManager : MonoBehaviour {
                         SceneManager.LoadScene("CommunityVN");
                         break;
                 }
+            } else {
+                //set the cantTalkDialog objet as active
+                cantTalkDialog.SetActive(true);
+
+                //change name text
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        characterNameText.text = GameStrings.getString("rashad_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        characterNameText.text = GameStrings.getString("elisa_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        characterNameText.text = GameStrings.getString("mrcalindas_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        characterNameText.text = GameStrings.getString("lila_first_name");
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        characterNameText.text = GameStrings.getString("lee_first_name");
+                        break;
+                }
+                //change dialog text
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogRashad");
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogElisa");
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogCalindas");
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLila");
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLee");
+                        break;
+                }
+                //change character sprite
+                switch (character) {
+                    case CharacterResources.CHARACTERS.RASHAD:
+                        rashad.SetActive(true);
+                        break;
+                    case CharacterResources.CHARACTERS.ELISA:
+                        elisa.SetActive(true);
+                        break;
+                    case CharacterResources.CHARACTERS.CALINDAS:
+                        mrcalindas.SetActive(true); 
+                        break;
+                    case CharacterResources.CHARACTERS.LILA:
+                        lila.SetActive(true); 
+                        break;
+                    case CharacterResources.CHARACTERS.LEE:
+                        mrslee.SetActive(true); 
+                        break;
+                }
             }
         }
+    }
+
+    // Start is called before the first frame update
+    public void CloseCantTalkDialog()
+    {
+        cantTalkDialog.SetActive(false);
+        rashad.SetActive(false);
+        elisa.SetActive(false);
+        mrcalindas.SetActive(false); 
+        lila.SetActive(false); 
+        mrslee.SetActive(false); 
     }
 
     private string InkToJson(string inkFilename) {
