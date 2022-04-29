@@ -19,11 +19,7 @@ public class InkFileManager : MonoBehaviour {
     private static int speakingToFileIndex = 0;
     public GameObject cantTalkDialog;
     public TextMeshProUGUI cantTalkText;
-    public GameObject RashadNameText;
-    public GameObject MsLeeNameText;
-    public GameObject CalindasNameText;
-    public GameObject LilaNameText;
-    public GameObject ElisaNameText;
+    public TextMeshProUGUI cantTalkName;
     public GameObject mrcalindas;
     public GameObject mrslee;
     public GameObject elisa;
@@ -367,58 +363,40 @@ public class InkFileManager : MonoBehaviour {
                 //set the cantTalkDialog objet as active
                 cantTalkDialog.SetActive(true);
 
-                //change name text
-                switch (character) {
-                    case CharacterResources.CHARACTERS.RASHAD:
-                        RashadNameText.SetActive(true);
-                        break;
-                    case CharacterResources.CHARACTERS.ELISA:
-                        ElisaNameText.SetActive(true);
-                        break;
-                    case CharacterResources.CHARACTERS.CALINDAS:
-                        CalindasNameText.SetActive(true);
-                        break;
-                    case CharacterResources.CHARACTERS.LILA:
-                        LilaNameText.SetActive(true);
-                        break;
-                    case CharacterResources.CHARACTERS.LEE:
-                        MsLeeNameText.SetActive(true);
-                        break;
-                }
                 //change dialog text
+                //change name text
+                //change character sprite
+                //change dimensions
                 switch (character) {
                     case CharacterResources.CHARACTERS.RASHAD:
                         cantTalkText.text = GameStrings.getString("cantTalkDialogRashad");
-                        break;
-                    case CharacterResources.CHARACTERS.ELISA:
-                        cantTalkText.text = GameStrings.getString("cantTalkDialogElisa");
-                        break;
-                    case CharacterResources.CHARACTERS.CALINDAS:
-                        cantTalkText.text = GameStrings.getString("cantTalkDialogCalindas");
-                        break;
-                    case CharacterResources.CHARACTERS.LILA:
-                        cantTalkText.text = GameStrings.getString("cantTalkDialogLila");
-                        break;
-                    case CharacterResources.CHARACTERS.LEE:
-                        cantTalkText.text = GameStrings.getString("cantTalkDialogLee");
-                        break;
-                }
-                //change character sprite
-                switch (character) {
-                    case CharacterResources.CHARACTERS.RASHAD:
+                        cantTalkName.text = GameStrings.getString("rashad_first_name");
+                        cantTalkName.transform.position = new Vector2(940, 736);
                         rashad.SetActive(true);
                         break;
-                    case CharacterResources.CHARACTERS.ELISA:
+                    case CharacterResources.CHARACTERS.ELISA: //difference 30
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogElisa");
+                        cantTalkName.text = GameStrings.getString("elisa_first_name");
+                        cantTalkName.transform.position = new Vector2(920, 736);
                         elisa.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.CALINDAS:
-                        mrcalindas.SetActive(true); 
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogCalindas");
+                        cantTalkName.text = GameStrings.getString("mrcalindas_first_name");
+                        cantTalkName.transform.position = new Vector2(970, 736);
+                        mrcalindas.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.LILA:
-                        lila.SetActive(true); 
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLila");
+                        cantTalkName.text = GameStrings.getString("lila_first_name");
+                        cantTalkName.transform.position = new Vector2(950, 736);
+                        lila.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.LEE:
-                        mrslee.SetActive(true); 
+                        cantTalkText.text = GameStrings.getString("cantTalkDialogLee");
+                        cantTalkName.text = GameStrings.getString("mrslee_first_name");
+                        cantTalkName.transform.position = new Vector2(960, 736);
+                        mrslee.SetActive(true);
                         break;
                 }
             }
@@ -433,12 +411,7 @@ public class InkFileManager : MonoBehaviour {
         elisa.SetActive(false);
         mrcalindas.SetActive(false); 
         lila.SetActive(false); 
-        mrslee.SetActive(false); 
-        RashadNameText.SetActive(false);
-        ElisaNameText.SetActive(false);
-        CalindasNameText.SetActive(false); 
-        LilaNameText.SetActive(false); 
-        MsLeeNameText.SetActive(false); 
+        mrslee.SetActive(false);  
     }
 
     private string InkToJson(string inkFilename) {
