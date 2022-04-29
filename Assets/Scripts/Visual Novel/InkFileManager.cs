@@ -19,7 +19,11 @@ public class InkFileManager : MonoBehaviour {
     private static int speakingToFileIndex = 0;
     public GameObject cantTalkDialog;
     public TextMeshProUGUI cantTalkText;
-    public TextMeshProUGUI characterNameText;
+    public GameObject RashadNameText;
+    public GameObject MsLeeNameText;
+    public GameObject CalindasNameText;
+    public GameObject LilaNameText;
+    public GameObject ElisaNameText;
     public GameObject mrcalindas;
     public GameObject mrslee;
     public GameObject elisa;
@@ -366,19 +370,19 @@ public class InkFileManager : MonoBehaviour {
                 //change name text
                 switch (character) {
                     case CharacterResources.CHARACTERS.RASHAD:
-                        characterNameText.text = GameStrings.getString("rashad_first_name");
+                        RashadNameText.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.ELISA:
-                        characterNameText.text = GameStrings.getString("elisa_first_name");
+                        ElisaNameText.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.CALINDAS:
-                        characterNameText.text = GameStrings.getString("mrcalindas_first_name");
+                        CalindasNameText.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.LILA:
-                        characterNameText.text = GameStrings.getString("lila_first_name");
+                        LilaNameText.SetActive(true);
                         break;
                     case CharacterResources.CHARACTERS.LEE:
-                        characterNameText.text = GameStrings.getString("lee_first_name");
+                        MsLeeNameText.SetActive(true);
                         break;
                 }
                 //change dialog text
@@ -430,6 +434,11 @@ public class InkFileManager : MonoBehaviour {
         mrcalindas.SetActive(false); 
         lila.SetActive(false); 
         mrslee.SetActive(false); 
+        RashadNameText.SetActive(false);
+        ElisaNameText.SetActive(false);
+        CalindasNameText.SetActive(false); 
+        LilaNameText.SetActive(false); 
+        MsLeeNameText.SetActive(false); 
     }
 
     private string InkToJson(string inkFilename) {
