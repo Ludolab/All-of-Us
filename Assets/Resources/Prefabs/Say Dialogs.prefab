@@ -1118,6 +1118,7 @@ GameObject:
   - component: {fileID: 4947600666555744641}
   - component: {fileID: 7257683682457077593}
   - component: {fileID: 3918973070073455866}
+  - component: {fileID: 551303494692557863}
   m_Layer: 5
   m_Name: VN SayDialog
   m_TagString: Untagged
@@ -1396,6 +1397,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &551303494692557863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094098722536282997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66e70f1db12f0e4681a44640f868bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frameType: 0
+  persistAcrossScenes: 0
+  screenRectStyle: 0
 --- !u!1 &4825420811364671312
 GameObject:
   m_ObjectHideFlags: 0
