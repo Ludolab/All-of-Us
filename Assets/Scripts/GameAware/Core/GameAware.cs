@@ -18,6 +18,7 @@ namespace GameAware {
         Transform,
         Collider,
         Renderer,
+		Custom
     }
 
 
@@ -238,10 +239,16 @@ namespace GameAware {
 
         public static DepthRect RectTransformToViewerScreenRect(Camera camera, RectTransform rectTransform) {
 			rectTransform.GetWorldCorners(rectTransformHelper);
+
+
+
 			for(int i =0; i < 4; i++) {
-				rectTransformHelper[i] = WorldToViewerScreenPoint(camera, rectTransformHelper[i]);
+				Debug.LogFormat("<color=cyan>RectTransform</color> Pre WorldCorners[{0}] = {1}", i, rectTransformHelper[i]);
+				//rectTransformHelper[i] = WorldToViewerScreenPoint(camera, rectTransformHelper[i]);
+				rectTransformHelper[i].y = Screen.height - rectTransformHelper[i].y;
+                Debug.LogFormat("<color=cyan>RectTransform</color> Post WorldCorners[{0}] = {1}", i, rectTransformHelper[i]);
             }
-			min = rectTransformHelper[0];
+            min = rectTransformHelper[0];
 			max = rectTransformHelper[0];
 			foreach(Vector3 vec in rectTransformHelper) {
                 min = Vector3.Min(min, vec);
@@ -252,9 +259,6 @@ namespace GameAware {
 
 
     }
-
-
-
 
     public static class Constants {
         public const string SCREEN_RECT_KEY = "screenRect";
@@ -331,7 +335,12 @@ namespace GameAware {
 		public RectInt rect;
 		public float z;
 
-		public static DepthRect zero = new DepthRect(0, 0, 0, 0, 0);
+		public int x { get { return rect.x; } }
+        public int y { get { return rect.y; } }
+        public int w { get { return rect.width; } }
+        public int h { get { return rect.height; } }
+
+        public static DepthRect zero = new DepthRect(0, 0, 0, 0, 0);
 
 		public DepthRect(int x, int y, int w, int h, float z) {
 			this.rect = new RectInt(x, y, w, h);
@@ -356,5 +365,6 @@ namespace GameAware {
                 {"z", z },
             };
         }
+
 	}
 }

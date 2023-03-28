@@ -76,6 +76,7 @@ namespace GameAware {
                 case ScreenSpaceReference.Transform:
                 case ScreenSpaceReference.Collider:
                 case ScreenSpaceReference.Renderer:
+                case ScreenSpaceReference.Custom:
                     return new JObject {
                         { Constants.SCREEN_RECT_KEY, ScreenRect().ToJObject() }
                     };
@@ -93,6 +94,7 @@ namespace GameAware {
                 case ScreenSpaceReference.Transform:
                 case ScreenSpaceReference.Collider:
                 case ScreenSpaceReference.Renderer:
+                case ScreenSpaceReference.Custom:
                     return new JObject {
                         { Constants.SCREEN_RECT_KEY, ScreenRect().ToJObject() }
                     };
@@ -107,6 +109,9 @@ namespace GameAware {
 
         public virtual DepthRect ScreenRect() {
             switch (this.screenRectStyle) {
+                case ScreenSpaceReference.Custom:
+                    Debug.LogWarning("ScreenRectStyle is Custom without Overrideing ScreenRect function");
+                    goto case ScreenSpaceReference.None;
                 case ScreenSpaceReference.Transform:
                     var pos = ScreenSpaceHelper.WorldToViewerScreenPoint(ScreenSpaceCamera, transform.position);
                     return new DepthRect((int)pos.x, (int)pos.y, 0, 0, pos.z);

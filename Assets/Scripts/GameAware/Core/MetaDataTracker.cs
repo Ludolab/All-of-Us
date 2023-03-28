@@ -84,6 +84,12 @@ namespace GameAware {
             }
         } 
 
+        public long CurrentKeyFrameNum {
+            get {
+                return keyFrameNum;
+            }
+        }
+
         public float CurrentTime {
             get {
                 return updateMode == RecordingUpdate.FixedUpdate ? Time.fixedTime : Time.time;
@@ -357,7 +363,10 @@ namespace GameAware {
             if (showMockOverlay) {
                 mockRects.Clear();
                 foreach (IMetaDataTrackable mdo in keyItems) {
-                    mockRects[mdo.ObjectKey] = mdo.ScreenRect();
+                    DepthRect drect = mdo.ScreenRect();
+                    if (drect.w > 0 && drect.h > 0) {
+                        mockRects[mdo.ObjectKey] = mdo.ScreenRect();
+                    }
                 }
             }
 
@@ -367,7 +376,10 @@ namespace GameAware {
             };
             JObject key = new JObject();
             foreach (IMetaDataTrackable mdo in keyItems) {
-                key[mdo.ObjectKey] = mdo.KeyFrameData();
+                JObject mdoKey = mdo.KeyFrameData();
+                if (mdoKey.Count > 0) {
+                    key[mdo.ObjectKey] = mdoKey;
+                }
             }
             currentFrameData["key"] = key;
 
@@ -397,7 +409,7 @@ namespace GameAware {
             foreach (IMetaDataTrackable mdo in tweenItems) {
                 JObject mdoTween = mdo.InbetweenData();
                 if (mdoTween.Count > 0) {
-                    newInbetween[mdo.ObjectKey] = mdo.InbetweenData();
+                    newInbetween[mdo.ObjectKey] = mdoTween;
                 }
             }
             if (newInbetween.Count > 0) {

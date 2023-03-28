@@ -21,16 +21,20 @@ public class VNDialogTracker : MetaDataTrackable
          */ 
         storyText = transform.Find("Panel/StoryText").GetComponent<Text>();
         characterText = transform.Find("Panel/NameBackground/NameText").GetComponent<Text>();
-        rectTransform = transform.Find("Panel").GetComponent<RectTransform>();
+        rectTransform = transform.Find("Panel/StoryText").GetComponent<RectTransform>();
         objectKey = "visualNovelText";
         frameType = MetaDataFrameType.KeyFrame;
+        screenRectStyle = ScreenSpaceReference.Custom;
         base.Start();
 
     }
 
+    public override DepthRect ScreenRect() {
+        return ScreenSpaceHelper.RectTransformToViewerScreenRect(rectTransform);
+    }
+
     public override JObject KeyFrameData() {
-        JObject ret = new JObject();
-        ret[Constants.SCREEN_RECT_KEY] = ScreenSpaceHelper.RectTransformToViewerScreenRect(rectTransform).ToJObject();
+        JObject ret = base.KeyFrameData();
         ret["dialog"] = storyText.text;
         ret["speaker"] = characterText.text;
         return ret;
