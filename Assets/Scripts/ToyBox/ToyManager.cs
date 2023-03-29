@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameAware;
+using Newtonsoft.Json;
 
 public class ToyManager : MonoBehaviour {
 
@@ -143,23 +143,27 @@ public class ToyManager : MonoBehaviour {
 
         MetaDataTracker.Instance.showMockOverlay = GUILayout.Toggle(MetaDataTracker.Instance.showMockOverlay, "Show Mock Overlay");
 
+        MetaDataTracker.Instance.mockOverlayFilterString = LabeledInputField("Display Filter:", MetaDataTracker.Instance.mockOverlayFilterString);
+
         GUILayout.Label("CurrentTrackables:");
         foreach(IMetaDataTrackable mdt in MetaDataTracker.Instance.CurrentTrackables) {
-            
-            GUILayout.Label(mdt.ObjectKey);
-            DepthRect rect = mdt.ScreenRect();
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(25);
-            GUILayout.Label(string.Format("x:{0}, y:{1}, w:{2}, h:{3}, z:{4}", rect.rect.x, rect.rect.y, rect.rect.width, rect.rect.height, rect.z));
-            GUILayout.EndHorizontal();
 
-            
-
+            if (MetaDataTracker.Instance.mockOverlayFilterString == string.Empty || mdt.ObjectKey.Contains(MetaDataTracker.Instance.mockOverlayFilterString)) {
+                GUILayout.Label(mdt.ObjectKey);
+                DepthRect rect = mdt.ScreenRect();
+                GUILayout.BeginHorizontal();
+                GUILayout.Space(25);
+                GUILayout.Label(string.Format("x:{0}, y:{1}, w:{2}, h:{3}, z:{4}", rect.rect.x, rect.rect.y, rect.rect.width, rect.rect.height, rect.z));
+                GUILayout.EndHorizontal();
+            }
         }
     }
 
     public void LastKeyFrameGUI() {
-        GUILayout.Label(MetaDataTracker.Instance.LastKeyFrameSent);
+        if (GUILayout.Button("Copy to Clipboard")) {
+            GUIUtility.systemCopyBuffer = JsonConvert.SerializeObject(MetaDataTracker.Instance.LatestFrame);
+        }
+        GUILayout.Label(JsonConvert.SerializeObject(MetaDataTracker.Instance.LatestFrame, Formatting.Indented));
     }
 
     private string LabeledInputField(string label, string value) {
