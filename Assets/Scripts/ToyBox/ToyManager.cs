@@ -160,9 +160,14 @@ public class ToyManager : MonoBehaviour {
     }
 
     public void LastKeyFrameGUI() {
-        if (GUILayout.Button("Copy to Clipboard")) {
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Copy Whole Frame Clipboard")) {
             GUIUtility.systemCopyBuffer = JsonConvert.SerializeObject(MetaDataTracker.Instance.LatestFrame);
         }
+        if (GUILayout.Button("Copy Key Only Clipboard")) {
+            GUIUtility.systemCopyBuffer = JsonConvert.SerializeObject(MetaDataTracker.Instance.LatestFrame["key"]);
+        }
+        GUILayout.EndHorizontal();
         GUILayout.Label(JsonConvert.SerializeObject(MetaDataTracker.Instance.LatestFrame, Formatting.Indented));
     }
 
