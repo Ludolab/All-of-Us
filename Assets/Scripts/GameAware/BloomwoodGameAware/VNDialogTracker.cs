@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 using InkFungus;
 using Ink.Runtime;
+using Newtonsoft.Json;
 
 public class VNDialogTracker : MetaDataTrackable
 {
@@ -66,13 +67,21 @@ public class VNDialogTracker : MetaDataTrackable
 
     public override JObject KeyFrameData() {
         JObject ret = base.KeyFrameData();
-        splitDialog = narrativeDirector.story.currentText.Split(spaceDelim, 2);
-        ret["dialogRendered"] = storyText.text;
-        ret["dialogFull"] = splitDialog.Length > 1 ? splitDialog[1].Trim(trimChars) : string.Empty;
-        ret["emotion"] = splitDialog.Length > 1 ? splitDialog[0].Split(questionDelim, 2)[1] : string.Empty;
-        ret["speaker"] = characterText.text;
-        ret["currentChoices"] = GetChoices();
-        ret["lastPlayerChoice"] = lastPlayerChoice;
+        try {
+            splitDialog = narrativeDirector.story.currentText.Split(spaceDelim, 2);
+            ret["dialogRendered"] = storyText.text;
+            ret["dialogFull"] = splitDialog.Length > 1 ? splitDialog[1].Trim(trimChars) : string.Empty;
+            if(splitDialog.Length > 1 && splitDialog[0].ToLower().StartsWith(characterText.text.ToLower())){
+                ret["emotion"] = splitDialog.Length > 1 ? splitDialog[0].Split(questionDelim, 2)[1] : string.Empty;
+            }
+            ret["speaker"] = characterText.text;
+            ret["currentChoices"] = GetChoices();
+            ret["lastPlayerChoice"] = lastPlayerChoice;
+        }
+        catch (System.IndexOutOfRangeException e) {
+            Debug.LogFormat("<color=red>Scene Transistion Bug</color> Current Text:{0}\nCurrent Tags:{1}", narrativeDirector.story.currentText, JsonConvert.SerializeObject(narrativeDirector.story.currentTags));
+            throw e;
+        }
         return ret;
     }
 
