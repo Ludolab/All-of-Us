@@ -6,8 +6,19 @@ using System.Collections.Generic;
 
 public static class SaveSerial : object {
 
+#if UNITY_EDITOR
+    public static bool IgnoreSaveData = true;
+#endif
+
     public static void SaveGame(Dictionary<string, SavedGame> dataToSave)
     {
+#if UNITY_EDITOR
+        if (IgnoreSaveData) {
+            Debug.Log("Game data not saved, saving is disabled.");
+            return;
+        }
+#endif
+
         BinaryFormatter bf = new BinaryFormatter(); 
         // FileStream file = LoadGameFile();
         FileStream file = null;
@@ -30,6 +41,12 @@ public static class SaveSerial : object {
 
     public static Dictionary<string, SavedGame> LoadGame()
     {
+#if UNITY_EDITOR
+        if (IgnoreSaveData) {
+            Debug.Log("Ignoring save data");
+            return null;
+        }
+#endif
         if (File.Exists(Application.persistentDataPath 
                     + "/SavedData.dat"))
         {

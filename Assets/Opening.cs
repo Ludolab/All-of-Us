@@ -11,6 +11,7 @@ public class Opening : MonoBehaviour
     public TextMeshProUGUI CreditsButton;
     public TextMeshProUGUI NewGameButton;
     public GameObject ContinueButton;
+    public bool IgnoreSaveData = false;
 
     void Start()
     {
@@ -23,8 +24,13 @@ public class Opening : MonoBehaviour
         NewGameButton.text = GameStrings.getString("new_game");
         CreditsButton.text = GameStrings.getString("credits");
 
+#if UNITY_EDITOR
+        SaveSerial.IgnoreSaveData = IgnoreSaveData;
+#endif
+
         // Loading game data
         GlobalGameInfo.gameData = SaveSerial.LoadGame();
+
 
         // Show continue button
         if (GlobalGameInfo.gameData != null) {
