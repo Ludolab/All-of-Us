@@ -20,14 +20,17 @@ public class TurninTracker : MetaDataTrackable
 
     JArray currentChoices = new JArray();
 
-    private List<RectTransform> optionRects = new List<RectTransform>();
-
+    protected override void Start()
+    {
+        base.Start();
+        objectKey = "visualNovelText";
+    }
 
     private JArray GetChoices() {
         currentChoices.Clear();
 
         for (int i = 0; i < options.Count; i++) {
-            RectTransform rect = optionRects[i];
+            RectTransform rect = options[i].rectTransform;
             DepthRect screenRect = ScreenSpaceHelper.RectTransformToViewerScreenRect(rect);
             JObject choice = new JObject();
             choice["text"] = options[i].text;
