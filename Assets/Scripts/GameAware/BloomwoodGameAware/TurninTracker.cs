@@ -23,7 +23,12 @@ public class TurninTracker : MetaDataTrackable
     protected override void Start()
     {
         base.Start();
+        screenRectStyle = ScreenSpaceReference.Custom;
         objectKey = "visualNovelText";
+    }
+    public override DepthRect ScreenRect()
+    {
+        return ScreenSpaceHelper.RectTransformToViewerScreenRect(PromptText.rectTransform);
     }
 
     private JArray GetChoices() {

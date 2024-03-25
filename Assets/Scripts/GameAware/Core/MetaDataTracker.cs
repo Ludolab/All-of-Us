@@ -190,6 +190,7 @@ namespace GameAware {
 
             redisConn = ConnectionMultiplexer.Connect(config);
             redDb = redisConn.GetDatabase();
+            redDb.Execute("FLUSHDB");
         }
 
 
